@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage{graphicx}
+\usepackage[dutch]{babel}
+\usepackage{hyperref}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{siunitx}
+\usepackage{tabu}
+\usepackage{booktabs}% for better rules in the table
+\usepackage[left=2.5cm,top=2cm,right=2.5cm,bottom=2cm,a4paper]{geometry}
+\date{Academiejaar 2020 -- 2021}
+\title{Teamkalender- Team 6}
+\author{Team 6}
+
+
+\begin{document}
+	
+\section{Samenvatting klantenvereisten}
+Budget:
+\begin{itemize}
+	\item 3500 eenheden
+\end{itemize}
+
+Wat moet het miniatuur robotwagentje kunnen:
+
+\begin{itemize}
+	\item straten (lengte 1m) volgen in miniatuur stad
+	\begin{itemize}
+		\item Straten bestaan uit strepen van plakband.
+		\item plakband is helder en 25mm breed
+		\item ondergrond donker
+		\item met sensor de plakband volgen
+		\item lijn in de richting van de wagen: rijden
+		\item lijn dwars op de baan: stoplijn -> stoppen (breedte 50mm)
+		\item voorgeprogrameerd traject
+	\end{itemize}
+	\item wagens (voorliggers) detecteren
+	\begin{itemize}
+		\item afstand inschatten
+		\item zorgen dat het op tijd kan stoppen om botsing te vemijden
+	\end{itemize}
+	\item verkeerslichten interpreteren op een hoogte van 7.5 cm
+	\begin{itemize}
+		\item kleur kunnen detecteren rechts van de wagen
+		\item groen: wagentje mag doorrijden
+		\item rood: blijven scannen tot het groen wordt
+		\item licht knippert aan 1Hz
+	\end{itemize}
+	\item het moet bestuurbaar zijn vanop afstand
+	\begin{itemize}
+		\item men moet vanaf een afstand het wagentje kunnen besturen
+		\item tijdens het traject overgenomen kunnen worden
+	\end{itemize}
+	\item redelijke snelheid
+	\begin{itemize}
+		\item moet snel kunnen stoppen als de stopstreep gedetecteerd wordt (minder dan 10cm/s)
+		\item moet geen uur doen over het traject (sneller dan 1cm/s)
+	\end{itemize}
+
+\end{itemize}
+\end{document}
