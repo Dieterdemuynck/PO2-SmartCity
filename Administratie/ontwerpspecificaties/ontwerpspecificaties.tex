@@ -10,45 +10,57 @@
 \begin{document}
 \section*{Overzicht ontwerpspecificaties}
 
-\begin{itemize}
+
 	 
 
-	\item\textbf{We kregen van de klant enkele minimale vereisten die het wagentje moet kunnen uitvoeren:}
+	\textbf{We kregen van de klant enkele minimale vereisten die het wagentje moet kunnen uitvoeren.}
 
-	\begin{itemize}
-		\item Het miniatuurwagentje verplaatst zich door het herkennen van dunne lijnen met een breedte van 25 millimeter en volgt vervolgens deze lijnen. 
+	
+		Het miniatuurwagentje verplaatst zich door het volgen van dunne lijnen met een breedte van 25 millimeter en volgt vervolgens deze lijnen. 
 		Daarvoor moet het wagentje een sensor bevatten die zo'n lijnen kan herkennen, meerbepaald een reflectiesensor. 
 		Daarnaast moet deze sensor ook bredere lijnen (van 50 mm breed) onderscheiden van dunnere lijnen, dit omdat het wagentje moet kunnen herkennen dat het een kruispunt nadert en dit wordt aangegeven door een bredere lijn van 50 mm.
-		Om deze lijnen te herkennen moet de sensor onderaan het wagentje geplaatst worden zodat deze de lijnen makkelijk kunnen worden herkent.
-		\item Wanneer het wagentje een kruispunt nadert, moet het een stoplicht juist kunnen interpreteren.
+		Om deze lijnen te herkennen moet de sensor onderaan het wagentje geplaatst worden zodat deze de lijnen makkelijk kunnen onderscheiden.
+		
+		
+		Wanneer het wagentje een kruispunt nadert, moet het een stoplicht juist kunnen interpreteren.
 		Dus moet het wagentje voorzien zijn van een kleursensor of camera die de twee verschillende kleuren van het stoplicht kan onderscheiden.
-		Bij een groen licht mag het wagentje doorrijden, bij een rood licht moet het het miniatuurrobotwagentje tot stilstand komen aan de bredere streep. 
-		\item Verder moet het wagentje volgens de klant aan een "aanvaardbare" snelheid voortbewegen, het miniatuur robotwagentje zal zich dus moeten voortbewegen met behulp van motoren.
+		Bij een groen licht mag het wagentje doorrijden, bij een rood licht moet het het miniatuurrobotwagentje het stoplicht blijven controleren tot het groen is geworden. 
+		
+		
+		Verder moet het wagentje volgens de klant aan een "aanvaardbare" snelheid voortbewegen, het miniatuur robotwagentje zal zich dus moeten voortbewegen met behulp van motoren.
 		Daarbij is het belangrijk dat het wagentje ook een beperkte massa heeft, maximaal 500 gram.
-		Dit zorgt ervoor dat het wagentje op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen, en dat zijn remafstand bij het naderen van een kruispunt beperkt blijft.
-		\item Het wagentje moet ook andere wagens kunnen detecteren, zodat het niet tot een botsing komt. Daarvoor moet het miniatuurwagentje een korte remafstand hebben om zo op een afstand van een ander wagentje te kunnen blijven.
+		Dit zorgt ervoor dat het wagentje op een veilige manier zich aan bijna 10 cm/s kan voortbewegen, en dat zijn remafstand bij het naderen van een kruispunt beperkt blijft.
+		
+		
+		Het wagentje moet ook andere wagens kunnen detecteren, zodat het niet tot een botsing komt. Daarvoor moet het miniatuurwagentje een korte remafstand hebben om zo op een afstand van een ander wagentje te kunnen blijven.
 		In het vorig punt werd daarom al aangehaald dat het wagentje maximaal een massa van 500 gram mag hebben. 
 		Om deze andere wagentjes te herkennen moet het wagentje een afstandssensor bevatten die het wagentje voor ons moet kunnen detecteren en vervolgens een signaal verzenden zodat de motoren vertragen, en we dus niet botsen.
-	    \item Als laatste grote klantenvereiste wordt verwacht dat men van op afstand kan ingrijpen wanneer er iets fout loopt met het wagentje. We zullen dit mogelijk maken door te werken met het programma \textit{LabVIEW}.
-	    Deze software zorgt voor de communicatie tussen het wagentje, de code en computer waardoor er een manual override mogelijk is. 
-	\end{itemize}
+		
+		
+	    Als laatste grote klantenvereiste wordt verwacht dat men van op afstand kan ingrijpen wanneer er iets fout loopt met het wagentje. We zullen dit mogelijk maken door te werken met het programma \textit{LabVIEW}.
+	    Deze software zorgt voor de communicatie tussen het wagentje, de code en computer waardoor er een handmatige overname via de computer (manual override: goed vertaald?) mogelijk is. 
+	
+	
+	
 	Door de vereisten van de klant zal het wagentje enkele sensoren en motoren nodig hebben die hierboven aangehaald werden.
 	Deze sensoren moeten ook aangestuurd worden, dit zal aan de hand van een microcontroller gebeuren zodat de sensoren en motoren met elkaar kunnen samenwerken en zo de vereisten van de klanten beantwoorden.
-	Zodat als de kleursensor bijvoorbeeld een rood licht herkent, het wagentje ook daadwerkelijk tot stilstand komt en wacht tot het terug groen is.
+	Zodat als de kleursensor bijvoorbeeld een rood licht herkent, het wagentje ook daadwerkelijk blijft staan en wacht tot het terug groen is.
 	
-	\item\textbf{We eindigen met nog enkele visuele ontwerpspecificaties van het miniatuur robotwagentje die van belang zijn voor de klant:}
+	\textbf{We eindigen met nog enkele visuele ontwerpspecificaties van het miniatuur robotwagentje die van belang zijn voor de klant.}
 	
-	\begin{itemize}
-		\item Het wagentje is maximaal 20 cm breed, zodat het een mogelijke tegenligger niet zou raken.
-		\item De kleursensor die de stoplichten onderscheidt moet op een hoogte van 7.5 cm van de grond worden gehangen, zodat de sensor op een zo ideaal mogelijk manier kan werken.
-		\item Omdat het wagentje een niet verwerpelijke massa en snelheid zal hebben moeten we ervoor zorgen dat het wagentje stabiel genoeg is en niet zal omkantelen tijdens een rit, daardoor moeten het wagentje op zijn minst
+	
+		Het wagentje is maximaal 20 cm breed, zodat het een mogelijke tegenligger niet zou raken.
+		
+		
+		De kleursensor die de stoplichten onderscheidt moet op een hoogte van 7.5 cm van de grond worden gehangen, zodat de sensor op een zo ideaal mogelijk manier kan werken.
+		
+		
+		Omdat het wagentje een niet verwerpelijke massa en snelheid zal hebben moeten we ervoor zorgen dat het wagentje stabiel genoeg is en niet zal omkantelen tijdens een rit, daardoor moeten het wagentje op zijn minst
 		ondersteunt worden door 3 of 4 wielen.
-		\item Doordat dit wagentje gemotoriseerd is en enkele sensoren moet bevatten, zal het noodzakelijk zijn dat deze ook van stroom worden voorzien door batterijen.
-	\end{itemize}
-	
-	
+		
+		
+		Doordat dit wagentje gemotoriseerd is en enkele sensoren moet bevatten, zal het noodzakelijk zijn dat deze ook van stroom worden voorzien door batterijen.
 
-\end{itemize}
 
 
 
