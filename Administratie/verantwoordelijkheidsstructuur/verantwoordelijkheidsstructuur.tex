@@ -1,0 +1,75 @@
+\documentclass[landscape,12pt]{article}
+
+% style
+\setlength{\parindent}{0pt}
+\usepackage[left=2.5cm,top=2cm,right=2.5cm,bottom=2cm,a4paper]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Team 6}
+\rhead{Verantwoordelijkheidsstructuur}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% table
+\usepackage{etoolbox}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xstring}
+\usepackage{xcolor,colortbl}
+\definecolor{gray1}{gray}{0.7}
+\definecolor{gray2}{gray}{0.85}
+\definecolor{gray3}{gray}{0.95}
+
+% counting system		
+\newcounter{counter}
+\newcounter{subcounter}
+\newcounter{subsubcounter}
+\newcommand{\teller}{
+	\stepcounter{counter}
+	\setcounter{subcounter}{0}
+	\setcounter{subsubcounter}{0}
+	\thecounter}
+\newcommand{\subteller}{
+	\stepcounter{subcounter}
+	\setcounter{subsubcounter}{0}
+	\thecounter.\thesubcounter}
+\newcommand{\subsubteller}{
+	\stepcounter{subsubcounter}
+	\thecounter.\thesubcounter.\thesubsubcounter}
+
+% row	
+%\newcommand{\row}[3]{
+%	\IfEqCase{#1}{
+%		{1}{\teller & #2 & \IfEqCase{#3}{{0}{niet OK}{1}{OK}} \\}
+%		{2}{\subteller & #2 & \IfEqCase{#3}{{0}{niet OK}{1}{OK}} \\}
+%		{3}{\subsubteller & #2 & \IfEqCase{#3}{{0}{niet OK}{1}{OK}} \\}
+%	}[PackageError{row}{Undefined option to row: #1}]}
+
+
+
+\begin{document}	
+	
+	\begin{table}
+		\centering
+		
+		\begin{tabular}{p{4cm}p{5cm}p{7cm}}
+			\toprule
+			Naam & Taak & Omschrijving \\ 
+			\midrule
+			Aaron Vandenberghe & Teamleider & Hij is verantwoordelijk voor het coördineren van het teamwerk, leidt de teamvergaderingen en blijft het aanspreekpunt en de verantwoordelijke tijdens het uitwerken van de opdrachten. Hij blijft voortdurend op de hoogte van de vooruitgang van de zaken en kan beslissen om een extra vergadering te organiseren.\\
+			\midrule
+			Dieter Demuynck & Software-verantwoordelijke & Hij neemt de coördinatie van het implementeren op zich. Verder is hij ook vanaf week 5 aanwezig op de campus.\\
+			\midrule
+			Jolien Barbier & Penningmeester & Zij houdt de uitgaven goed bij zodat het gekregen budget niet overschreden wordt.\\
+			\midrule
+			Mathis Bossuyt & Eindverantwoordelijke voor de constructie & Hij neemt de coördinatie van de constructie op zich. Verder is hij ook vanaf week 5 aanwezig op de campus.\\
+			\midrule
+			Rani Jans & Notulist & Zij maakt het verslag van de vergaderingen en is verantwoordelijk voor alle documenten.\\
+			\midrule
+			Sarah De Meester & Planner & Zij zorgt ervoor dat alles op tijd klaar is. Stelt de schema's op waaraan iedereen zich moet houden. \\
+			
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+
+\end{document}
