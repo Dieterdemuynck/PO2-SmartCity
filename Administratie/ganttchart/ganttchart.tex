@@ -1,0 +1,123 @@
+\documentclass[dutch,landscape,12pt]{article}
+% style
+\usepackage{babel}
+\usepackage{translator}
+\usepackage[left=2.5cm,top=2cm,right=2.5cm,bottom=2cm,a4paper]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Team 6}
+\rhead{Gantt chart}
+\renewcommand{\headrulewidth}{0.4pt}
+\usepackage{color}
+
+% gantt
+\usepackage{pgfgantt}
+\def\pgfcalendarweekdayletter#1{%
+	\ifcase#1M\or D\or W\or D\or V\or Z\or Z\fi%
+}
+\def\pgfcalendarmonthshortname#1{ 
+	\translate{
+		\ifcase#1\or Jan\or Feb\or Maa\or Apr\or Mei\or Jun\or Jul\or Aug\or Sep\or Okt\or Nov\or Dec\fi}
+}
+
+
+\definecolor{foobarblue}{RGB}{0,153,255}
+\definecolor{foobaryellow}{RGB}{234,187,0}
+\definecolor{grey}{RGB}{170,170,170}
+
+\newganttchartelement{foobar}{
+	foobar/.style={
+		shape= rectangle,
+		inner sep=0pt,
+		draw=grey!70!blue,
+		thick,
+		fill=white,
+		inner color=blue!10, outer color=blue!40, opacity=0.95
+	},
+	foobar incomplete/.style={
+		/pgfgantt/foobar,
+		draw=foobaryellow,
+		bottom color=foobaryellow!50
+	},
+	foobar label font=\slshape,
+	foobar left shift=0,%.1,
+	foobar right shift=0%-.1
+}
+
+\begin{document}
+
+% Een goede Gantt-chart maakt gebruik van \emph{links} en \emph{milestones}. Deze laatste definieer je in een lijstje onder de Gantt chart.
+
+	\begin{figure}
+		\centering
+		\begin{ganttchart}[hgrid, vgrid, x unit=5mm, time slot format=isodate]{2021-02-12}{2021-04-02}
+			\gantttitlecalendar{week,month=shortname,day,weekday=letter} \\
+			
+			\ganttgroup{1}{2021-02-12}{2021-02-16} \\
+
+			\ganttgroup{2}{2021-02-26}{2021-03-26} \\ % {nummer}{begindatum}{einddatum}
+			%2.1 Stuklijst
+			\ganttfoobar[name=21]{2.1}{2021-02-26}{2021-02-26} \\
+			%2.2 3D modellen
+			\ganttfoobar[name=22]{2.2}{2021-02-26}{2021-03-12} \\
+			\ganttlink{21}{22} % 21 must be completed before 22 %pijltje
+			%2.3 Technische tekeningen
+			\ganttfoobar[name=23]{2.3}{2021-03-05}{2021-03-19} \\
+			\ganttlink{22}{23}
+			%2.4 Implementatie
+			\ganttfoobar[name=24]{2.4}{2021-03-12}{2021-04-02} \\
+			%2.5 Assemblage
+			\ganttfoobar[name=25]{2.5}{2021-03-19}{2021-03-19}
+			\ganttfoobar[name=25]{2.5}{2021-03-26}{2021-03-26} \\ %Asssemblage: eind maart
+			
+		
+			\ganttgroup{3}{2021-03-12}{2021-04-02} \\
+			%3.1 Tussentijds verslag
+			\ganttfoobar[name=31]{3.1}{2021-03-12}{2021-04-02} \\
+		
+			%3.2 Verslag afwerken
+			\ganttfoobar[name=32]{3.2}{2021-04-23}{2021-05-21} \\
+			%\ganttlink{31}{32}
+			
+			%3.3 Tussentijdse presentatie
+			\ganttfoobar[name=33]{3.3}{2021-03-19}{2021-04-02} \\
+		
+			%3.4 Presentatie afwerken
+			\ganttfoobar[name=34]{3.4}{2021-04-23}{2021-05-21} \\
+			%\ganttlink{33}{34}
+			
+			
+			%\ganttmilestone{Mijlpaal I}{2021-03-05} % milestone completed
+			
+		\end{ganttchart}
+	\end{figure}
+\newpage
+
+\begin{figure}
+
+	\centering
+	\begin{ganttchart}[hgrid, vgrid, x unit=5mm, time slot format=isodate]{2021-04-03}{2021-05-21}
+		\gantttitlecalendar{week=8,month=shortname,day,weekday=letter} \\
+		
+		
+		\ganttgroup{3}{2021-04-03}{2021-05-21} \\
+		
+		\ganttnewline
+		
+		%3.2 Verslag afwerken
+		\ganttfoobar[name=32]{3.2}{2021-04-23}{2021-05-21} \\
+
+		
+		\ganttnewline
+		
+		%3.4 Presentatie afwerken
+		\ganttfoobar[name=34]{3.4}{2021-04-23}{2021-05-21} \\
+		
+		
+		%\ganttmilestone{Mijlpaal I}{2021-03-05} % milestone completed
+		
+	\end{ganttchart}
+\end{figure}
+
+
+\end{document}
