@@ -6,5 +6,5 @@ Groep 6 leden:
  - Jolien Barbier
  - Sarah De Meester
  - Rani Jans
- - Demuynck Dieter
+ - Dieter Demuynck
  - Mathis Bossuyt
