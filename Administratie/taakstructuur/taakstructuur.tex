@@ -1,0 +1,128 @@
+\documentclass[12pt]{article}
+\usepackage[dutch]{babel}
+% style
+\setlength{\parindent}{0pt}
+\usepackage[left=2.5cm,top=2cm,right=2.5cm,bottom=2cm,a4paper]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Team 6}
+\rhead{Taakstructuur}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% table
+\usepackage{etoolbox}
+\usepackage{booktabs}
+\usepackage{xstring}
+\usepackage{xcolor,colortbl}
+\definecolor{gray1}{gray}{0.7}
+\definecolor{gray2}{gray}{0.85}
+\definecolor{gray3}{gray}{0.95}
+
+% counting system		
+\newcounter{counter}
+\newcounter{subcounter}
+\newcounter{subsubcounter}
+\newcommand{\teller}{
+	\stepcounter{counter}
+	\setcounter{subcounter}{0}
+	\setcounter{subsubcounter}{0}
+	\thecounter}
+\newcommand{\subteller}{
+	\stepcounter{subcounter}
+	\setcounter{subsubcounter}{0}
+	\thecounter.\thesubcounter}
+\newcommand{\subsubteller}{
+	\stepcounter{subsubcounter}
+	\thecounter.\thesubcounter.\thesubsubcounter}
+
+% row	
+\newcommand{\row}[3]{
+	\IfEqCase{#1}{
+		{1}{\teller & #2 & \IfEqCase{#3}{{0}{niet OK}{1}{OK}} \\}
+		{2}{\subteller & #2 & \IfEqCase{#3}{{0}{niet OK}{1}{OK}} \\}
+		{3}{\subsubteller & #2 & \IfEqCase{#3}{{0}{niet OK}{1}{OK}} \\}
+	}[PackageError{row}{Undefined option to row: #1}]}
+
+
+
+\begin{document}	
+	
+	\begin{table}
+		\centering
+		\begin{tabular}{p{1cm}p{12cm}c}
+			\toprule
+			Code & Taak & Status \\ 
+			\midrule
+			\row{1}{Inwerken}{1}
+			\row{2}{Documenten op Toledo lezen}{1}
+			\row{2}{Brainstormen}{1}
+			\row{3}{Materiaal en onderdelen bespreken}{1}
+			\row{3}{Individuele touch kiezen}{1}
+			\row{3}{Klantenvereisten}{1}
+			\row{2}{Plannen}{1}
+			\row{3}{Planning op lange termijn (Gantt-chart)}{1}
+			\row{3}{Teamkalender}{1}
+			\row{3}{Taakstructuur}{1}
+			\midrule
+			%Verdere stappen nog aan te vullen
+			\row{1}{Technische aspecten}{0}
+			\row{2}{Stuklijst}{0}
+			\row{3}{Lijst maken}{0}
+			\row{3}{Onderdelen bestellen}{0}
+			\row{2}{3D modellen	(Solid parts)}{0}
+			%grotere structuren
+			\row{3}{Wiel}{0}
+			\row{3}{Motoren}{0}
+			\row{3}{Kleursensor}{0}
+			\row{3}{Chassis}{0}
+			\row{3}{Frame}{0}
+			\row{3}{Microcontroller}{0}
+			\row{3}{Dual drive motor}{0} %nog andere onderdelen toevoegen
+			\row{2}{Technische tekeningen (Drawing)}{0}
+			\row{3}{Wiel}{0}
+			\row{3}{Motoren}{0}
+			\row{3}{Sensoren}{0}
+			\row{3}{Chassis}{0}
+			\row{3}{Frame}{0}
+			\row{3}{Microcontroller}{0}
+			\row{3}{Dual drive motor}{0} %nog andere onderdelen toevoegen
+			\row{2}{Implementatie}{0}
+			\row{3}{Straten volgen}{0}
+			\row{3}{Wagens detecteren}{0}
+			\row{3}{Verkeerslichten interpreteren}{0}
+			\row{3}{Bestuurbaar vanop afstand}{0}
+			\row{3}{Redelijke snelheid}{0}
+			\row{3}{Wagentje testen}{0}
+			\row{2}{Assemblage}{0}
+			\midrule
+		\end{tabular}
+	\end{table}
+	\begin{table}
+		\begin{tabular}{p{1cm}p{12cm}c}
+			\toprule
+			Code & Taak & Status \\ 
+			\midrule
+			\row{1}{Rapportering}{0}
+			\row{2}{Tussentijds verslag maken}{0}
+			\row{3}{Inleiding}{0}
+			\row{3}{Ontwerpproces}{0}
+			\row{3}{Planning}{0}
+			\row{3}{Verslag maken}{0}
+			\row{3}{Conclusie}{0}
+			\row{3}{Nalezen}{0}
+			\row{2}{Verslag afwerken}{0}
+			\row{3}{Feedback in rekening brengen}{0}
+			\row{2}{Tussentijdse presentatie}{0}
+			\row{3}{Structuur}{0}
+			\row{3}{Presentatie maken}{0}
+			\row{3}{Nalezen}{0}
+			\row{3}{Inoefenen}{0}
+			\row{2}{Presentatie afwerken}{0}
+			\row{3}{Feedback in rekening brengen}{0}
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	
+	Opmerking: Dit zal nog worden geüpdatet tijdens het semester.
+
+\end{document}
