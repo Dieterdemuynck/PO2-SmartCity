@@ -58,32 +58,35 @@
 			\ganttgroup{2}{2021-02-26}{2021-03-26} \\ % {nummer}{begindatum}{einddatum}
 			%2.1 Stuklijst
 			\ganttfoobar[name=21]{2.1}{2021-02-26}{2021-02-26} \\
-			%2.2 3D modellen
-			\ganttfoobar[name=22]{2.2}{2021-02-26}{2021-03-12} \\
+			%2.2 Assemblage
+			\ganttfoobar[name=25]{2.2}{2021-03-19}{2021-03-19}
+			\ganttfoobar[name=25]{2.2}{2021-03-26}{2021-03-26} \\ %Asssemblage: eind
+			
+			%3 3D modellen
+			\ganttgroup[name=22]{3}{2021-02-26}{2021-03-12} \\
 			\ganttlink{21}{22} % 21 must be completed before 22 %pijltje
-			%2.3 Technische tekeningen
-			\ganttfoobar[name=23]{2.3}{2021-03-05}{2021-03-19} \\
+			%4 Technische tekeningen
+			\ganttgroup[name=23]{4}{2021-03-05}{2021-03-19} \\
 			\ganttlink{22}{23}
-			%2.4 Implementatie
-			\ganttfoobar[name=24]{2.4}{2021-03-12}{2021-04-02} \\
-			%2.5 Assemblage
-			\ganttfoobar[name=25]{2.5}{2021-03-19}{2021-03-19}
-			\ganttfoobar[name=25]{2.5}{2021-03-26}{2021-03-26} \\ %Asssemblage: eind maart
+			%5 Implementatie
+			\ganttgroup[name=24]{5}{2021-03-12}{2021-04-02} \\
+			
+		 maart
 			
 		
-			\ganttgroup{3}{2021-03-12}{2021-04-02} \\
+			\ganttgroup{6}{2021-03-12}{2021-04-02} \\
 			%3.1 Tussentijds verslag
-			\ganttfoobar[name=31]{3.1}{2021-03-12}{2021-04-02} \\
+			\ganttfoobar[name=31]{6.1}{2021-03-12}{2021-04-02} \\
 		
 			%3.2 Verslag afwerken
-			\ganttfoobar[name=32]{3.2}{2021-04-23}{2021-05-21} \\
+			\ganttfoobar[name=32]{6.2}{2021-04-23}{2021-05-21} \\
 			%\ganttlink{31}{32}
 			
 			%3.3 Tussentijdse presentatie
-			\ganttfoobar[name=33]{3.3}{2021-03-19}{2021-04-02} \\
+			\ganttfoobar[name=33]{6.3}{2021-03-19}{2021-04-02} \\
 		
 			%3.4 Presentatie afwerken
-			\ganttfoobar[name=34]{3.4}{2021-04-23}{2021-05-21} \\
+			\ganttfoobar[name=34]{6.4}{2021-04-23}{2021-05-21} \\
 			%\ganttlink{33}{34}
 			
 			
@@ -100,18 +103,18 @@
 		\gantttitlecalendar{week=8,month=shortname,day,weekday=letter} \\
 		
 		
-		\ganttgroup{3}{2021-04-03}{2021-05-21} \\
+		\ganttgroup{6}{2021-04-03}{2021-05-21} \\
 		
 		\ganttnewline
 		
 		%3.2 Verslag afwerken
-		\ganttfoobar[name=32]{3.2}{2021-04-23}{2021-05-21} \\
+		\ganttfoobar[name=32]{6.2}{2021-04-23}{2021-05-21} \\
 
 		
 		\ganttnewline
 		
 		%3.4 Presentatie afwerken
-		\ganttfoobar[name=34]{3.4}{2021-04-23}{2021-05-21} \\
+		\ganttfoobar[name=34]{6.4}{2021-04-23}{2021-05-21} \\
 		
 		
 		%\ganttmilestone{Mijlpaal I}{2021-03-05} % milestone completed
