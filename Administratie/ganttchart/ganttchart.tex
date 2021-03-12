@@ -58,23 +58,20 @@
 			\ganttgroup{2}{2021-02-26}{2021-03-26} \\ % {nummer}{begindatum}{einddatum}
 			%2.1 Stuklijst
 			\ganttfoobar[name=21]{2.1}{2021-02-26}{2021-02-26} \\
-			%2.2 Assemblage
-			\ganttfoobar[name=25]{2.2}{2021-03-19}{2021-03-19}
-			\ganttfoobar[name=25]{2.2}{2021-03-26}{2021-03-26} \\ %Asssemblage: eind
-			
-			%3 3D modellen
-			\ganttgroup[name=22]{3}{2021-02-26}{2021-03-12} \\
+			%2.2 3D modellen
+			\ganttfoobar[name=22]{3}{2021-02-26}{2021-03-12} \\
 			\ganttlink{21}{22} % 21 must be completed before 22 %pijltje
-			%4 Technische tekeningen
-			\ganttgroup[name=23]{4}{2021-03-05}{2021-03-19} \\
+			%2.3 Technische tekeningen
+			\ganttfoobar[name=23]{4}{2021-03-05}{2021-03-19} \\
 			\ganttlink{22}{23}
-			%5 Implementatie
-			\ganttgroup[name=24]{5}{2021-03-12}{2021-04-02} \\
-			
-		 maart
+			%2.4 Implementatie
+			\ganttfoobar[name=24]{5}{2021-03-12}{2021-04-02} \\
+			%2.5 Assemblage
+			\ganttfoobar[name=25]{2.2}{2021-03-19}{2021-03-19}
+			\ganttfoobar[name=25]{2.2}{2021-03-26}{2021-03-26} \\ %Asssemblage: eind maart
 			
 		
-			\ganttgroup{6}{2021-03-12}{2021-04-02} \\
+			\ganttgroup{3}{2021-03-12}{2021-04-02} \\
 			%3.1 Tussentijds verslag
 			\ganttfoobar[name=31]{6.1}{2021-03-12}{2021-04-02} \\
 		
