@@ -1,0 +1,4 @@
+Open eerst SolidEdge,
+Open dan deze bestanden vanuit SolidEdge.
+Kies voor een isometric part, zoals gewoonlijk.
+En sla deze dan ook op.
