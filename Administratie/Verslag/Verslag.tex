@@ -23,27 +23,42 @@
 
 \tableofcontents
 
-\section*{Inleiding}
+\chapter*{Inleiding}
 %probleemstelling
 
 %Ontwerpsproces en planning
-\section{Sectie-titel}
+\chapter{Eerste hoofdstuk}
+\section{Ontwerpsproces}
+\subsection*{Inleiding}
 
 \subsection{Deel 1 ontwerpsproces}
+%Wat auto moet kunnen en algemeen wat je zal gebruiken.
 
+(tekst Sarah)
 
-Wat auto moet kunnen en algemeen wat je zal gebruiken.
+De auto moet over het algemeen lijnen herkennen en deze volgen, stoppen bij een rood licht, andere wagens detecteren en stoppen als de auto te dicht bij een voorligger komt. Men moet ook van op afstand kunnen ingrijpen.
+
+Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt namelijk een onderscheid gemaakt tussen twee soorten lijnen: volglijnen en stoplijnen. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De wagen zal dus de lijnen van 25 mm dik moeten volgen en moeten stoppen bij de lijnen van 50 mm dik. De wagen moet dus een sensor bevatten deze lijnen kan herkennen, meerbepaald een reflectiesensor. 
+
+De wagen komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal hij moeten tot stilstand komen en een verkeerslicht moeten interpreteren. Het wagentje zal dus moeten voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. 
+
 - herkennen lijnen: welke soort sensor (bv reflectie voor lijnen)
 - stoplicht: kleurensensor, tot stilstand komen blabla
 - snelheid: massa belangrijk
 - andere wagens detecteren => remafstand, massa belangrijk => stoppen door signaal zodat motoren vertragen
 - op afstand ingrijpen
 
-\subsection{Deel 2 ontwerpsproces}
-Zeer specifiek toelichten waarom je elk onderdeel heb gekozen.
+
+
+\subsection{Deel 2 ontwerpsproces: toelichting bij keuze}
+%Zeer specifiek toelichten waarom je elk onderdeel heb gekozen.
 
 - reflectie sensor: wrm analoge en niet digitale
+Omdat we werken met een NI MyRio als microcontroller, is het beter om te werken met een analoge reflectiesensor.
+De sensor zal onderaan het wagentje geplaatst worden zodat de lijnen makkelijk worden herkend.
 
+
+We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. We kozen ervoor om de camera en webcam niet te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het zal nodig hebben om een bepaalde snelheid te kunnen halen. De camera is enkel bruikbaar bij een Raspberry Pi als microcontroller. Omdat we werken met een NI My Rio was dit dus geen optie.
 
 
 \section{Planning}
