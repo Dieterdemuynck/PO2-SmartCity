@@ -2,56 +2,47 @@ This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Verslag.aux
 The style file: plain.bst
-I couldn't open database file bronnen_verslag.bib
----line 34 of file Verslag.aux
- : \bibdata{bronnen_verslag
- :                         }
-I'm skipping whatever remains of this command
-Illegal, another \bibstyle command---line 35 of file Verslag.aux
- : \bibstyle
- :          {unsrt}
-I'm skipping whatever remains of this command
-I found no database files---while reading file Verslag.aux
-Warning--I didn't find a database entry for "ChassisW79:online"
-You've used 0 entries,
+Database file #1: bronnen_verslag.bib
+Warning--to sort, need author or key in BreadboardFullSize
+You've used 1 entry,
             2118 wiz_defined-function locations,
-            499 strings with 4036 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
+            502 strings with 4233 characters,
+and the built_in function-call counts, 188 in all, are:
+= -- 17
+> -- 1
 < -- 0
-+ -- 0
++ -- 1
 - -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+* -- 7
+:= -- 28
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
+cite$ -- 2
+duplicate$ -- 7
+empty$ -- 24
 format.name$ -- 0
-if$ -- 1
+if$ -- 43
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 3
+newline$ -- 8
 num.names$ -- 0
-pop$ -- 0
+pop$ -- 10
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 2
 quote$ -- 0
-skip$ -- 1
+skip$ -- 5
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 5
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
+type$ -- 4
+warning$ -- 1
 while$ -- 0
-width$ -- 0
-write$ -- 2
-(There were 3 error messages)
+width$ -- 2
+write$ -- 11
+(There was 1 warning)
