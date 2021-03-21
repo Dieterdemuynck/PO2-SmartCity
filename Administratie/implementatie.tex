@@ -1,0 +1,26 @@
+\documentclass[a4paper,kulak]{kulakarticle} %options: kul or kulak (default)
+
+\usepackage[dutch]{babel}
+
+\date{Academiejaar 2020 -- 2021}
+\address{
+  Burgerlijk ingenieur \\
+  Naam van het vak \\
+  Naam van de docent/begeleiders}
+\title{Titel van het document}
+\author{Aaron Vandenberghe}
+
+
+\begin{document}
+
+\section{Implementatie}
+
+Om te kunnen implementeren zijn we eerst vooral bezig geweest met opzoekwerk. Dit hebben we gedaan vanaf week 1 om te weten welke sensoren, motoren, en microcontroller ons het beste leken. Vanaf week 3 was het specifiek hoe we het materiaal het beste kunnen gebruiken.
+Dit deden we om de communicatie tussen de sensoren en de \texttt{NI myrio-controller} te begrijpen. Ook het aantal volt we moeten hebben om de sensoren te laten te werken. Zo zijn er een paar poorten waar er precies volt 5 uitkomt wat perfect is voor de sensoren omdat die 5 volt nodig hebben om te werken. Eens we al deze info hadden, begonnen we met het electrisch circuit op te stellen. Zo weten we welke dingen er met elkaar worden verbonden. Eens dit in orde is, kunnen we het programma beginnen schrijven.
+ 
+Het schrijven van stukjes code begon pas echt in week 6. Dit was zo omdat we het materiaal dan voor ons hadden liggen en onze stukjes code effectief konden testen. Met de eerste test probeerden we de lampjes op de microcontroller te laten branden. Dit deden we via de 'LED' functie van LabVIEW. Onze tweede test was het versturen en ontvangen van signalen. Het programma \texttt{main.vi} dat standaard in LabVIEW onder myrio staat heeft weer hoe de microcontroller beweegt. We hebben dit standaard programma gebruikt bij onze testen. We hebben op de controller een draad bevestigd tussen poort 11A en 13A. Op het moment dat het kantelt en op de z-as meer dan 0.5 wordt weergegeven moet het via 11A een signaal versturen. Dit werd dan ontvangen door 13A. Als 13A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
+
+Het echt programma zal bestaan uit verschillende subVI's. Zo zullen we een stukje code schrijven dat specifiek is voor het detecteren van wagens die voor ons rijden. Als er een obstakel minder dan 20 cm voor ons staat zal hij moeten stoppen of de snelheid aanpassen. Een ander stukje code zal het lezen van het stoplicht zijn. Hier zal de microcontroller de signalen van kleursensor moeten interpreteren. Een ander deel zal met de reflectie sensor de volglijn volgen en weten wanneer die overgaat in een stopstreep waarna het wagentje moet stoppen.
+Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit 3 delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden. 
+
+\end{document}
