@@ -18,52 +18,103 @@
    }
 
 \begin{document} % hier begint de eigenlijke inhoud van het document
+%Wat allemaal in het doc verwerkt moet zitten:
+%-klantenvereisten
+%-ontwerpsspecificaties
+%-ontwerpskeuze
+%-financieel rapprot
+%-evaluatie wat gedaan is en wat nog moet gebeuren en hoe
+%-wat nog verbeterd kan worden aan ontwerp
 
 \titlepage
 
 \tableofcontents
 
-\chapter*{Inleiding}
+\section*{Inleiding}
 %probleemstelling
 
 %Ontwerpsproces en planning
-\chapter{Eerste hoofdstuk}
+%\chapter{Eerste hoofdstuk}
 \section{Ontwerpsproces}
-\subsection*{Inleiding}
 
-\subsection{Deel 1 ontwerpsproces}
+\subsection{Onderdelen}
+
 %Wat auto moet kunnen en algemeen wat je zal gebruiken.
+Eerst en vooral is het belangrijk om een idee te krijgen over alle cruciale onderdelen die zullen gebruikt worden in het project. 
 
-(tekst Sarah)
+Een van de basisonderdelen is de chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
+Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één ball caster. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
 
+\subsection{Vereisten} %aanpassing woord!!
+% Wat moet de auto  kunnen
 De auto moet over het algemeen lijnen herkennen en deze volgen, stoppen bij een rood licht, andere wagens detecteren en stoppen als de auto te dicht bij een voorligger komt. Men moet ook van op afstand kunnen ingrijpen.
 
-Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt namelijk een onderscheid gemaakt tussen twee soorten lijnen: volglijnen en stoplijnen. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De wagen zal dus de lijnen van 25 mm dik moeten volgen en moeten stoppen bij de lijnen van 50 mm dik. De wagen moet dus een sensor bevatten deze lijnen kan herkennen, meerbepaald een reflectiesensor. 
+Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt namelijk een onderscheid gemaakt tussen twee soorten lijnen: volglijnen en stoplijnen. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De wagen zal dus de lijnen van 25 mm dik moeten volgen en moeten stoppen bij de lijnen van 50 mm dik. De wagen moet dus een sensor bevatten deze lijnen kan herkennen, meerbepaald een reflectiesensor.
 
-De wagen komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal hij moeten tot stilstand komen en een verkeerslicht moeten interpreteren. Het wagentje zal dus moeten voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. 
+De wagen komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal hij moeten tot stilstand komen en een verkeerslicht moeten interpreteren. Het wagentje zal dus moeten voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht zal hij moeten stoppen aan de stoplijn, bij groen zal hij weer mogen starten.
 
-- herkennen lijnen: welke soort sensor (bv reflectie voor lijnen)
-- stoplicht: kleurensensor, tot stilstand komen blabla
-- snelheid: massa belangrijk
-- andere wagens detecteren => remafstand, massa belangrijk => stoppen door signaal zodat motoren vertragen
-- op afstand ingrijpen
+Ook moet het wagentje voorliggende wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden een zo kort mogelijke remafstand.
+
+Verder moet het wagentje aan een aanvaardbare snelheid voortbewegen. De micro tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het wagentje een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het wagentje op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
+
+Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt.
 
 
+%Per onnderdeel verwijzen voor bibliografie!!!
 
-\subsection{Deel 2 ontwerpsproces: toelichting bij keuze}
+%- herkennen lijnen: welke soort sensor (bv reflectie voor lijnen)
+%- stoplicht: kleurensensor, tot stilstand komen blabla
+%- snelheid: massa belangrijk
+%- andere wagens detecteren => remafstand, massa belangrijk => stoppen door signaal zodat motoren vertragen
+%- op afstand ingrijpen
+
+
+\subsection{Ontwerpskeuze} %toelichting bij keuze
 %Zeer specifiek toelichten waarom je elk onderdeel heb gekozen.
 
-- reflectie sensor: wrm analoge en niet digitale
-Omdat we werken met een NI MyRio als microcontroller, is het beter om te werken met een analoge reflectiesensor.
-De sensor zal onderaan het wagentje geplaatst worden zodat de lijnen makkelijk worden herkend.
+In deze sectie wordt aanvullende uitleg gegeven over elk onderdeel dat in het project wordt gebruikt. Daarnaast wordt extra beargumenteerd waarom dit specifiek onderdeel wordt gekozen.
+
+Als eerste wordt de chassis gesproken. Voor deze auto wordt een rechthoekige chassis gebruikt met afmetingen 80 mm op 172 mm zoals kan gevonden worden op site. %verwijzing chassis materiaal
+Deze chassis is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site %site van de ronde chassis
+is hiervoor minder geschikt. Bovendien zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
+
+Een goede keuze voor wielen zijn deze met respectievelijk een diameter en dikte van 42 mm en 19 mm. De site van %bron van de wielen
+geeft een idee hoe het wiel eruit ziet. De dikte van dit wiel is echter geschikt om voldoende grip te hebben. Dit is minder bij dunnere wielen waardoor dit niet ideaal is voor dit model. Daarnaast zorgt de grootte van de diameter voor een relatieve grote versnelling en een gemiddelde kracht. Een kleiner wiel impliceert namelijk een kleinere kracht een een kleine versnelling. Een groot wiel daarentegen gaat een grote versnelling leveren maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite. Dit kan perfect met wielen van de grootte zoals hierboven aangegeven. Aansluitend hierbij 
+Zoals eerder aangegeven is de auto van dit project een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een ball caster. Op die manier moet er geen extra tandwielmotor en bijhorende zaken zoals een tandwielmotorsbeugel worden aangekocht. %eventueel verder aanvullen.
 
 
-We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. We kozen ervoor om de camera en webcam niet te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het zal nodig hebben om een bepaalde snelheid te kunnen halen. De camera is enkel bruikbaar bij een Raspberry Pi als microcontroller. Omdat we werken met een NI My Rio was dit dus geen optie.
 
+Omdat we werken met een NI MyRio als microcontroller, is het beter om te werken met een analoge reflectiesensor en een analoge afstandssensor. %wrm analoge en niet digitale
+
+De reflectiesensor zal onderaan het wagentje geplaatst worden zodat de lijnen makkelijk worden herkend.
+
+We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. We kozen ervoor om de camera en webcam niet te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het zal nodig hebben om een bepaalde snelheid te kunnen halen. De camera is enkel bruikbaar bij een Raspberry Pi als microcontroller. Omdat we werken met een NI My Rio was dit dus geen optie. 
+
+Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
 \section{Planning}
+%Eerst hebben we nagedacht over welke materialen we nodig zullen hebben. Daarvoor is het best om vooral veel opzoekingswerk te doen om meer te weten te komen over de materialen. Het was vooral belangrijk om na te gaan welke onderdelen samengaan en welke niet. Dan wogen we af welke opties we hebben. Voor de aankoop van de materialen maakten we twee alternatieve modellen.
+
+Om zo efficiënt mogelijk te werken, verdeelden we onze groep in twee zodat één deel volop kon werken aan het implementeren in LabVIEW terwijl het andere deel de CAD-modellen en technische tekeningen in orde brachten. 
+
+
+De CAD-modellen en technische tekeningen worden gebruikt om meer inzicht te krijgen in hoe het wagentje eruit zal zien.
+
+%wat hebben we tot nu kunnen bereiken
+%hoe kunnen we ons ontwerp nog verbeteren
+%experimenten met LabVIEW 
+
+
+
+Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
+
+%Hoe gaan we dat doen
+
 
 \chapter*{Besluit}
 Afsluitende tekst.
 
+\bibliographystyle{plain}
+\bibliography{bronnen_verslag}
+\bibliographystyle{unsrt}
 \end{document}
