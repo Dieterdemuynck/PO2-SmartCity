@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Webcam}
 17003 - trust - exis webcam with 640x480 resolution.
@@ -6,9 +6,24 @@
   \url{https://be.farnell.com/trust/17003/webcam-exis-trust-uk/dp/1860369}.
 \newblock (Accessed on 03/19/2021).
 
+\bibitem{MicroMetalGearMotor50:1HP}
+Pololu - 50:1 micro metal gearmotor hp 6v.
+\newblock \url{https://www.pololu.com/product/998/}.
+\newblock (Accessed on 03/19/2021).
+
+\bibitem{DualDriveDRV8833}
+Pololu - drv8833 dual motor driver carrier.
+\newblock \url{https://www.pololu.com/product/2130/specs}.
+\newblock (Accessed on 03/19/2021).
+
 \bibitem{RobotChassis}
 Pololu 5" robot chassis rrc04a solid red.
 \newblock \url{https://www.pololu.com/product/1500/}.
+\newblock (Accessed on 03/19/2021).
+
+\bibitem{MicroMetalGearMotorBeugel}
+Pololu micro metal gearmotor bracket extended pair.
+\newblock \url{https://www.pololu.com/product/1089/}.
 \newblock (Accessed on 03/19/2021).
 
 \bibitem{RobotChassisRechthoekigZwart}
@@ -33,6 +48,11 @@ Rpi 8mp camera board. - raspberry-pi - daughter board, raspberry pi camera
 \newblock
   \url{https://be.farnell.com/raspberry-pi/rpi-8mp-camera-board/raspberry-pi-camera-board-v2/dp/2510728?ost=camera+pi&searchref=searchlookahead&krypto=s3BKJWUDhkKs%2B6%2BoElU3qp5Q1z8q3lRE1vmPWgTZlLrzKjYBB0YduGK5kkEynRdY87DaSp5UtwI43pMKuOM%2BMLufVEMIbye7hr4xU5rqA4gx9F1eCKfk%2FsEUWwneE6YxHvSCk%2FJkDlTGAlJN0i%2F54Nm%2BCxe%2FbLNvv02bEKSFfiF00z4fcR7jYVfWAFGcmMMAZu8iutp5Tsm78RuPObOMpy59ZYDRf24UOEoZn%2FmF2ZRAg6wvgx8hzN7Ef%2BvJ8Vuo1Ag5oq7Id1f1kfJxi8vBWfodWFk1IzLgY4c5%2FrpG7KolGGdUBBktFEpQvIJ79v%2BiAzGHjGLSMEKs4QWK52Bi%2F7K%2BCy5F4pif72zxOhTRfZqjtuF3pUm5kQwkBm8AyVuFWCqMeSPQR2dJWz0ASV3XGCIvrE7duTo%2BHE4cTG8GjBeg%2B48gHW%2Bae3t8%2Fg5LJdc31r3iGJKgslvO04bz3%2Bm5CrNgamUzM2UaSjesJq2BmhgrvTxWx08wZykYZcb8S7qnaWD%2B373Na%2FUHWsEcUVZay5fTKKJPZhiRa1g9ZTMLLeUSDAJNyOYs%2Fj%2FwQfvPtViQtb5B4HGf%2FQ0gj70lOaa%2BOpQ1B4c6MtGGMlnU%2Brw5AvK%2F9sJt7GB6d08PbK6I1HVb5I1bjluGBUoC7bnrnG6Pfl%2BXb%2Fq0ygKacLYa4GcuxRMM0NgwXpTwIp2S0ESaxwYVbvSkzfa2oIGvuqxxwTbo5KLXQvHPTvmjF%2BRzRYmk1kLW1o6xHrdTU4QMdpeu54KwpJ906ZTKC3boCGYCOStP8Q%3D%3D&ddkey=https%3Anl-BE%2FElement14_Belgium%2Fsearch}.
 \newblock (Accessed on 03/19/2021).
+
+\bibitem{SmartCity}
+Slimme stad - wikipedia.
+\newblock \url{https://nl.wikipedia.org/wiki/Slimme_stad}.
+\newblock (Accessed on 03/26/2021).
 
 \bibitem{DigitaalOfAnaloog}
 What's the difference between analog and digital sensors? - skylerh automation.
