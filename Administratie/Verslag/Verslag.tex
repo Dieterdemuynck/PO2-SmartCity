@@ -49,7 +49,7 @@ Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wo
 % Wat moet de auto  kunnen
 De auto moet over het algemeen lijnen herkennen en deze volgen, stoppen bij een rood licht, andere wagens detecteren en stoppen als de auto te dicht bij een voorligger komt. Men moet ook van op afstand kunnen ingrijpen.
 
-Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt namelijk een onderscheid gemaakt tussen twee soorten lijnen: volglijnen en stoplijnen. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De wagen zal dus de lijnen van 25 mm dik moeten volgen en moeten stoppen bij de lijnen van 50 mm dik. De wagen moet dus een sensor bevatten deze lijnen kan herkennen, meerbepaald een reflectiesensor.
+Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt namelijk een onderscheid gemaakt tussen twee soorten lijnen: volglijnen en stoplijnen. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De wagen zal dus de lijnen van 25 mm dik moeten volgen en moeten stoppen bij de lijnen van 50 mm dik. De wagen moet dus een sensor bevatten deze lijnen kan herkennen, meerbepaald een reflectiesensor. Deze zal onderaan het wagentje geplaatst worden zodat de lijnen makkelijk worden herkend.
 
 De wagen komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal hij moeten tot stilstand komen en een verkeerslicht moeten interpreteren. Het wagentje zal dus moeten voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht zal hij moeten stoppen aan de stoplijn, bij groen zal hij weer mogen starten.
 
@@ -74,28 +74,28 @@ Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt.
 
 In deze sectie wordt aanvullende uitleg gegeven over elk onderdeel dat in het project wordt gebruikt. Daarnaast wordt extra beargumenteerd waarom dit specifiek onderdeel wordt gekozen.
 
-Als eerste wordt de chassis gesproken. Voor deze auto wordt een rechthoekige chassis gebruikt met afmetingen 80 mm op 172 mm zoals kan gevonden worden op site. %verwijzing chassis materiaal
-Deze chassis is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site %site van de ronde chassis
-is hiervoor minder geschikt. Bovendien zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
+Als eerste wordt de chassis gesproken. Voor deze auto wordt een rechthoekige chassis gebruikt met afmetingen 80 mm op 172 mm zoals kan gevonden worden op site \cite{RobotChassisRechthoekigZwart}. %verwijzing chassis materiaal
+Deze chassis is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site \cite{RobotChassis} is hiervoor minder geschikt. Bovendien zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
 
-Een goede keuze voor wielen zijn deze met respectievelijk een diameter en dikte van 42 mm en 19 mm. De site van %bron van de wielen
-geeft een idee hoe het wiel eruit ziet. De dikte van dit wiel is echter geschikt om voldoende grip te hebben. Dit is minder bij dunnere wielen waardoor dit niet ideaal is voor dit model. Daarnaast zorgt de grootte van de diameter voor een relatieve grote versnelling en een gemiddelde kracht. Een kleiner wiel impliceert namelijk een kleinere kracht een een kleine versnelling. Een groot wiel daarentegen gaat een grote versnelling leveren maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite. Dit kan perfect met wielen van de grootte zoals hierboven aangegeven. Aansluitend hierbij 
-Zoals eerder aangegeven is de auto van dit project een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een ball caster. Op die manier moet er geen extra tandwielmotor en bijhorende zaken zoals een tandwielmotorsbeugel worden aangekocht. %eventueel verder aanvullen.
+Een goede keuze voor wielen zijn deze met respectievelijk een diameter en dikte van 42 mm en 19 mm. De site van \cite{Wiel42x19mm}%bron van de wielen 
+geeft een idee hoe het wiel eruit ziet. De dikte van dit wiel is echter geschikt om voldoende grip te hebben. Dit is minder bij dunnere wielen waardoor dit niet ideaal is voor dit model. Daarnaast zorgt de grootte van de diameter voor een relatieve grote versnelling en een gemiddelde kracht. Een kleiner wiel impliceert namelijk een kleinere kracht een een kleine versnelling. Een groot wiel daarentegen gaat een grote versnelling leveren maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite. Dit kan perfect met wielen van de grootte zoals hierboven aangegeven. Aansluitend hierbij spelen de tandwielmotoren hier ook een belangrijke rol bij. Motoren met een groot tandwiel starten zeer gemakkelijk maar behalen geen al te grote snelheid. Kleine tandwielen hebben dan weer de omgekeerde eigenschap. Het is dus weer van belang dat we een tandwielen gebruiken met een gemiddelde grootte namelijk de motor met de verhouding 50:1. Niet alleen de grootte speelt een rol bij de tandwielmotoren, maar ook de kracht van de motor. Hiervoor wordt het best gekozen voor de "High Power" (HP). Deze motoren hebben een grotere efficiëntie. Een bijkomend voordeel is het gewicht dat slechts ??0.86kg*cm bedraagt?? %Erbij zetten dat het ook een groter vermogen heeft?
+Het is vanzelfsprekend dat door het gebruik van deze tandwielen nood is per motor aan een tandwielmotorbeugel opdat de tandwielmotoren aan de chassis kunnen vast gemaakt worden. Aangezien de motoren een breedte van 12 mm hebben en een hoogte van 10 mm als diameter hebben, heeft het als logisch gevolg dat de beugel met lengtes 12 mm op 10 mm worden genomen.
+Verder is een dual drive motor essentieel om de tandwielmotoren met de microcontroller te verbinden. In dit project wordt gekozen voor de Dual Drive DRV8833. %site vermelden
+Zoals eerder aangegeven is de auto van dit project een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een ball caster. Op die manier moet er geen extra tandwielmotor en bijhorende zaken zoals een tandwielmotorsbeugel worden aangekocht. %eventueel verder aanvullen.​
 
 
 
-Omdat we werken met een NI MyRio als microcontroller, is het beter om te werken met een analoge reflectiesensor en een analoge afstandssensor. %wrm analoge en niet digitale
 
-De reflectiesensor zal onderaan het wagentje geplaatst worden zodat de lijnen makkelijk worden herkend.
+Zoals eerder aangegeven zullen we werken met een reflectiesensor en een afstandssensor. Er bestaan 2 soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRio. De analoge sensoren geven ons meer info dan de digitale. De digitale kunnen namelijk maar één of twee dingen doorgeven als informatie aan de microcontroller. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven ons daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant geven de analoge sensoren ons wel meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, maar er komt hier dus wel meer programmeerwerk bij kijken.
 
-We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. We kozen ervoor om de camera en webcam niet te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het zal nodig hebben om een bepaalde snelheid te kunnen halen. De camera is enkel bruikbaar bij een Raspberry Pi als microcontroller. Omdat we werken met een NI My Rio was dit dus geen optie. 
+Ook om kleuren te herkennen, hebben we een sensor of camera nodig. We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. We kozen ervoor om de camera en webcam niet te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt \cite{Webcam,TCS34725KleurSensorBOB}. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het zal nodig hebben om een bepaalde snelheid te kunnen halen. Omdat de camera enkel bruikbaar is bij een Raspberry Pi als microcontroller, was dit dus geen optie \cite{RPi-camera}. We werken namelijk met een NI MyRio. De kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRio als microcontroller.
 
-Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
+%Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
 \section{Planning}
 %Eerst hebben we nagedacht over welke materialen we nodig zullen hebben. Daarvoor is het best om vooral veel opzoekingswerk te doen om meer te weten te komen over de materialen. Het was vooral belangrijk om na te gaan welke onderdelen samengaan en welke niet. Dan wogen we af welke opties we hebben. Voor de aankoop van de materialen maakten we twee alternatieve modellen.
 
-Om zo efficiënt mogelijk te werken, verdeelden we onze groep in twee zodat één deel volop kon werken aan het implementeren in LabVIEW terwijl het andere deel de CAD-modellen en technische tekeningen in orde brachten. 
+Om zo efficiënt mogelijk te werken, verdeelden we onze groep in twee zodat één deel volop kon werken aan het implementeren in LabVIEW terwijl het andere deel de CAD-modellen en technische tekeningen in orde brachten.
 
 
 De CAD-modellen en technische tekeningen worden gebruikt om meer inzicht te krijgen in hoe het wagentje eruit zal zien.
@@ -107,6 +107,11 @@ De CAD-modellen en technische tekeningen worden gebruikt om meer inzicht te krij
 
 
 Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
+
+
+Om te beginnen aan dit soort project, is het noodzakelijk om eerst op lange termijn te plannen: algemeen van welke 'grote' taken moeten er na een bepaalde tijd zeker afgewerkt zijn.
+
+
 
 %Hoe gaan we dat doen
 
