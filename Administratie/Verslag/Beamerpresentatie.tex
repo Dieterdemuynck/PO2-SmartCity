@@ -45,7 +45,9 @@
 	\item Wie: 1$^{ste}$ jaar bachelorstudenten IW 
 	\item Waarom: Probleem oplossen en ontwerpen
 	\item Wat:
-		\subitem Zelfrijdend autootje met principe smart city
+	\begin{itemize}
+		\item Zelfrijdend autootje met principe smart city
+	\end{itemize}
 	\begin{block}{Definitie: Smart City}
 		Stad met informatietechnologie om de stad te beheren en te besturen \cite{SmartCity}
 	\end{block}
@@ -68,11 +70,129 @@
 
 
 
-\section[Aanpak]{Aanpak}
+\section{Aanpak}
+
+
+\subsection{Planning}
+\begin{frame}
+	\frametitle{Planning}
+	\begin{itemize}
+		\item Onderdelen vergelijken
+		\begin{itemize}
+			\item Budget in rekening houden
+			\item Stuklijst
+		\end{itemize}
+		\item Technisch
+		\begin{itemize}
+			\item 3D-modellen
+			\item Technische tekeningen
+		\end{itemize}
+		\item Praktisch
+		\begin{itemize}
+			\item Assemblage
+			\item Testen
+			\item Implementatie
+		\end{itemize}
+	\end{itemize}
+	
+\end{frame}
+
+\subsection{Onderdelen}
 
 \begin{frame}
-\frametitle{Aanpak}
-Tekst.
+	\frametitle{Microcontroller \& chassis}
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.7\textwidth]{NI-myrio}
+			\caption{NI MyRio}%nog bron
+		\end{figure}
+		\column{.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.7\textwidth]{chassis}
+			\caption{Chassis}\cite{RobotChassisRechthoekigZwart}
+		\end{figure}
+		
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Wielen \& ball caster}
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.7\textwidth]{wielen}
+			\caption{Wiel 42x19mm}\cite{Wiel42x19mm}
+		\end{figure}
+		\column{.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.7\textwidth]{ballcaster}
+			\caption{Ball Caster}\cite{BallCaster}
+		\end{figure}
+	\end{columns}
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sensoren}
+	\begin{columns}
+		\column{.3\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.7\textwidth]{kleurensensor}
+			\caption{Kleurensensor}\cite{TCS34725KleurSensorBOB}
+		\end{figure}
+		\column{.3\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.8\textwidth]{reflectiesensor}
+			\caption{Analoge reflectiesensor}\cite{QTR-8AAnalogeReflexieSensorArray}
+		\end{figure}
+		\column{.3\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.9\textwidth]{afstandssensor}
+			\caption{Analoge afstandssensor}\cite{Optischeafstandssensor(analoog)}
+		\end{figure}
+	\end{columns}
+	
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Gear Motor}
+	\begin{columns}
+		\column{.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.6\textwidth]{gear}
+			\caption{Micro Metal Gear Motor 50:1 HP}\cite{MicroMetalGearMotor50:1HP}
+		\end{figure}
+		\column{.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.7\textwidth]{beugel}
+			\caption{Motorbeugel}\cite{MicroMetalGearMotorBeugel}
+		\end{figure}
+	\end{columns}
+	
+\end{frame}
+
+
+
+\subsection{Prijsbesteding}
+\begin{frame}
+	\frametitle{Prijsbesteding}
+	\begin{itemize}
+		\item Budget: 3500 eenheden
+		\item Bieding: 1350 eenheden
+		\item Uitgave aan onderdelen: 1615 eenheden
+	\end{itemize}
 \end{frame}
 
 
@@ -84,9 +204,11 @@ Tekst.
 	\begin{itemize}
 		\item Voorbeeldprogramma's voor sensoren
 		\item Testen
-		\subitem Reflectiesensor: witte bladzijde en zwart omhulsel laptop
-		\subitem Afstandssensor: afstand object variëren
-		\subitem nog aan te vullen
+		\begin{itemize}
+			\item Reflectiesensor: witte bladzijde en zwart omhulsel laptop
+			\item Afstandssensor: afstand object variëren
+			\item nog aan te vullen
+		\end{itemize}
 	\end{itemize}.
 \end{frame}
 
