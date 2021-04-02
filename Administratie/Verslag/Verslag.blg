@@ -2,7 +2,7 @@ This is BibTeX, Version 0.99d (TeX Live 2020/W32TeX)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Verslag.aux
 The style file: plain.bst
-Illegal, another \bibstyle command---line 58 of file Verslag.aux
+Illegal, another \bibstyle command---line 64 of file Verslag.aux
  : \bibstyle
  :          {unsrt}
 I'm skipping whatever remains of this command
@@ -11,11 +11,7 @@ I was expecting a `,' or a `}'---line 771 of file bronnen_verslag.bib
  : @misc{Makerbeamprofiel 
  :                        200 mm,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 909 of file bronnen_verslag.bib
- : @misc{Optische 
- :                afstandssensor(analoog),
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 1055 of file bronnen_verslag.bib
+I was expecting a `,' or a `}'---line 1069 of file bronnen_verslag.bib
  : @misc{Optische 
  :                afstandssensor(digitaal),
 I'm skipping whatever remains of this entry
@@ -71,4 +67,4 @@ warning$ -- 11
 while$ -- 0
 width$ -- 13
 write$ -- 101
-(There were 4 error messages)
+(There were 3 error messages)

@@ -112,7 +112,10 @@ Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en 
 
 Ook om kleuren te herkennen, is er nood aan een sensor of camera. We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt er niet voor gekozen om de camera en webcam te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt \cite{Webcam,TCS34725KleurSensorBOB}. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. Bovendien is de camera enkel bruikbaar is met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRIO als microcontroller.
 
+~
 
+\subsubsection{LED-lampjes}
+We kozen als optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar 
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
 \subsection{Assemblage}
@@ -125,8 +128,9 @@ Ook om kleuren te herkennen, is er nood aan een sensor of camera. We hadden de k
 %titel nog aan te passen
 
 
-Om te kunnen implementeren is men eerst en vooral bezig geweest met opzoekwerk. Dit hebben we gedaan vanaf week 1 om te weten welke sensoren, motoren, en microcontroller ons het beste leken. Vanaf week 3 was het specifiek hoe we het materiaal het beste kunnen gebruiken.
-Dit deden we om de communicatie tussen de sensoren en de \texttt{NI myrio-controller} te begrijpen. Ook het aantal volt we moeten hebben om de sensoren te laten te werken. Zo zijn er een paar poorten waar er precies 5 volt uitkomt wat perfect is voor de sensoren omdat die 5 volt nodig hebben om te werken. Eens we al deze info hadden, begonnen we met het elektrisch circuit op te stellen. Zo weten we welke dingen er met elkaar worden verbonden. Eens dit in orde is, kunnen we het programma beginnen schrijven.
+Om te kunnen implementeren is men eerst en vooral bezig geweest met opzoekwerk. Vanaf week 1 is het best om te weten welke sensoren, motoren en microcontrollers nodig zijn. Vanaf week 3 moet er specifieker gezocht worden hoe het materiaal best gebruikt kan worden. 
+%bron myrio nog vermelden
+Dit deed men om de communicatie tussen de sensoren en de NI MyRIO-controller te begrijpen. Ook het aantal volt dat nodig is om de sensoren te laten te werken. Zo zijn er een paar poorten waar er precies 5 volt uitkomt wat perfect is voor de sensoren omdat die 5 volt nodig hebben om te werken. Eens we al deze info hadden, begonnen we met het elektrisch circuit op te stellen. Zo weten we welke dingen er met elkaar worden verbonden. Eens dit in orde is, kunnen we het programma beginnen schrijven.
 
 Het schrijven van stukjes code begon pas echt in week 6. Dit was zo omdat we het materiaal dan voor ons hadden liggen en onze stukjes code effectief konden testen. Met de eerste test probeerden we de lampjes op de microcontroller te laten branden. Dit deden we via de 'LED' functie van LabVIEW. Onze tweede test was het versturen en ontvangen van signalen. Het programma \texttt{main.vi} dat standaard in LabVIEW onder myrio staat heeft weer hoe de microcontroller beweegt. We hebben dit standaard programma gebruikt bij onze testen. We hebben op de controller een draad bevestigd tussen poort 11A en 13A. Op het moment dat het kantelt en op de z-as meer dan 0.5 wordt weergegeven moet het via 11A een signaal versturen. Dit werd dan ontvangen door 13A. Als 13A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
 
