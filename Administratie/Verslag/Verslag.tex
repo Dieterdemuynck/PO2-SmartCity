@@ -38,7 +38,7 @@
 %probleemstelling
 %Ontwerpsproces en planning
 
-Bij het ontwerpen van een zelfrijdend wagentje komt er heel wat bij te kijken. Wat houdt het project in? Het wagentje moet in staat zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de 'Smart City'. 'Smart City', ook wel 'Slimme Stad' genoemd, is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, komt het wagentje verschillende obstakels tegen. De bedoeling is dat deze worden herkend en dat er een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag.
+Bij het ontwerpen van een zelfrijdend wagentje komt er heel wat bij te kijken. Wat houdt het project in? Het wagentje moet in staat zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de 'Smart City'. 'Smart city', ook wel 'Slimme Stad' genoemd, is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, komt het wagentje verschillende obstakels tegen. De bedoeling is dat deze worden herkend en dat er een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag.
 Dit verslag zal een beeld geven van hoe dit project moet aangepakt worden. Het ontwerpproces wordt uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht. Hoe men te werk gaat op vlak van planning wordt ook toegelicht.
 
 \section{Ontwerpproces}
@@ -59,7 +59,7 @@ Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt
 
 De wagen komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal hij moeten tot stilstand komen en een verkeerslicht moeten interpreteren. Het wagentje zal dus moeten voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht zal hij moeten stoppen aan de stoplijn, bij groen zal hij weer mogen starten.
 
-Ook moet het wagentje voorliggende wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden een zo kort mogelijke remafstand.
+Ook moet het wagentje voorgaande wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden een zo kort mogelijke remafstand.
 
 Verder moet het wagentje aan een aanvaardbare snelheid voortbewegen. De micro tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het wagentje een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het wagentje op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
 
@@ -78,32 +78,35 @@ Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt.
 \subsection{Ontwerpskeuze}
 %Zeer specifiek toelichten waarom je elk onderdeel heb gekozen.
 
-In deze sectie wordt aanvullende uitleg gegeven over elk onderdeel dat in het project wordt gebruikt. Daarnaast wordt extra beargumenteerd waarom dit specifiek onderdeel wordt gekozen.
+In deze sectie wordt aanvullende uitleg gegeven over elk onderdeel dat in het project wordt gebruikt. Daarnaast wordt extra beargumenteerd waarom dit specifiek onderdeel is gekozen.
 
-Als eerste wordt de chassis gesproken. Voor deze auto wordt een rechthoekige chassis gebruikt met afmetingen 80 mm op 172 mm zoals kan gevonden worden op site \cite{RobotChassisRechthoekigZwart}. %verwijzing chassis materiaal
-Deze chassis is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site \cite{RobotChassis} is hiervoor minder geschikt. Bovendien zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
+\subsubsection{Chassis}
+Als eerste wordt de chassis gesproken. Voor deze auto wordt een rechthoekige chassis gebruikt met als afmetingen 80 mm op 172 mm zoals kan gevonden worden op site \cite{RobotChassisRechthoekigZwart}. %verwijzing chassis materiaal
+Deze chassis is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site \cite{RobotChassis} is hiervoor minder geschikt. Ook zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
+
+~
+\subsubsection{Wielen}
+Een goede keuze voor wielen zijn deze met respectievelijk een diameter en dikte van 42 mm en 19 mm. De site \cite{Wiel42x19mm} geeft een idee hoe het wiel eruit ziet. De dikte van dit wiel is echter geschikt om voldoende grip te hebben. Dit is minder bij dunnere wielen waardoor dit niet ideaal is voor dit model. Daarnaast zorgt de grootte van de diameter voor een relatieve grote versnelling en een gemiddelde kracht. Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite. Dit kan perfect met wielen van de grootte zoals hierboven aangegeven. 
+
+Zoals eerder aangegeven is de auto van dit project een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een ball caster. Op die manier moet er geen extra tandwielmotor en bijhorende zaken zoals een tandwielmotorsbeugel worden aangekocht. Daarnaast beperkt dit ook het extra gewicht op de auto waardoor het zou kunnen vertragen.
 
 ~
 
-Een goede keuze voor wielen zijn deze met respectievelijk een diameter en dikte van 42 mm en 19 mm. De site \cite{Wiel42x19mm} geeft een idee hoe het wiel eruit ziet. De dikte van dit wiel is echter geschikt om voldoende grip te hebben. Dit is minder bij dunnere wielen waardoor dit niet ideaal is voor dit model. Daarnaast zorgt de grootte van de diameter voor een relatieve grote versnelling en een gemiddelde kracht. Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite. Dit kan perfect met wielen van de grootte zoals hierboven aangegeven. 
-
+\subsubsection{Motoren}
 Aansluitend hierbij spelen de tandwielmotoren hier ook een belangrijke rol bij. Motoren met een groot tandwiel starten zeer gemakkelijk maar behalen geen al te grote snelheid. Kleine tandwielen hebben dan weer de omgekeerde eigenschap. Het is dus weer van belang dat er een tandwielen worden gebruikt met een gemiddelde grootte namelijk de motor met de verhouding 50:1. Niet alleen de grootte speelt een rol bij de tandwielmotoren, maar ook de kracht van de motor. Hiervoor wordt het best gekozen voor de "High Power" (HP). Deze motoren hebben een grotere efficiëntie. Een bijkomend voordeel is het gewicht dat slechts 9,5 gram bedraagt \cite{MicroMetalGearMotor50:1HP}. %Erbij zetten dat het ook een groter vermogen heeft?
 
 Het is vanzelfsprekend dat door het gebruik van deze tandwielen nood is per motor aan een tandwielmotorbeugel opdat de tandwielmotoren aan de chassis kunnen vast gemaakt worden. Aangezien de motoren een breedte van 12 mm hebben en een hoogte van 10 mm als diameter hebben, heeft het als logisch gevolg dat de beugel met lengtes 12 mm op 10 mm worden genomen \cite{MicroMetalGearMotorBeugel}.
 Verder is een dual drive motor essentieel om de tandwielmotoren met de microcontroller te verbinden. In dit project wordt gekozen voor de Dual Drive DRV8833 \cite{DualDriveDRV8833}. %site vermelden
 
-~
-
-Zoals eerder aangegeven is de auto van dit project een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een ball caster. Op die manier moet er geen extra tandwielmotor en bijhorende zaken zoals een tandwielmotorsbeugel worden aangekocht. Daarnaast beperkt dit ook het extra gewicht op de auto waardoor het zou kunnen vertragen. %eventueel verder aanvullen.​
 
 ~
-
+\subsubsection{Microcontroller}
 Volgend component is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt de microcontroller er immers voor dat het autootje de taken correct uitvoert. Dit keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
-Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijden de implementatie. %site van de microcontroller
+Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. %site van de microcontroller
 
 ~
-
-Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan 2 soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen namelijk maar één of twee dingen doorgeven als informatie aan de microcontroller. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken.
+\subsubsection{Sensoren}
+Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan 2 soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
 
 ~
 
@@ -112,15 +115,17 @@ Ook om kleuren te herkennen, is er nood aan een sensor of camera. We hadden de k
 
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
-\subsection{Opstelling}
+\subsection{Assemblage}
 %titel nog aan te passen
+%Alles op elkaar zetten, 3D-modellen?
+%NOG DOEN
 
 
 \subsection{Implementatie}
 %titel nog aan te passen
 
 
-Om te kunnen implementeren zijn we eerst en vooral bezig geweest met opzoekwerk. Dit hebben we gedaan vanaf week 1 om te weten welke sensoren, motoren, en microcontroller ons het beste leken. Vanaf week 3 was het specifiek hoe we het materiaal het beste kunnen gebruiken.
+Om te kunnen implementeren is men eerst en vooral bezig geweest met opzoekwerk. Dit hebben we gedaan vanaf week 1 om te weten welke sensoren, motoren, en microcontroller ons het beste leken. Vanaf week 3 was het specifiek hoe we het materiaal het beste kunnen gebruiken.
 Dit deden we om de communicatie tussen de sensoren en de \texttt{NI myrio-controller} te begrijpen. Ook het aantal volt we moeten hebben om de sensoren te laten te werken. Zo zijn er een paar poorten waar er precies 5 volt uitkomt wat perfect is voor de sensoren omdat die 5 volt nodig hebben om te werken. Eens we al deze info hadden, begonnen we met het elektrisch circuit op te stellen. Zo weten we welke dingen er met elkaar worden verbonden. Eens dit in orde is, kunnen we het programma beginnen schrijven.
 
 Het schrijven van stukjes code begon pas echt in week 6. Dit was zo omdat we het materiaal dan voor ons hadden liggen en onze stukjes code effectief konden testen. Met de eerste test probeerden we de lampjes op de microcontroller te laten branden. Dit deden we via de 'LED' functie van LabVIEW. Onze tweede test was het versturen en ontvangen van signalen. Het programma \texttt{main.vi} dat standaard in LabVIEW onder myrio staat heeft weer hoe de microcontroller beweegt. We hebben dit standaard programma gebruikt bij onze testen. We hebben op de controller een draad bevestigd tussen poort 11A en 13A. Op het moment dat het kantelt en op de z-as meer dan 0.5 wordt weergegeven moet het via 11A een signaal versturen. Dit werd dan ontvangen door 13A. Als 13A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
