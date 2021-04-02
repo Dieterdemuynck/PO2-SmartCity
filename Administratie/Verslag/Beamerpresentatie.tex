@@ -1,0 +1,108 @@
+%% This classfile tries to implement the lay-out of the beamer style beamerthemekuleuven2. This .sty-file can be downloaded here: https://www.kuleuven.be/communicatie/marketing/templates/presentatiemateriaal/index.html Not all options of the style are implemented in this class, for its purpose is merely to mimic the lay-out, and to provide a way to change the lay-out of presentations that were made using the "old" kulakbeamer class. For new documents, we recommend using the .sty-file instead.
+
+\documentclass
+   [kulak] % options: kul or kulak (default), handout 
+   {kulakbeamer}
+
+\usepackage[dutch]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\title[Korte titel]{Lange titel}
+\subtitle{Ondertitel}
+\author[Korte naam]{Lange naam} 
+\institute[Kulak]{KU Leuven Kulak}
+\date{Academiejaar 2020 -- 2021}
+
+%% Overview at begin of each section; delete if unwanted.
+
+\AtBeginSection[]{
+	\begin{frame}
+	\frametitle{Overzicht} %Change to "Outline" for English presentation
+	{
+		\hypersetup{hidelinks} %disable link colors
+		\hfill	{\large\parbox{.95\textwidth}{\tableofcontents[currentsection,hideothersubsections]}}
+	}
+\end{frame}}
+
+\begin{document}
+
+\begin{titleframe}
+\titlepage
+\end{titleframe}
+
+\begin{outlineframe}[Overzicht]
+\tableofcontents
+\end{outlineframe}
+
+ % % % Here you go  % % % 
+
+\section{Inleiding}
+
+\begin{frame}
+\frametitle{Inleiding}
+\begin{itemize}
+	\item Wie: 1$^{ste}$ jaar bachelorstudenten IW 
+	\item Waarom: Probleem oplossen en ontwerpen
+	\item Wat:
+		\subitem Zelfrijdend autootje met principe smart city
+	\begin{block}{Definitie: Smart City}
+		Stad met informatietechnologie om de stad te beheren en te besturen \cite{SmartCity}
+	\end{block}
+\end{itemize}
+\end{frame}
+
+
+\section[Opdracht]{Opdracht}% eventueel aanpassen
+
+\begin{frame}
+\frametitle{De V's van vereisten}
+\begin{itemize}
+	\item Volglijnen, stoplijnen en verkeerslichten interpreteren
+	\item Voorgaande wagen detecteren en botsing voorkomen
+	\item Voldoende grote snelheid
+	\item Vanop afstand kunnen ingrijpen
+\end{itemize}
+
+\end{frame}
+
+
+
+\section[Aanpak]{Aanpak}
+
+\begin{frame}
+\frametitle{Aanpak}
+Tekst.
+\end{frame}
+
+
+
+\section[Experimenten]{Experimenten met LabVIEW}
+
+\begin{frame}
+	\frametitle{Experimenten}
+	\begin{itemize}
+		\item Voorbeeldprogramma's voor sensoren
+		\item Testen
+		\subitem Reflectiesensor: witte bladzijde en zwart omhulsel laptop
+		\subitem Afstandssensor: afstand object variëren
+		\subitem nog aan te vullen
+	\end{itemize}.
+\end{frame}
+
+
+
+\section{Besluit}
+\begin{frame}
+\frametitle{Besluit}
+Afsluitende tekst.
+\end{frame}
+
+\begin{frame}
+\frametitle{Bronvermelding}
+	\bibliographystyle{plain}
+	\bibliography{bronnen_verslag}
+	\bibliographystyle{unsrt}
+\end{frame}
+
+\end{document}
