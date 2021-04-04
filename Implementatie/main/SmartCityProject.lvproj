@@ -80,8 +80,9 @@
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
-		<Item Name="num to 2 pos.vi" Type="VI" URL="../subvi/Manual Drive/num to 2 pos.vi"/>
+		<Item Name="Manual Motor Controller.vi" Type="VI" URL="../subvi/Manual Drive/Manual Motor Controller.vi"/>
 		<Item Name="SCP-Main.vi" Type="VI" URL="../SCP-Main.vi"/>
+		<Item Name="Seperate to POS and NEG values.vi" Type="VI" URL="../subvi/Manual Drive/Seperate to POS and NEG values.vi"/>
 		<Item Name="Seperated Exclusive Or.vi" Type="VI" URL="../subvi/Manual Drive/Seperated Exclusive Or.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -191,6 +192,7 @@
 				<Item Name="VariantType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/VariantDataType/VariantType.lvlib"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
+			<Item Name="Automatic Motor Controller.vi" Type="VI" URL="../subvi/Automatic Drive/Automatic Motor Controller.vi"/>
 			<Item Name="InitRGBStudentVersion.vi" Type="VI" URL="../../../../LabVIEWTryOutDocs/TryOutProject/subvi/InitRGBStudentVersion.vi"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
