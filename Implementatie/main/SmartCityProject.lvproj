@@ -2,6 +2,10 @@
 <Project Type="Project" LVVersion="19008000">
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Property Name="NI.Project.Description" Type="Str"></Property>
+	<Property Name="varPersistentID:{050D42C9-C2E2-4C48-83CF-72750AA5607F}" Type="Ref">/My Computer/KeysPressed.lvlib/Down1</Property>
+	<Property Name="varPersistentID:{A3D3E8FD-2A6A-42AB-B214-9CC9E4457C9F}" Type="Ref">/My Computer/KeysPressed.lvlib/Up1</Property>
+	<Property Name="varPersistentID:{EC3E0816-C5F9-47F8-A414-8AE48B0402CA}" Type="Ref">/My Computer/KeysPressed.lvlib/Left1</Property>
+	<Property Name="varPersistentID:{FF00D32D-FFD9-4A4B-8E95-9EDF25452624}" Type="Ref">/My Computer/KeysPressed.lvlib/Right1</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="IOScan.Faults" Type="Str"></Property>
 		<Property Name="IOScan.NetVarPeriod" Type="UInt">100</Property>
@@ -26,7 +30,22 @@
 			</Item>
 			<Item Name="myRIO Project Documentation.html" Type="Document" URL="../documentation/myRIO Project Documentation.html"/>
 		</Item>
-		<Item Name="Dependencies" Type="Dependencies"/>
+		<Item Name="KeyReader.vi" Type="VI" URL="../subvi/KeyReader/KeyReader.vi"/>
+		<Item Name="KeysPressed.lvlib" Type="Library" URL="../subvi/KeyReader/KeysPressed.lvlib"/>
+		<Item Name="Dependencies" Type="Dependencies">
+			<Item Name="vi.lib" Type="Folder">
+				<Item Name="Acquire Input Data.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/Acquire Input Data.vi"/>
+				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
+				<Item Name="ErrorDescriptions.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/ErrorDescriptions.vi"/>
+				<Item Name="errorList.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/errorList.vi"/>
+				<Item Name="Intialize Keyboard.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/Intialize Keyboard.vi"/>
+				<Item Name="joystickAcquire.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/joystickAcquire.vi"/>
+				<Item Name="keyboardAcquire.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/keyboardAcquire.vi"/>
+				<Item Name="mouseAcquire.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/inputDevices.llb/mouseAcquire.vi"/>
+			</Item>
+			<Item Name="CheckArrowKeys.vi" Type="VI" URL="../subvi/Manual Drive/CheckArrowKeys.vi"/>
+			<Item Name="lvinput.dll" Type="Document" URL="/&lt;resource&gt;/lvinput.dll"/>
+		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
 	<Item Name="myRIO-1900" Type="RT myRIO">
