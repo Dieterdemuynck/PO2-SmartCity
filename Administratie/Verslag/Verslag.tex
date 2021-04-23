@@ -108,7 +108,7 @@ Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog 
 
 ~
 \subsubsection{Sensoren}
-Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan 2 soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
+Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
 
 ~
 
@@ -131,54 +131,66 @@ We kozen als optie om LED's te plaatsen omdat het ons het meest haalbaar leek in
 
 Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden. 
 %bron myrio nog vermelden
-Dit deed men om de communicatie tussen de sensoren en de NI MyRIO-controller te begrijpen. Ook het aantal volt dat nodig is om de sensoren te laten te werken is belangrijk. Zo zijn er een paar poorten waar er precies 5 Volt uitkomt, wat perfect is voor de sensoren omdat deze 5 Volt nodig hebben om te kunnen werken. Eens dit geweten is, begint men met het elektrisch circuit op te stellen. Dit is handig om te weten welke onderdelen er met elkaar worden verbonden. Eens dit in orde is, kan het programmeerwerk beginnen.
+Dit deed men om de communicatie tussen de sensoren en de NI MyRIO-controller te begrijpen. Ook het aantal Volt dat nodig is om de sensoren te laten te werken is belangrijk. Zo zijn er een paar poorten waar er precies 5 Volt uitkomt, wat perfect is voor de sensoren omdat deze 5 Volt nodig hebben om te kunnen werken. Eens dit geweten is, begint men met het elektrisch circuit op te stellen. Dit is handig om te weten welke onderdelen er met elkaar worden verbonden. Eens dit in orde is, kan het programmeerwerk beginnen.
 
-Het schrijven van stukjes code begon pas echt in week 6. Dit was zo omdat we het materiaal dan voor ons hadden liggen en onze stukjes code effectief konden testen. Met de eerste test probeerden we de lampjes op de microcontroller te laten branden. Dit deden we via de 'LED' functie van LabVIEW. Onze tweede test was het versturen en ontvangen van signalen. Het programma \texttt{main.vi} dat standaard in LabVIEW onder myrio staat heeft weer hoe de microcontroller beweegt. We hebben dit standaard programma gebruikt bij onze testen. We hebben op de controller een draad bevestigd tussen poort 11A en 13A. Op het moment dat het kantelt en op de z-as meer dan 0,5 wordt weergegeven moet het via 11 A een signaal versturen. Dit werd dan ontvangen door 13A. Als 13A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
+Het schrijven van stukjes code begon pas echt in week zes. Dit was zo omdat we het materiaal dan voor ons hadden liggen en onze stukjes code effectief konden testen. Met de eerste test probeerden we de lampjes op de microcontroller te laten branden. Dit deden we via de 'LED' functie van LabVIEW. Onze tweede test was het versturen en ontvangen van signalen. Het programma \texttt{main.vi} dat standaard in LabVIEW onder MyRIO staat heeft weer hoe de microcontroller beweegt. We hebben dit standaard programma gebruikt bij onze testen. We hebben op de controller een draad bevestigd tussen poort 11 en 13 Ampère. Op het moment dat het kantelt en op de z-as meer dan 0,5 wordt weergegeven moet het via 11 A een signaal versturen. Dit werd dan ontvangen door 13 A. Als 13 A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
 
 Het echt programma zal bestaan uit verschillende subVI's. Zo zullen we een stukje code schrijven dat specifiek is voor het detecteren van wagens die voor ons rijden. Als er een obstakel minder dan 20 cm voor ons staat zal hij moeten stoppen of de snelheid aanpassen. Een ander stukje code zal het lezen van het stoplicht zijn. Hier zal de microcontroller de signalen van kleursensor moeten interpreteren. Een ander deel zal met de reflectie sensor de volglijn volgen en weten wanneer die overgaat in een stopstreep waarna het wagentje moet stoppen.
-Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit 3 delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden. 
+Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden. 
 
 \subsubsection{Experimenten}
 
 We experimenteren met de sensoren. Voorbeeldprogramma's worden gemaakt om de data die we krijgen van de sensoren te interpreteren. Op die manier weten we met welke waarden we moeten werken in ons echt programma. 
 
-Het eerste experiment met sensoren was met de reflectiesensor. Dat is een programma dat de 6 waarden van de sensor weer geeft. Omdat het miniatuur robotwagentje helder en donker moet onderscheiden hebben we die getest op wit papier waarbij we waarden rond de 1 krijgen. Om de waarden bij van het donkere spectrum te krijgen, hebben we het zwart van de laptop gebruikt. Hier kregen we waarden rond de 4 tot 4,5. We hebben het ook gedaan op de grijze tafels.
+Het eerste experiment met sensoren was met de reflectiesensor. Dat is een programma dat de zes waarden van de sensor weer geeft. Omdat het miniatuur robotwagentje helder en donker moet onderscheiden hebben we die getest op wit papier waarbij we waarden rond de 1 krijgen. Om de waarden bij van het donkere spectrum te krijgen, hebben we het zwart van de laptop gebruikt. Hier kregen we waarden rond de 4 tot 4,5. We hebben het ook gedaan op de grijze tafels.
 Nu gaan we die waarden gebruiken om te weten wat de lijn is die we zullen moeten volgen.
 We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
 
 
-De volgende test was met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0.1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
+De volgende test was met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0,1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
 
-\section{Planning}
-%Eerst hebben we nagedacht over welke materialen we nodig zullen hebben. Daarvoor is het best om vooral veel opzoekingswerk te doen om meer te weten te komen over de materialen. Het was vooral belangrijk om na te gaan welke onderdelen samengaan en welke niet. Dan wogen we af welke opties we hebben. Voor de aankoop van de materialen maakten we twee alternatieve modellen.
+%\section{Planning}
+%%Eerst hebben we nagedacht over welke materialen we nodig zullen hebben. Daarvoor is het best om vooral veel opzoekingswerk te doen om meer te weten te komen over de materialen. Het was vooral belangrijk om na te gaan welke onderdelen samengaan en welke niet. Dan wogen we af welke opties we hebben. Voor de aankoop van de materialen maakten we twee alternatieve modellen.
+%
+%%Om zo efficiënt mogelijk te werken, verdeelden we onze groep in twee zodat één deel volop kon werken aan het implementeren in LabVIEW terwijl het andere deel de CAD-modellen en technische tekeningen in orde brachten.
+%
+%
+%%De CAD-modellen en technische tekeningen worden gebruikt om meer inzicht te krijgen in hoe het wagentje eruit zal zien.
+%
+%%wat hebben we tot nu kunnen bereiken
+%%hoe kunnen we ons ontwerp nog verbeteren
+%%experimenten met LabVIEW 
+%
+%
+%
+%%Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
+%
+%
+%Om te beginnen aan dit soort project, is het noodzakelijk om eerst op lange termijn te plannen: algemeen van welke 'grote' taken moeten er na een bepaalde tijd zeker afgewerkt zijn. Eerst en vooral moeten een aantal technische aspecten in orde zijn voordat we echt van werk kunnen gaan. Het aanmaken van een stuklijst is noodzakelijk om een beeld te krijgen van hoeveel we ongeveer zullen besteden rekening houdend met het budget. Hierbij is het ook zeer belangrijk om na te gaan welke onderdelen samen gaan en welke niet om fouten zoals bijvoorbeeld het bestellen van een motorbeugel die niet op de motor past te vermijden.
+%
+%Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisch aan de slag gaan met de sensoren, motoren en microcontroller om deze te implementeren in LabVIEW. Hoe men hieraan te werk is gegaan wordt beschreven in sectie 0.1.5.
+%
+%Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
 
-%Om zo efficiënt mogelijk te werken, verdeelden we onze groep in twee zodat één deel volop kon werken aan het implementeren in LabVIEW terwijl het andere deel de CAD-modellen en technische tekeningen in orde brachten.
 
+\section{Het verloop van het project}
+Om te beginnen aan dit project, is het noodzakelijk om zowel op korte als lange termijn te plannen. Daarnaast is het ook belangrijk om de financiën te beheren. In deze sectie krijgt men een kort besluit over deze zaken.
 
-%De CAD-modellen en technische tekeningen worden gebruikt om meer inzicht te krijgen in hoe het wagentje eruit zal zien.
+Een goede planning is van groots belang. Het een geeft een overzicht wat van wat er allemaal is volbracht en wat er nog moet gebeuren.% nog verder afwerken
 
-%wat hebben we tot nu kunnen bereiken
-%hoe kunnen we ons ontwerp nog verbeteren
-%experimenten met LabVIEW 
+In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed. 
 
-
-
-%Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
-
-
-Om te beginnen aan dit soort project, is het noodzakelijk om eerst op lange termijn te plannen: algemeen van welke 'grote' taken moeten er na een bepaalde tijd zeker afgewerkt zijn. Eerst en vooral moeten een aantal technische aspecten in orde zijn voordat we echt van werk kunnen gaan. Het aanmaken van een stuklijst is noodzakelijk om een beeld te krijgen van hoeveel we ongeveer zullen besteden rekening houdend met het budget. Hierbij is het ook zeer belangrijk om na te gaan welke onderdelen samen gaan en welke niet om fouten zoals bijvoorbeeld het bestellen van een motorbeugel die niet op de motor past te vermijden.
-
-Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisch aan de slag gaan met de sensoren, motoren en microcontroller om deze te implementeren in LabVIEW. Hoe men hieraan te werk is gegaan wordt beschreven in sectie 0.1.5.
-
-Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
-
-
-\section{Bijlagen}
-\includepdf{FinancieelRapport.pdf}
-
+In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteden aan de mechanische stukken en draden.
 
 \chapter*{Besluit}
-Afsluitende tekst.
+Afsluitende tekst. Nog te schrijven.
+
+\section{Bijlagen}
+\includepdf{FinancieelRapport.pdf}\label{financieel rapport}
+%\includepdf{Kalender.pdf}\label{kalender}
+%\include{Takenstructuur.pdf}\label{takenstructuur}
+
+
 
 \bibliographystyle{plain}
 \bibliography{bronnen_verslag}
