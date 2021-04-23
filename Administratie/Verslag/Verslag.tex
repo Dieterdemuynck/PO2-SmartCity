@@ -31,7 +31,6 @@
 %-wat nog verbeterd kan worden aan ontwerp
 
 \titlepage
-
 \tableofcontents
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
@@ -80,18 +79,20 @@ Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt.
 \subsection{Ontwerpskeuze}
 %Zeer specifiek toelichten waarom je elk onderdeel heb gekozen.
 
-In deze sectie wordt aanvullende uitleg gegeven over elk onderdeel dat in het project wordt gebruikt. Daarnaast wordt extra beargumenteerd waarom dit specifiek onderdeel is gekozen.
+Hier wordt extra beargumenteerd waarom dit specifiek onderdeel is gekozen.
+\label{Ontwerpskeuze}
 
 \subsubsection{Chassis}
-Als eerste wordt de chassis gesproken. Voor deze auto wordt een rechthoekige chassis gebruikt met als afmetingen 80 mm op 172 mm zoals kan gevonden worden op site \cite{RobotChassisRechthoekigZwart}. %verwijzing chassis materiaal
-Deze chassis is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site \cite{RobotChassis} is hiervoor minder geschikt. Ook zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
-
+Als eerste wordt de chassis besproken. Voor deze auto wordt een rechthoekige chassis gebruikt met als afmetingen 80 mm op 172 mm zoals kan gevonden worden op site \cite{RobotChassisRechthoekigZwart}. %verwijzing klopt niet!!!! + 3 figuren invoegen assemblage
+Deze is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site \cite{RobotChassis} is hiervoor minder geschikt. Ook zijn er in deze laatste groeven aanwezig voor de wielen.%verwijzing klopt niet!!!
+Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
+\label{Chassis}
 ~
 \subsubsection{Wielen}
 Een goede keuze voor wielen zijn deze met respectievelijk een diameter en dikte van 42 mm en 19 mm. De site \cite{Wiel42x19mm} geeft een idee hoe het wiel eruit ziet. De dikte van dit wiel is echter geschikt om voldoende grip te hebben. Dit is minder bij dunnere wielen waardoor dit niet ideaal is voor dit model. Daarnaast zorgt de grootte van de diameter voor een relatieve grote versnelling en een gemiddelde kracht. Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite. Dit kan perfect met wielen van de grootte zoals hierboven aangegeven. 
 
 Zoals eerder aangegeven is de auto van dit project een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een ball caster. Op die manier moet er geen extra tandwielmotor en bijhorende zaken zoals een tandwielmotorsbeugel worden aangekocht. Daarnaast beperkt dit ook het extra gewicht op de auto waardoor het zou kunnen vertragen.
-
+\label{Wielen}
 ~
 
 \subsubsection{Motoren}
@@ -99,13 +100,13 @@ Aansluitend hierbij spelen de tandwielmotoren hier ook een belangrijke rol bij. 
 
 Het is vanzelfsprekend dat door het gebruik van deze tandwielen nood is per motor aan een tandwielmotorbeugel opdat de tandwielmotoren aan de chassis kunnen vast gemaakt worden. Aangezien de motoren een breedte van 12 mm hebben en een hoogte van 10 mm als diameter hebben, heeft het als logisch gevolg dat de beugel met lengtes 12 mm op 10 mm worden genomen \cite{MicroMetalGearMotorBeugel}.
 Verder is een dual drive motor essentieel om de tandwielmotoren met de microcontroller te verbinden. In dit project wordt gekozen voor de Dual Drive DRV8833 \cite{DualDriveDRV8833}. %site vermelden
-
+\label{Motoren}
 
 ~
 \subsubsection{Microcontroller}
 Volgend component is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt de microcontroller er immers voor dat het autootje de taken correct uitvoert. Dit keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
 Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. %site van de microcontroller
-
+\label{Microcontroller}
 ~
 \subsubsection{Sensoren}
 Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
@@ -113,21 +114,21 @@ Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en 
 ~
 
 Ook om kleuren te herkennen, is er nood aan een sensor of camera. We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt er niet voor gekozen om de camera en webcam te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt \cite{Webcam,TCS34725KleurSensorBOB}. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. Bovendien is de camera enkel bruikbaar is met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRIO als microcontroller.
-
+\label{Sensoren}
 ~
 
 \subsubsection{LED-lampjes}
 We kozen als optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren waardoor er risico zou zijn dat het wagentje niet juist werkt.
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
-
+\label{LED-lampjes}
 \subsection{Assemblage}
 %titel nog aan te passen
 %Alles op elkaar zetten, 3D-modellen?
 %NOG DOEN
-
+\label{Assemblage}
 \subsection{Implementatie}
 %titel nog aan te passen
-
+\label{Implementatie}
 
 Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden. 
 %bron myrio nog vermelden
@@ -147,6 +148,7 @@ Nu gaan we die waarden gebruiken om te weten wat de lijn is die we zullen moeten
 We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
 
 
+<<<<<<< Updated upstream
 De volgende test was met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0,1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
 
 %\section{Planning}
@@ -171,6 +173,12 @@ De volgende test was met de afstandssensor. Als de afstand tussen de sensor en h
 %Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisch aan de slag gaan met de sensoren, motoren en microcontroller om deze te implementeren in LabVIEW. Hoe men hieraan te werk is gegaan wordt beschreven in sectie 0.1.5.
 %
 %Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
+=======
+De volgende test was met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0.1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
+\label{Experimenten}
+\section{Planning}
+%Eerst hebben we nagedacht over welke materialen we nodig zullen hebben. Daarvoor is het best om vooral veel opzoekingswerk te doen om meer te weten te komen over de materialen. Het was vooral belangrijk om na te gaan welke onderdelen samengaan en welke niet. Dan wogen we af welke opties we hebben. Voor de aankoop van de materialen maakten we twee alternatieve modellen.
+>>>>>>> Stashed changes
 
 
 \section{Het verloop van het project}
@@ -182,8 +190,21 @@ In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat 
 
 In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteden aan de mechanische stukken en draden.
 
+<<<<<<< Updated upstream
 \chapter*{Besluit}
 Afsluitende tekst. Nog te schrijven.
+=======
+
+%Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
+
+
+Om te beginnen aan dit soort project, is het noodzakelijk om eerst op lange termijn te plannen: algemeen van welke 'grote' taken moeten er na een bepaalde tijd zeker afgewerkt zijn. Eerst en vooral moeten een aantal technische aspecten in orde zijn voordat we echt van werk kunnen gaan. Het aanmaken van een stuklijst is noodzakelijk om een beeld te krijgen van hoeveel we ongeveer zullen besteden rekening houdend met het budget. Hierbij is het ook zeer belangrijk om na te gaan welke onderdelen samen gaan en welke niet om fouten zoals bijvoorbeeld het bestellen van een motorbeugel die niet op de motor past te vermijden.
+
+Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisch aan de slag gaan met de sensoren, motoren en microcontroller om deze te implementeren in LabVIEW. Hoe men hieraan te werk is gegaan wordt beschreven in sectie 0.1.5.
+
+Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
+\label{Planning}
+>>>>>>> Stashed changes
 
 \section{Bijlagen}
 \includepdf{FinancieelRapport.pdf}\label{financieel rapport}
