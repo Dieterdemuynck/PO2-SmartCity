@@ -91,7 +91,7 @@ Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op he
 ~
 \subsubsection{Wielen}
 Een goede keuze voor de wielen zijn deze met respectievelijk een diameter en dikte van 42 mm en 19 mm.
-Figuur ... geeft een idee hoe het wiel eruit ziet.
+Figuur \ref{fig:wiel} geeft een idee hoe het wiel eruit ziet.
 
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{wielen}
@@ -104,21 +104,29 @@ Figuur ... geeft een idee hoe het wiel eruit ziet.
  De dikte van dit wiel is geschikt om voldoende grip te hebben. Bij dunnere wielen is er dus minder grip en dat zou ervoor kunnen zorgen dat de auto niet snel genoeg kan remmen bij obstakels en stoplijnen \cite{Banden}. %nog mooi citeren
  Daarnaast zorgt de grootte van de diameter voor een relatieve grote versnelling en een gemiddelde kracht. Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite.  
 
-Zoals eerder aangegeven is de auto van dit project een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een ball caster. Op die manier moet er geen extra tandwielmotor en bijhorende zaken zoals een tandwielmotorsbeugel worden aangekocht. Daarnaast beperkt dit ook het extra gewicht op de auto waardoor het zou kunnen vertragen.
+De auto van dit project is een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om manoeuvres zoals draaien te voltooien. Als je vier wielen hebt, zijn er twee vaste punten en dus meer wrijving waardoor de auto minder vlot kan draaien. Om af te slaan is het makkelijker om een vast punt te hebben en dat de andere wielen er omheen draaien.%misschien nog anders verwoorden.
+Ten tweede reduceert een driewieler de kosten van het project. Idealiter wordt als derde wiel gebruik gemaakt van een kogelwiel. We kozen voor het kogelwiel omdat dit flexibelere draaibewegingen heeft dan een normaal wiel. 
 \label{Wielen}
 ~
 
 \subsubsection{Motoren}
 Aansluitend hierbij spelen de tandwielmotoren ook een belangrijke rol. Motoren met een groot tandwiel starten zeer gemakkelijk maar behalen geen al te grote snelheid. Kleine tandwielen hebben dan weer de omgekeerde eigenschap. Het is dus van belang dat er een tandwielen worden gebruikt met een gemiddelde grootte namelijk de motor met de verhouding 50:1. Niet alleen de grootte speelt een rol bij de tandwielmotoren, maar ook de kracht van de motor. Hiervoor wordt het best gekozen voor de "High Power" (HP). Deze motoren hebben een grotere efficiëntie. Een bijkomend voordeel is het gewicht dat slechts 9,5 gram bedraagt \cite{MicroMetalGearMotor50:1HP}. %Erbij zetten dat het ook een groter vermogen heeft?
+Hoe minder de onderdelen wegen, hoe minder kracht je nodig hebt om de auto te laten rijden. 
 
-Het is vanzelfsprekend dat door het gebruik van deze tandwielen nood is per motor aan een tandwielmotorbeugel opdat de tandwielmotoren aan de chassis kunnen vast gemaakt worden. Aangezien de motoren een breedte van 12 mm hebben en een hoogte van 10 mm als diameter hebben, heeft het als logisch gevolg dat de beugel met lengtes 12 mm op 10 mm worden genomen \cite{MicroMetalGearMotorBeugel}.
-Verder is een dual drive motor essentieel om de tandwielmotoren met de microcontroller te verbinden. In dit project wordt gekozen voor de Dual Drive DRV8833 \cite{DualDriveDRV8833}. %site vermelden
+Door het gebruik van deze tandwielen is er nood aan motorbeugels zodat de tandwielmotoren aan de chassis  vastgemaakt kunnen worden. Aangezien de motoren een breedte van 12 mm hebben en een hoogte van 10 mm, is het logisch dat de beugels met afmetingen 12 mm op 10 mm worden genomen \cite{MicroMetalGearMotorBeugel}.
+Verder is een dubbele aandrijfmotor essentieel om de tandwielmotoren met de microcontroller te verbinden. In dit project wordt gekozen voor de Dual Drive DRV8833 \cite{DualDriveDRV8833}. %site vermelden
 \label{Motoren}
 
 ~
 \subsubsection{Microcontroller}
-Volgend component is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt de microcontroller er immers voor dat het autootje de taken correct uitvoert. Dit keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
-Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. %site van de microcontroller
+De microcontroller is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt het ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi.
+
+
+Dit heeft enkele gevolgen.
+Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. Daarnaast heeft dit ook invloed op de keuze van het chassis.%welke invloed
+%Waarom voor deze microcontroller gekozen
+
+ %site van de microcontroller
 \label{Microcontroller}
 ~
 \subsubsection{Sensoren}
