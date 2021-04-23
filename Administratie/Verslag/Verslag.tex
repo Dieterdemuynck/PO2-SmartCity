@@ -43,7 +43,7 @@ o.l.v. Boussé Martijn, Maveau Benjamin en Truyaert Kevin}
 Bij het ontwerpen van een zelfrijdend wagentje komt er heel wat bij te kijken. Wat houdt het project in? Het wagentje moet in staat zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City´. 'Smart city', ook wel 'Slimme Stad' genoemd, is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, komt het wagentje verschillende obstakels tegen. De bedoeling is dat deze worden herkend en dat er een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag.
 Dit verslag zal een beeld geven van hoe dit project moet aangepakt worden. Het ontwerpproces wordt uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht. Hoe men te werk gaat op vlak van planning wordt ook toegelicht.
 
-\section{Ontwerpproces}
+\section{Ontwerp}
 
 \subsection{Onderdelen}
 
@@ -119,7 +119,12 @@ Verder is een dubbele aandrijfmotor essentieel om de tandwielmotoren met de micr
 
 ~
 \subsubsection{Microcontroller}
+<<<<<<< Updated upstream
 De microcontroller is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt het ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi.
+=======
+Volgend component is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt de microcontroller er immers voor dat het autootje de taken correct uitvoert. Dit keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
+Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. In sectie \ref{Implementatie} wordt hier dieper op ingegaan. %site van de microcontroller
+>>>>>>> Stashed changes
 
 
 Dit heeft enkele gevolgen.
@@ -139,8 +144,9 @@ Ook om kleuren te herkennen, is er nood aan een sensor of camera. We hadden de k
 ~
 
 \subsubsection{LED-lampjes}
-We kozen als optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren waardoor er risico zou zijn dat het wagentje niet juist werkt.
+Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren waardoor er risico zou zijn dat het wagentje niet juist werkt.
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
+<<<<<<< Updated upstream
 \label{LED-lampjes}
 \subsection{Assemblage}
 %titel nog aan te passen
@@ -150,26 +156,50 @@ We kozen als optie om LED's te plaatsen omdat het ons het meest haalbaar leek in
 \subsection{Implementatie}
 %titel nog aan te passen
 \label{Implementatie}
+=======
 
-Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden. 
+\section{Assemblage}
+%titel nog aan te passen
+%Alles op elkaar zetten, 3D-modellen?
+%NOG DOEN
+
+\section{Implementatie}\label{Implementatie}
+%titel nog aan te passen
+Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden.
 %bron myrio nog vermelden
-Dit deed men om de communicatie tussen de sensoren en de NI MyRIO-controller te begrijpen. Ook het aantal Volt dat nodig is om de sensoren te laten te werken is belangrijk. Zo zijn er een paar poorten waar er precies 5 Volt uitkomt, wat perfect is voor de sensoren omdat deze 5 Volt nodig hebben om te kunnen werken. Eens dit geweten is, begint men met het elektrisch circuit op te stellen. Dit is handig om te weten welke onderdelen er met elkaar worden verbonden. Eens dit in orde is, kan het programmeerwerk beginnen.
+Dit is nuttig om de communicatie tussen de sensoren en de NI MyRIO-controller te begrijpen. Ook de spanning dat nodig is om de sensoren te laten te werken is belangrijk. Zo zijn er enkele poorten die precies 5 volt leveren. Dit is perfect, aangezien dit compatibel is met het spanningsverschil van de sensoren. Vervolgens kan het elektrisch circuit opgesteld worden. Dit is handig om te weten welke onderdelen er met elkaar worden verbonden. Eenmaal dit in orde is, kan het programmeerwerk beginnen.
+%Laatste twee zinnen nog aan te passen.
 
-Het schrijven van stukjes code begon pas echt in week zes. Dit was zo omdat we het materiaal dan voor ons hadden liggen en onze stukjes code effectief konden testen. Met de eerste test probeerden we de lampjes op de microcontroller te laten branden. Dit deden we via de 'LED' functie van LabVIEW. Onze tweede test was het versturen en ontvangen van signalen. Het programma \texttt{main.vi} dat standaard in LabVIEW onder MyRIO staat heeft weer hoe de microcontroller beweegt. We hebben dit standaard programma gebruikt bij onze testen. We hebben op de controller een draad bevestigd tussen poort 11 en 13 Ampère. Op het moment dat het kantelt en op de z-as meer dan 0,5 wordt weergegeven moet het via 11 A een signaal versturen. Dit werd dan ontvangen door 13 A. Als 13 A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
+Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de onderdelen van de auto te beschikken opdat de fragmenten van de code kunnen worden uitgetest. In de subsectie die volgt wordt een korte analyse gegeven van de observaties die volgen uit kleine experimenten. Om de testen mogelijk te maken, moet er eerst contact worden gemaakt tussen een computer en de microcontroller. Dit kan gerealiseerd worden met de ´LED´ functie in LabVIEW. Eenmaal er connectie is, branden de lampjes op de microcontroller en kunnen de experimenten van start gaan.
+>>>>>>> Stashed changes
+
+
+\subsection{Experimenten}
+\subsubsection{Signalen ontvangen en versturen}
+Het doel van de eerste test is de communicatie met de microcontroller te begrijpen. Met behulp van het standaardprogramma \texttt{main.vi} kan er gezien worden hoe de microcontroller beweegt. 
+De tweede test bestaat uit het versturen en ontvangen van signalen. 
+
+ We hebben op de controller een draad bevestigd tussen poort 11 en 13 Ampère. Op het moment dat het kantelt en op de z-as meer dan 0,5 wordt weergegeven moet het via 11 A een signaal versturen. Dit werd dan ontvangen door 13 A. Als 13 A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
+%om te communiceren, te debuggen... daaruit implementatie van het autootje
 
 Het echt programma zal bestaan uit verschillende subVI's. Zo zullen we een stukje code schrijven dat specifiek is voor het detecteren van wagens die voor ons rijden. Als er een obstakel minder dan 20 cm voor ons staat zal hij moeten stoppen of de snelheid aanpassen. Een ander stukje code zal het lezen van het stoplicht zijn. Hier zal de microcontroller de signalen van kleursensor moeten interpreteren. Een ander deel zal met de reflectie sensor de volglijn volgen en weten wanneer die overgaat in een stopstreep waarna het wagentje moet stoppen.
 Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden. 
 
-\subsubsection{Experimenten}
+\subsubsection{Sensoren}
+Met behulp van voorbeeldprogramma's is het mogelijk om de gekregen data die van de sensoren te interpreteren. Zo is er een idee met welke waarden er moet gewerkt worden in het definitief programma. 
 
-We experimenteren met de sensoren. Voorbeeldprogramma's worden gemaakt om de data die we krijgen van de sensoren te interpreteren. Op die manier weten we met welke waarden we moeten werken in ons echt programma. 
+Een eerste experiment is met de reflectiesensor. Deze sensor werkt met een programma dat de zes waarden %van de sensor teruggeeft. 
+Een van de vereisten voor het autootje is een lichte en donkere kleur te onderscheiden. Om te weten welke waarden de sensor geeft, kan dit worden getest met een wit papier, de zwarte voorkant van een laptop en een grijs tafelblad. Bij het papier wordt een waarde dichtbij één verkregen terwijl bij het donkere spectrum waarden tussen vier en vier en een half. %en de tafel?
+Door het experimentje is er nu geweten welke waarden er moeten gebruikt worden om de lijn op de grond te kunnen volgen.
+% !!!!!!!! Eventueel hetgene hieronder weglaten?? Is dit noodzakelijk voor het verslag????
+% We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
 
-Het eerste experiment met sensoren was met de reflectiesensor. Dat is een programma dat de zes waarden van de sensor weer geeft. Omdat het miniatuur robotwagentje helder en donker moet onderscheiden hebben we die getest op wit papier waarbij we waarden rond de 1 krijgen. Om de waarden bij van het donkere spectrum te krijgen, hebben we het zwart van de laptop gebruikt. Hier kregen we waarden rond de 4 tot 4,5. We hebben het ook gedaan op de grijze tafels.
-Nu gaan we die waarden gebruiken om te weten wat de lijn is die we zullen moeten volgen.
-We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
+De volgende test is met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0,1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
 
 
-De volgende test was met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0,1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
+%manuele override
+%inlezen sensoren
+%programma auto niet botsen -> stopwaarde
 
 %\section{Planning}
 %%Eerst hebben we nagedacht over welke materialen we nodig zullen hebben. Daarvoor is het best om vooral veel opzoekingswerk te doen om meer te weten te komen over de materialen. Het was vooral belangrijk om na te gaan welke onderdelen samengaan en welke niet. Dan wogen we af welke opties we hebben. Voor de aankoop van de materialen maakten we twee alternatieve modellen.
@@ -182,7 +212,6 @@ De volgende test was met de afstandssensor. Als de afstand tussen de sensor en h
 %%wat hebben we tot nu kunnen bereiken
 %%hoe kunnen we ons ontwerp nog verbeteren
 %%experimenten met LabVIEW 
-%
 %
 %
 %%Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
@@ -210,7 +239,11 @@ In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat 
 In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteden aan de mechanische stukken en draden.
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 \chapter*{Besluit}
+=======
+\section{Besluit}
+>>>>>>> Stashed changes
 Afsluitende tekst. Nog te schrijven.
 =======
 
@@ -224,6 +257,9 @@ Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisc
 Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
 \label{Planning}
 >>>>>>> Stashed changes
+
+
+\newpage
 
 \section{Bijlagen}
 \includepdf{FinancieelRapport.pdf}\label{financieel rapport}
