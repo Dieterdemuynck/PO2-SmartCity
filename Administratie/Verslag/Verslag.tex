@@ -43,29 +43,37 @@ o.l.v. Boussé Martijn, Maveau Benjamin en Truyaert Kevin}
 Wat houdt het project in? Het zelfrijdend autootje moet in staat zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City´. `Smart city', ook wel `Slimme Stad' genoemd, is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling is dat deze worden herkend en dat er een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag.
 Het ontwerpproces wordt uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht.
 Wat is het doel van dit project? Deze opdracht leert je actief aan de slag gaan al werkend in teamverband. Een volledig ontwerpproces moet zelf worden uitgestippeld  rekening houdend met deadlines en met focus op het eindresultaat. Deze opdracht steunt op alle vakken van het eerste jaar ingenieurswetenschappen: werken in teamverband, omgaan met geld, technisch en praktisch aan de slag gaan.
-\section{Ontwerp} \label{Ontwerp}
+Nu wat is de maatschappelijke relevantie van een zelfrijdende auto?
 
-\section{Ontwerp}
+% !! maatschappelijke relevantie nog uitleggen
 
-%Wat auto moet kunnen en algemeen wat je zal gebruiken.
-Eerst en vooral is het belangrijk om een idee te krijgen over alle cruciale onderdelen die zullen gebruikt worden in het project. 
 
-Een van de basisonderdelen is de chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
-Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één ball caster. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
+\section{Klantenvereisten} \label{Klantenvereisten}
+De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een stoplijn. Een verkeerslicht moet ook kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en stoppen als deze te dicht komt om aanrijdingen te vermijden.
 
-\subsection{Vereisten} \label{Vereisten}%aanpassing woord!!
-% Wat moet de auto  kunnen
-De auto moet over het algemeen lijnen herkennen en deze volgen, stoppen bij een rood licht, andere wagens detecteren en stoppen als de auto te dicht bij een voorligger komt. Men moet ook van op afstand kunnen ingrijpen.
+\section{Hardwareontwerp} \label{Hardwareontwerp}
 
-Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt namelijk een onderscheid gemaakt tussen twee soorten lijnen: volglijnen en stoplijnen. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De wagen zal dus de lijnen van 25 mm dik moeten volgen en moeten stoppen bij de lijnen van 50 mm dik. De wagen moet dus een sensor bevatten deze lijnen kan herkennen, meer bepaald een reflectiesensor. Deze zal onderaan het wagentje geplaatst worden zodat de lijnen makkelijk worden herkend.
+\subsection{Ontwerpspecificaties} \label{Ontwerpspecificaties}
+%Een van de basisonderdelen is het chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
+%Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één kogelwiel. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
 
-De wagen komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal hij moeten tot stilstand komen en een verkeerslicht moeten interpreteren. Het wagentje zal dus moeten voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht zal hij moeten stoppen aan de stoplijn, bij groen zal hij weer mogen starten.
 
-Ook moet het wagentje voorgaande wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden een zo kort mogelijke remafstand.
+De modelstad bestaat uit enkele straten en kruispunten. De straten zijn telkens 1 meter lang. Op het parcours met donkere ondergrond zijn er twee soorten lijnen te vinden: volglijnen en stoplijnen. Op het kruispunt zelf zijn er geen lijnen. Het autootje zal deze lijnen moeten kunnen interpreteren en een onderscheid kunnen maken tussen deze twee soorten. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De auto moet de lijnen van 25 mm dik volgen en stoppen bij de lijnen van 50 mm dik \ref{fig:plattegrond}. Het moet dus een sensor bevatten die deze lijnen kan herkennen, meer bepaald een reflectiesensor. De auto komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal het moeten stoppen en een verkeerslicht moeten interpreteren. Het feit dat het verkeerslicht om 7.5 cm hoogte staat, speelt een rol bij de het bepalen van de hoogte van de auto. De auto moet dus voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht moet de auto blijven stil staan aan de stoplijn, bij groen moet hij weer starten.
 
-Verder moet het wagentje aan een aanvaardbare snelheid voortbewegen. De micro tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het wagentje een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het wagentje op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
+%Smalle auto
+\begin{figure}
+	\centering
+	\includegraphics[width=.5\textwidth]{volglijnenEnStoplijnen}
+	\caption{Parcours}
+	\label{fig:plattegrond}
+\end{figure}
 
-Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt.
+Ook moet het wagentje voorgaande wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand.
+
+Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
+
+Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt. Zo zal de auto bestuurbaar gemaakt worden vanuit een toetsenbord.
+
 
 
 %Per onnderdeel verwijzen voor bibliografie!!!
@@ -134,11 +142,12 @@ Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog 
 \label{Microcontroller}
 ~
 \subsubsection{Sensoren}
-Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
+Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven analoge signalen. Dit soort signaal kan alle waarden aannemen, terwijl een digitaal signaal maar bepaalde waarden kan aannemen. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
+De reflectiesensor zal onderaan de auto, dichtbij de grond geplaatst worden zodat de lijnen op het juiste moment zullen herkend worden.
 
 ~
 
-Ook om kleuren te herkennen, is er nood aan een sensor of camera. We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt er niet voor gekozen om de camera en webcam te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt \cite{Webcam,TCS34725KleurSensorBOB}. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. Bovendien is de camera enkel bruikbaar is met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRIO als microcontroller.
+Ook om de kleuren groen en rood te herkennen, is er nood aan een sensor of camera. We hadden de keuze tussen een Raspberry Pi-camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt gekozen voor de kleurensensor. Deze is compatibel met de NI MyRIO en weegt maar 3,23 gram \cite{Webcam,TCS34725KleurSensorBOB}. Bovendien weegt de webcam 223,6 gram. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. De camera is enkel bruikbaar met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRIO-microcontroller.
 \label{Sensoren}
 ~
 
@@ -147,12 +156,12 @@ Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in ve
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
 
-\section{Assemblage}
+\subsection{Assemblage}
 %titel nog aan te passen
 %Alles op elkaar zetten, 3D-modellen?
 %NOG DOEN
 
-\section{Implementatie}\label{Implementatie}
+\section{Softwareontwerp}\label{Softwareontwerp}
 %titel nog aan te passen
 Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden.
 %bron myrio nog vermelden
@@ -191,7 +200,7 @@ Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwe
 
 
 
-\section{Het verloop van het project}
+\section{Het verloop van het project} %discussiesectie
 Om te beginnen aan dit project, is het noodzakelijk om zowel op korte als lange termijn te plannen. Daarnaast is het ook belangrijk om de financiën te beheren. In deze sectie krijgt men een kort besluit over deze zaken.
 
 Een goede planning is van groots belang. Het een geeft een overzicht wat van wat er allemaal is volbracht en wat er nog moet gebeuren.% nog verder afwerken
