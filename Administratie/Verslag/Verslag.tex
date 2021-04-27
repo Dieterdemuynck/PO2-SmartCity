@@ -36,36 +36,44 @@ o.l.v. Boussé Martijn, Maveau Benjamin en Truyaert Kevin}
 \renewcommand\thesection{\arabic{section}}
 \renewcommand\thesubsection{\thesection.\arabic{subsection}}
 \newpage
-\section*{Inleiding}
+\section*{Inleiding}\label{Inleiding}
 %probleemstelling
 %Ontwerpsproces en planning
 
-Bij het ontwerpen van een zelfrijdend wagentje komt er heel wat bij te kijken. Wat houdt het project in? Het wagentje moet in staat zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City´. 'Smart city', ook wel 'Slimme Stad' genoemd, is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, komt het wagentje verschillende obstakels tegen. De bedoeling is dat deze worden herkend en dat er een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag.
-Dit verslag zal een beeld geven van hoe dit project moet aangepakt worden. Het ontwerpproces wordt uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht. Hoe men te werk gaat op vlak van planning wordt ook toegelicht.
+Wat houdt het project in? Het zelfrijdend autootje moet in staat zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City´. `Smart city', ook wel `Slimme Stad' genoemd, is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling is dat deze worden herkend en dat er een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag.
+Het ontwerpproces wordt uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht.
+Wat is het doel van dit project? Deze opdracht leert je actief aan de slag gaan al werkend in teamverband. Een volledig ontwerpproces moet zelf worden uitgestippeld  rekening houdend met deadlines en met focus op het eindresultaat. Deze opdracht steunt op alle vakken van het eerste jaar ingenieurswetenschappen: werken in teamverband, omgaan met geld, technisch en praktisch aan de slag gaan.
+Nu wat is de maatschappelijke relevantie van een zelfrijdende auto?
 
-\section{Ontwerp}
+% !! maatschappelijke relevantie nog uitleggen
 
-\subsection{Onderdelen}
 
-%Wat auto moet kunnen en algemeen wat je zal gebruiken.
-Eerst en vooral is het belangrijk om een idee te krijgen over alle cruciale onderdelen die zullen gebruikt worden in het project. 
+\section{Klantenvereisten} \label{Klantenvereisten}
+De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een stoplijn. Een verkeerslicht moet ook kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en stoppen als deze te dicht komt om aanrijdingen te vermijden.
 
-Een van de basisonderdelen is de chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
-Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één ball caster. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
+\section{Hardwareontwerp} \label{Hardwareontwerp}
 
-\subsection{Vereisten} %aanpassing woord!!
-% Wat moet de auto  kunnen
-De auto moet over het algemeen lijnen herkennen en deze volgen, stoppen bij een rood licht, andere wagens detecteren en stoppen als de auto te dicht bij een voorligger komt. Men moet ook van op afstand kunnen ingrijpen.
+\subsection{Ontwerpspecificaties} \label{Ontwerpspecificaties}
+%Een van de basisonderdelen is het chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
+%Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één kogelwiel. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
 
-Nadat het wagentje de lijn herkent, moet hij deze kunnen interpreteren. Er wordt namelijk een onderscheid gemaakt tussen twee soorten lijnen: volglijnen en stoplijnen. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De wagen zal dus de lijnen van 25 mm dik moeten volgen en moeten stoppen bij de lijnen van 50 mm dik. De wagen moet dus een sensor bevatten deze lijnen kan herkennen, meer bepaald een reflectiesensor. Deze zal onderaan het wagentje geplaatst worden zodat de lijnen makkelijk worden herkend.
 
-De wagen komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal hij moeten tot stilstand komen en een verkeerslicht moeten interpreteren. Het wagentje zal dus moeten voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht zal hij moeten stoppen aan de stoplijn, bij groen zal hij weer mogen starten.
+De modelstad bestaat uit enkele straten en kruispunten. De straten zijn telkens 1 meter lang. Op het parcours met donkere ondergrond zijn er twee soorten lijnen te vinden: volglijnen en stoplijnen. Op het kruispunt zelf zijn er geen lijnen. Het autootje zal deze lijnen moeten kunnen interpreteren en een onderscheid kunnen maken tussen deze twee soorten. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De auto moet de lijnen van 25 mm dik volgen en stoppen bij de lijnen van 50 mm dik \ref{fig:plattegrond}. Het moet dus een sensor bevatten die deze lijnen kan herkennen, meer bepaald een reflectiesensor. De auto komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal het moeten stoppen en een verkeerslicht moeten interpreteren. Het feit dat het verkeerslicht om 7.5 cm hoogte staat, speelt een rol bij de het bepalen van de hoogte van de auto. De auto moet dus voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht moet de auto blijven stil staan aan de stoplijn, bij groen moet hij weer starten.
 
-Ook moet het wagentje voorgaande wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden een zo kort mogelijke remafstand.
+%Smalle auto
+\begin{figure}
+	\centering
+	\includegraphics[width=.5\textwidth]{volglijnenEnStoplijnen}
+	\caption{Parcours}
+	\label{fig:plattegrond}
+\end{figure}
 
-Verder moet het wagentje aan een aanvaardbare snelheid voortbewegen. De micro tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het wagentje een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het wagentje op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
+Ook moet het wagentje voorgaande wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand.
 
-Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt.
+Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
+
+Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt. Zo zal de auto bestuurbaar gemaakt worden vanuit een toetsenbord.
+
 
 
 %Per onnderdeel verwijzen voor bibliografie!!!
@@ -119,12 +127,11 @@ Verder is een dubbele aandrijfmotor essentieel om de tandwielmotoren met de micr
 
 ~
 \subsubsection{Microcontroller}
-<<<<<<< Updated upstream
-De microcontroller is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt het ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi.
-=======
+% To do: conflict oplossen!!!
+% Versie van Rani: De microcontroller is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt het ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi.
+
 Volgend component is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt de microcontroller er immers voor dat het autootje de taken correct uitvoert. Dit keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
 Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. In sectie \ref{Implementatie} wordt hier dieper op ingegaan. %site van de microcontroller
->>>>>>> Stashed changes
 
 
 Dit heeft enkele gevolgen.
@@ -135,17 +142,19 @@ Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog 
 \label{Microcontroller}
 ~
 \subsubsection{Sensoren}
-Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven daartegenover een nauwkeurige feedback en echte waarden. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
+Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven analoge signalen. Dit soort signaal kan alle waarden aannemen, terwijl een digitaal signaal maar bepaalde waarden kan aannemen. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
+De reflectiesensor zal onderaan de auto, dichtbij de grond geplaatst worden zodat de lijnen op het juiste moment zullen herkend worden.
 
 ~
 
-Ook om kleuren te herkennen, is er nood aan een sensor of camera. We hadden de keuze tussen een RPi camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt er niet voor gekozen om de camera en webcam te gebruiken. De webcam weegt namelijk 223,6 gram terwijl de kleurensensor 3,23 gram weegt \cite{Webcam,TCS34725KleurSensorBOB}. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. Bovendien is de camera enkel bruikbaar is met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRIO als microcontroller.
+Ook om de kleuren groen en rood te herkennen, is er nood aan een sensor of camera. We hadden de keuze tussen een Raspberry Pi-camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt gekozen voor de kleurensensor. Deze is compatibel met de NI MyRIO en weegt maar 3,23 gram \cite{Webcam,TCS34725KleurSensorBOB}. Bovendien weegt de webcam 223,6 gram. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. De camera is enkel bruikbaar met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRIO-microcontroller.
 \label{Sensoren}
 ~
 
 \subsubsection{LED-lampjes}
 Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren waardoor er risico zou zijn dat het wagentje niet juist werkt.
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 \label{LED-lampjes}
 \subsection{Assemblage}
@@ -163,13 +172,16 @@ Door dit model was het gemakkelijker om de wagen in elkaar te zetten omdat er na
 %titel nog aan te passen
 \label{Implementatie}
 =======
+=======
+>>>>>>> AdministratieveDocumenten
 
-\section{Assemblage}
+
+\subsection{Assemblage}
 %titel nog aan te passen
 %Alles op elkaar zetten, 3D-modellen?
 %NOG DOEN
 
-\section{Implementatie}\label{Implementatie}
+\section{Softwareontwerp}\label{Softwareontwerp}
 %titel nog aan te passen
 Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden.
 %bron myrio nog vermelden
@@ -177,7 +189,6 @@ Dit is nuttig om de communicatie tussen de sensoren en de NI MyRIO-controller te
 %Laatste twee zinnen nog aan te passen.
 
 Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de onderdelen van de auto te beschikken opdat de fragmenten van de code kunnen worden uitgetest. In de subsectie die volgt wordt een korte analyse gegeven van de observaties die volgen uit kleine experimenten. Om de testen mogelijk te maken, moet er eerst contact worden gemaakt tussen een computer en de microcontroller. Dit kan gerealiseerd worden met de ´LED´ functie in LabVIEW. Eenmaal er connectie is, branden de lampjes op de microcontroller en kunnen de experimenten van start gaan.
->>>>>>> Stashed changes
 
 
 \subsection{Experimenten}
@@ -185,7 +196,7 @@ Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de o
 Het doel van de eerste test is de communicatie met de microcontroller te begrijpen. Met behulp van het standaardprogramma \texttt{main.vi} kan er gezien worden hoe de microcontroller beweegt. 
 De tweede test bestaat uit het versturen en ontvangen van signalen. 
 
- We hebben op de controller een draad bevestigd tussen poort 11 en 13 Ampère. Op het moment dat het kantelt en op de z-as meer dan 0,5 wordt weergegeven moet het via 11 A een signaal versturen. Dit werd dan ontvangen door 13 A. Als 13 A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
+We hebben op de controller een draad bevestigd tussen poort 11 en 13 Ampère. Op het moment dat het kantelt en op de z-as meer dan 0,5 wordt weergegeven moet het via 11 A een signaal versturen. Dit werd dan ontvangen door 13 A. Als 13 A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
 %om te communiceren, te debuggen... daaruit implementatie van het autootje
 
 Het echt programma zal bestaan uit verschillende subVI's. Zo zullen we een stukje code schrijven dat specifiek is voor het detecteren van wagens die voor ons rijden. Als er een obstakel minder dan 20 cm voor ons staat zal hij moeten stoppen of de snelheid aanpassen. Een ander stukje code zal het lezen van het stoplicht zijn. Hier zal de microcontroller de signalen van kleursensor moeten interpreteren. Een ander deel zal met de reflectie sensor de volglijn volgen en weten wanneer die overgaat in een stopstreep waarna het wagentje moet stoppen.
@@ -195,47 +206,21 @@ Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Dez
 Met behulp van voorbeeldprogramma's is het mogelijk om de gekregen data die van de sensoren te interpreteren. Zo is er een idee met welke waarden er moet gewerkt worden in het definitief programma. 
 
 Een eerste experiment is met de reflectiesensor. Deze sensor werkt met een programma dat de zes waarden %van de sensor teruggeeft. 
-Een van de vereisten voor het autootje is een lichte en donkere kleur te onderscheiden. Om te weten welke waarden de sensor geeft, kan dit worden getest met een wit papier, de zwarte voorkant van een laptop en een grijs tafelblad. Bij het papier wordt een waarde dichtbij één verkregen terwijl bij het donkere spectrum waarden tussen vier en vier en een half. %en de tafel?
+Een van de vereisten voor het autootje is een lichte en donkere kleur te onderscheiden. Om te weten welke waarden de sensor geeft, kan dit worden getest met een wit papier, de zwarte voorkant van een laptop en een grijs tafelblad. Bij het papier wordt een waarde dichtbij 1 verkregen terwijl bij het donkere spectrum waarden tussen 4 en 4,5. %en de tafel?
 Door het experimentje is er nu geweten welke waarden er moeten gebruikt worden om de lijn op de grond te kunnen volgen.
 % !!!!!!!! Eventueel hetgene hieronder weglaten?? Is dit noodzakelijk voor het verslag????
 % We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
 
-De volgende test is met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0,1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
+Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwerp eerst ver van de sensor gehouden en dan dichterbij. Bij afstanden kleiner dan 80 cm worden lage waarden bekomen zoals 0,1. Afstanden groter dan 80 cm geven een negatieve waarde. Wanneer de afstand echter op een tiental cm van de sensor verwijderd is, wordt een maximale waarde van 3 verkregen. Eenmaal de lengte tussen de afstandssensor en het voorwerp kleiner is dan 10 cm, zakt de geleidelijk aan naar 2. De conclusie van deze test: voor de afstandssensor zullen de waarden twee en drie moeten gebruikt worden.
 
-
+\subsection{Definitieve programma's}
 %manuele override
 %inlezen sensoren
 %programma auto niet botsen -> stopwaarde
 
-%\section{Planning}
-%%Eerst hebben we nagedacht over welke materialen we nodig zullen hebben. Daarvoor is het best om vooral veel opzoekingswerk te doen om meer te weten te komen over de materialen. Het was vooral belangrijk om na te gaan welke onderdelen samengaan en welke niet. Dan wogen we af welke opties we hebben. Voor de aankoop van de materialen maakten we twee alternatieve modellen.
-%
-%%Om zo efficiënt mogelijk te werken, verdeelden we onze groep in twee zodat één deel volop kon werken aan het implementeren in LabVIEW terwijl het andere deel de CAD-modellen en technische tekeningen in orde brachten.
-%
-%
-%%De CAD-modellen en technische tekeningen worden gebruikt om meer inzicht te krijgen in hoe het wagentje eruit zal zien.
-%
-%%wat hebben we tot nu kunnen bereiken
-%%hoe kunnen we ons ontwerp nog verbeteren
-%%experimenten met LabVIEW 
-%
-%
-%%Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
-%
-%
-%Om te beginnen aan dit soort project, is het noodzakelijk om eerst op lange termijn te plannen: algemeen van welke 'grote' taken moeten er na een bepaalde tijd zeker afgewerkt zijn. Eerst en vooral moeten een aantal technische aspecten in orde zijn voordat we echt van werk kunnen gaan. Het aanmaken van een stuklijst is noodzakelijk om een beeld te krijgen van hoeveel we ongeveer zullen besteden rekening houdend met het budget. Hierbij is het ook zeer belangrijk om na te gaan welke onderdelen samen gaan en welke niet om fouten zoals bijvoorbeeld het bestellen van een motorbeugel die niet op de motor past te vermijden.
-%
-%Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisch aan de slag gaan met de sensoren, motoren en microcontroller om deze te implementeren in LabVIEW. Hoe men hieraan te werk is gegaan wordt beschreven in sectie 0.1.5.
-%
-%Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
-=======
-De volgende test was met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0.1). Als er binnen de 80 cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10 cm. Als we het object dichter dan 10 cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
-\label{Experimenten}
 
 
-
-
-\section{Het verloop van het project}
+\section{Het verloop van het project} %discussiesectie
 Om te beginnen aan dit project, is het noodzakelijk om zowel op korte als lange termijn te plannen. Daarnaast is het ook belangrijk om de financiën te beheren. In deze sectie krijgt men een kort besluit over deze zaken.
 
 Een goede planning is van groots belang. Het een geeft een overzicht wat van wat er allemaal is volbracht en wat er nog moet gebeuren.% nog verder afwerken
@@ -244,14 +229,12 @@ In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat 
 
 In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteden aan de mechanische stukken en draden.
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-\chapter*{Besluit}
-=======
+
+
 \section{Besluit}
->>>>>>> Stashed changes
+
 Afsluitende tekst. Nog te schrijven.
-=======
+
 
 %Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
 
@@ -262,7 +245,7 @@ Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisc
 
 Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
 \label{Planning}
->>>>>>> Stashed changes
+
 
 
 \newpage
