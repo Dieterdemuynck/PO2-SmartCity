@@ -128,6 +128,7 @@ AddOutputFilter chunkFilter
 		<Property Name="target.WebServer.ViAccess" Type="Str">+*</Property>
 		<Property Name="target.webservices.SecurityAPIKey" Type="Str">PqVr/ifkAQh+lVrdPIykXlFvg12GhhQFR8H9cUhphgg=:pTe9HRlQuMfJxAG6QCGq7UvoUpJzAzWGKy5SbZ+roSU=</Property>
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
+		<Item Name="Distance-Speed Adaptor.vi" Type="VI" URL="../subvi/Automatic Drive/Distance-Speed Adaptor.vi"/>
 		<Item Name="LineToDirections.vi" Type="VI" URL="../subvi/Automatic Drive/LineToDirections.vi"/>
 		<Item Name="Manual Motor Controller.vi" Type="VI" URL="../subvi/Manual Drive/Manual Motor Controller.vi"/>
 		<Item Name="SCP-Main.vi" Type="VI" URL="../SCP-Main.vi"/>
