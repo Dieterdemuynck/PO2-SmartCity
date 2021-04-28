@@ -130,6 +130,7 @@ AddOutputFilter chunkFilter
 		<Property Name="target.webservices.ValidTimestampWindow" Type="Int">15</Property>
 		<Item Name="Manual Motor Controller.vi" Type="VI" URL="../subvi/Manual Drive/Manual Motor Controller.vi"/>
 		<Item Name="SCP-Main.vi" Type="VI" URL="../SCP-Main.vi"/>
+		<Item Name="SensorDataConverter.vi" Type="VI" URL="../subvi/Automatic Drive/SensorDataConverter.vi"/>
 		<Item Name="Seperate to POS and NEG values.vi" Type="VI" URL="../subvi/Manual Drive/Seperate to POS and NEG values.vi"/>
 		<Item Name="Seperated Exclusive Or.vi" Type="VI" URL="../subvi/Manual Drive/Seperated Exclusive Or.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
