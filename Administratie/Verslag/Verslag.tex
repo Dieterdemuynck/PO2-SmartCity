@@ -48,7 +48,7 @@ Nu wat is de maatschappelijke relevantie van een zelfrijdende auto?
 
 
 \section{Klantenvereisten} \label{Klantenvereisten}
-De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een stoplijn. Een verkeerslicht moet ook kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en stoppen als deze te dicht komt om aanrijdingen te vermijden.
+De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een stoplijn. Een verkeerslicht moet ook kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en stoppen als deze te dicht komen, om aanrijdingen te vermijden.
 
 \section{Hardwareontwerp} \label{Hardwareontwerp}
 
@@ -62,7 +62,7 @@ De modelstad bestaat uit enkele straten en kruispunten. De straten zijn telkens 
 %Smalle auto
 \begin{figure}
 	\centering
-	\includegraphics[width=.5\textwidth]{volglijnenEnStoplijnen}
+	\includegraphics[width=.6\textwidth]{volglijnenEnStoplijnen}
 	\caption{Parcours}
 	\label{fig:plattegrond}
 \end{figure}
@@ -153,8 +153,7 @@ Ook om de kleuren groen en rood te herkennen, is er nood aan een sensor of camer
 \subsubsection{LED-lampjes}
 Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren waardoor er risico zou zijn dat het wagentje niet juist werkt.
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+
 \label{LED-lampjes}
 \subsection{Assemblage}
 %titel nog aan te passen
@@ -167,21 +166,9 @@ Door dit model was het gemakkelijker om de wagen in elkaar te zetten omdat er na
 
 
 \label{Assemblage}
-\subsection{Implementatie}
-%titel nog aan te passen
-\label{Implementatie}
-=======
-=======
->>>>>>> AdministratieveDocumenten
-
-
-\subsection{Assemblage}
-%titel nog aan te passen
-%Alles op elkaar zetten, 3D-modellen?
-%NOG DOEN
 
 \section{Softwareontwerp}\label{Softwareontwerp}
-%titel nog aan te passen
+
 Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden.
 %bron myrio nog vermelden
 Dit is nuttig om de communicatie tussen de sensoren en de NI MyRIO-controller te begrijpen. Ook de spanning dat nodig is om de sensoren te laten te werken is belangrijk. Zo zijn er enkele poorten die precies 5 volt leveren. Dit is perfect, aangezien dit compatibel is met het spanningsverschil van de sensoren. Vervolgens kan het elektrisch circuit opgesteld worden. Dit is handig om te weten welke onderdelen er met elkaar worden verbonden. Eenmaal dit in orde is, kan het programmeerwerk beginnen.
@@ -232,19 +219,16 @@ In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te best
 
 \section{Besluit}
 
-Afsluitende tekst. Nog te schrijven.
-
-
-%Eerst bestelden we onze materialen. Van deze hebben we CAD-modellen en technische tekeningen gemaakt om inzicht te krijgen in de opbouw. We zijn voorlopig nog bezig met de implementatie en de assemblage van het wagentje.
-
-
 Om te beginnen aan dit soort project, is het noodzakelijk om eerst op lange termijn te plannen: algemeen van welke 'grote' taken moeten er na een bepaalde tijd zeker afgewerkt zijn. Eerst en vooral moeten een aantal technische aspecten in orde zijn voordat we echt van werk kunnen gaan. Het aanmaken van een stuklijst is noodzakelijk om een beeld te krijgen van hoeveel we ongeveer zullen besteden rekening houdend met het budget. Hierbij is het ook zeer belangrijk om na te gaan welke onderdelen samen gaan en welke niet om fouten zoals bijvoorbeeld het bestellen van een motorbeugel die niet op de motor past te vermijden.
 
 Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisch aan de slag gaan met de sensoren, motoren en microcontroller om deze te implementeren in LabVIEW. Hoe men hieraan te werk is gegaan wordt beschreven in sectie 0.1.5.
 
 Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
-\label{Planning}
+\label{Besluit}
 
+%Samenvatting wat in verslag
+%Conclusie: werkte goed of niet
+%Future outlook: wat zou je nog doen als je nog weken extra had, verbetering
 
 
 \newpage
