@@ -131,6 +131,7 @@ AddOutputFilter chunkFilter
 		<Item Name="Distance-Speed Adaptor.vi" Type="VI" URL="../subvi/Automatic Drive/Distance-Speed Adaptor.vi"/>
 		<Item Name="LineToDirections.vi" Type="VI" URL="../subvi/Automatic Drive/LineToDirections.vi"/>
 		<Item Name="Manual Motor Controller.vi" Type="VI" URL="../subvi/Manual Drive/Manual Motor Controller.vi"/>
+		<Item Name="RGB FFT.vi" Type="VI" URL="../subvi/Automatic Drive/RGB FFT.vi"/>
 		<Item Name="SCP-Main.vi" Type="VI" URL="../SCP-Main.vi"/>
 		<Item Name="SensorDataConverter.vi" Type="VI" URL="../subvi/Automatic Drive/SensorDataConverter.vi"/>
 		<Item Name="Seperate to POS and NEG values.vi" Type="VI" URL="../subvi/Manual Drive/Seperate to POS and NEG values.vi"/>
@@ -232,6 +233,7 @@ AddOutputFilter chunkFilter
 				<Item Name="myRIO v1.1 Open I2C.vi" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/myRIO v1.0/I2C/vis/myRIO v1.1 Open I2C.vi"/>
 				<Item Name="myRIO v1.1 Open.vi" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/myRIO v1.0/myRIO v1.1 Open.vi"/>
 				<Item Name="Named Mutex.ctl" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/Utilities/typedefs/Named Mutex.ctl"/>
+				<Item Name="NI_AALPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALPro.lvlib"/>
 				<Item Name="Parse Scaling Constant Table.vi" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/Utilities/vis/Parse Scaling Constant Table.vi"/>
 				<Item Name="Raw To Scaled Value.vi" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/Utilities/vis/Raw To Scaled Value.vi"/>
 				<Item Name="Reentrant Mutex.ctl" Type="VI" URL="/&lt;vilib&gt;/myRIO/Common/Instrument Driver Framework/Utilities/typedefs/Reentrant Mutex.ctl"/>
@@ -268,6 +270,7 @@ AddOutputFilter chunkFilter
 			<Item Name="Automatic Motor Controller.vi" Type="VI" URL="../subvi/Automatic Drive/Automatic Motor Controller.vi"/>
 			<Item Name="CrossTurn Motor Controller.vi" Type="VI" URL="../subvi/Automatic Drive/CrossTurn Motor Controller.vi"/>
 			<Item Name="InitRGBStudentVersion.vi" Type="VI" URL="../../../../LabVIEWTryOutDocs/TryOutProject/subvi/InitRGBStudentVersion.vi"/>
+			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
