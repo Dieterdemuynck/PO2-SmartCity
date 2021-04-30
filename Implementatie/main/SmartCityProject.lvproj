@@ -269,13 +269,13 @@ AddOutputFilter chunkFilter
 			</Item>
 			<Item Name="Automatic Motor Controller.vi" Type="VI" URL="../subvi/Automatic Drive/Automatic Motor Controller.vi"/>
 			<Item Name="CrossTurn Motor Controller.vi" Type="VI" URL="../subvi/Automatic Drive/CrossTurn Motor Controller.vi"/>
-			<Item Name="InitRGBStudentVersion.vi" Type="VI" URL="../../../../LabVIEWTryOutDocs/TryOutProject/subvi/InitRGBStudentVersion.vi"/>
+			<Item Name="InitRGBStudentVersion.vi" Type="VI" URL="../subvi/Sensors/InitRGBStudentVersion.vi"/>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="NiFpgaLv.dll" Type="Document" URL="NiFpgaLv.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="ReadAnalogReflectanceSensorStudentVersion.vi" Type="VI" URL="../../../../LabVIEWTryOutDocs/TryOutProject/subvi/ReadAnalogReflectanceSensorStudentVersion.vi"/>
-			<Item Name="ReadGeneralColourRGBSensorStudentVersion.vi" Type="VI" URL="../../../../LabVIEWTryOutDocs/TryOutProject/subvi/ReadGeneralColourRGBSensorStudentVersion.vi"/>
+			<Item Name="ReadAnalogReflectanceSensorStudentVersion.vi" Type="VI" URL="../subvi/Sensors/ReadAnalogReflectanceSensorStudentVersion.vi"/>
+			<Item Name="ReadGeneralColourRGBSensorStudentVersion.vi" Type="VI" URL="../subvi/Sensors/ReadGeneralColourRGBSensorStudentVersion.vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
