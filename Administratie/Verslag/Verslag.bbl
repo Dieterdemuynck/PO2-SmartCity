@@ -11,6 +11,11 @@ Brede band: voor- en nadelen van brede banden? je leest ze hier.
 \newblock \url{https://www.tuning-gids.nl/brede-autoband.htm#}.
 \newblock (Accessed on 04/23/2021).
 
+\bibitem{nimyrio}
+myrio-1900 user guide and specifications - national instruments.
+\newblock \url{https://www.ni.com/pdf/manuals/376047c.pdf}.
+\newblock (Accessed on 04/02/2021).
+
 \bibitem{MicroMetalGearMotor50:1HP}
 Pololu - 50:1 micro metal gearmotor hp 6v.
 \newblock \url{https://www.pololu.com/product/998/}.
@@ -47,10 +52,25 @@ Rgb color sensor with ir filter and white led - tcs34725 : Id 1334 : \$7.95 :
 \newblock \url{https://www.adafruit.com/product/1334}.
 \newblock (Accessed on 03/19/2021).
 
+\bibitem{AutonomeAutos2}
+R.jelies - 3685195 - cbm - masterthesis (3).pdf.
+\newblock \url{https://dspace.library.uu.nl/}.
+\newblock (Accessed on 04/30/2021).
+
 \bibitem{RPi-camera}
 Rpi 8mp camera board. - raspberry-pi - daughter board, raspberry pi camera
   board, version 2.
 \newblock \url{https://be.farnell.com/raspberry-pi/rpi-8mp-camera-board}.
+\newblock (Accessed on 03/19/2021).
+
+\bibitem{AutonomeAutos1}
+Stilstaan bij autonoom rijden.
+\newblock \url{https://dspace.library.uu.nl/}.
+\newblock (Accessed on 04/30/2021).
+
+\bibitem{RaspberryPi}
+Teach, learn, and make with raspberry pi.
+\newblock \url{https://www.raspberrypi.org/}.
 \newblock (Accessed on 03/19/2021).
 
 \bibitem{SmartCity}

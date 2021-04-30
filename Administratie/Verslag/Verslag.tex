@@ -122,21 +122,26 @@ Verder is een dubbele aandrijfmotor essentieel om de tandwielmotoren met de micr
 
 
 \subsubsection{Microcontroller}
-De microcontroller is cruciaal voor de werking van de auto. Het zorgt ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
-Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. In sectie \ref{Implementatie} wordt hier dieper op ingegaan. %site van de microcontroller 
+De microcontroller is cruciaal voor de werking van de auto. Het zorgt ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi \cite{nimyrio},\cite{RaspberryPi}.
+Dit is omdat deze zowel met analoge als digitale signalen kan werken. 
+%Dit heeft enkele gevolgen. 
+%Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. 
+Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren, waarvoor ik verwijs naar het onderdeel over sensoren in \ref{Sensoren}.
+Daaruit volgt dat alles in LabVIEW geprogrammeerd wordt.
+%Ten tweede zal alles in LabVIEW worden geprogrammeerd.
+Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. In sectie \ref{Implementatie} wordt hier dieper op ingegaan. %verwijzing nog aanpassen want Sarah ging dat stukje veranderen.
 Daarnaast heeft dit ook invloed op de keuze van het chassis. Achteraf viel het op dat de microcontroller niet paste op het chassis waardoor men het heeft vastgemaakt met makerbeams.
-%Waarom voor deze microcontroller gekozen
+%Waarom voor deze microcontroller gekozen: prijs en deze kan met analoge signalen
 
- %site van de microcontroller
 \label{Microcontroller}
 
 \subsubsection{Sensoren}
-Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Beide kunnen gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven analoge signalen. Dit soort signaal kan alle waarden aannemen, terwijl een digitaal signaal maar bepaalde waarden kan aannemen. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt.
+Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Zoals hierboven verteld is, kunnen beiden gebruikt worden met de NI MyRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen maar één of twee signalen doorgeven aan de microcontroller namelijk nul of een. Ofwel staat de sensor aan ofwel uit. De analoge sensoren geven analoge signalen. Dit soort signaal kan alle waarden aannemen, in tegenstelling tot een digitaal signaal. Langs de andere kant zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden. Bij keuze van een analoge sensor is dit dus voldaan, alhoewel er meer programmeerwerk bij komt kijken. %echte waarden nog wat uitleggen wat ermee bedoeld wordt. experimentele waarden?
 De reflectiesensor zal onderaan de auto, dichtbij de grond geplaatst worden zodat de lijnen op het juiste moment zullen herkend worden.
 
 ~
 
-Ook om de kleuren groen en rood te herkennen, is er nood aan een sensor of camera. We hadden de keuze tussen een Raspberry Pi-camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt gekozen voor de kleurensensor. Deze is compatibel met de NI MyRIO en weegt maar 3,23 gram \cite{Webcam,TCS34725KleurSensorBOB}. Bovendien weegt de webcam 223,6 gram. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. De camera is enkel bruikbaar met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft dus als voordeel dat het zeer licht is en compatibel is met de NI MyRIO-microcontroller.
+Ook om de kleuren groen en rood te herkennen, is er nood aan een sensor of camera. Er is keuze tussen een Raspberry Pi-camera, webcam en kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt gekozen voor de kleurensensor. Deze is compatibel met de NI MyRIO en weegt maar 3,23 gram \cite{Webcam,TCS34725KleurSensorBOB}. Bovendien weegt de webcam 223,6 gram. Hoe minder de wagen weegt, hoe stabieler het is en hoe minder kracht het nodig heeft om een bepaalde snelheid te kunnen halen. De Raspberry Pi-camera is enkel bruikbaar met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI MyRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft als voordeel dat het zeer licht is en compatibel is met de NI MyRIO-microcontroller. % 2 keer is? 
 \label{Sensoren}
 
 
