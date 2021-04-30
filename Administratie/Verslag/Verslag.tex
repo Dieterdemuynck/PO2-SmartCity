@@ -8,10 +8,9 @@
 \title{Smart city}
 \subtitle{Probleemoplossen en Ontwerpen Deel 2}
 \author{Groep 6}
-\institute {Barbier Jolien, Bossuyt Mathis, De Meester Sarah,
-\newline Demuynck Dieter en Jans Rani 
-\newline 
-o.l.v. Boussé Martijn, Maveau Benjamin en Truyaert Kevin}
+\institute {Aaron Vandenberghe, Dieter Demuynck, Jolien Barbier\\  
+	Mathis Bossuyt, Rani Jans en Sarah De Meester \\~\\ 
+	o.l.v. Benjamin Maveau Kevin Truyaert en Martijn Boussé} 
 \date{Academiejaar 2020 -- 2021}
 \address{
    KU Leuven Kulak           \\
@@ -145,11 +144,11 @@ Ook om de kleuren groen en rood te herkennen, is er nood aan een sensor of camer
 \label{Sensoren}
 ~
 
-\subsubsection{LED-lampjes}
+\subsubsection{LED-lampjes}\label{LED-lampjes}
 Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren waardoor er risico zou zijn dat het wagentje niet juist werkt.
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
-\label{LED-lampjes}
+
 \subsection{Assemblage}
 %titel nog aan te passen
 %Alles op elkaar zetten, 3D-modellen?
@@ -174,14 +173,14 @@ Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de o
 
 \subsection{Experimenten}
 \subsubsection{Signalen ontvangen en versturen}
-Het doel van de eerste test is de communicatie met de microcontroller te begrijpen. Met behulp van het standaardprogramma \texttt{main.vi} kan er gezien worden hoe de microcontroller beweegt. 
-De tweede test bestaat uit het versturen en ontvangen van signalen. 
+Het doel van de eerste test is de communicatie met de microcontroller te begrijpen. Met behulp van het standaardprogramma \texttt{main.vi} in LabVIEW kan er gezien worden hoe de microcontroller beweegt.  
+De tweede test bestaat uit het versturen en ontvangen van signalen. Om te weten wanneer een signaal verstuurd wordt, wordt volgend experiment uitgevoerd. Een draad wordt bevestigd tussen de poorten van 11 en 13 Ampère. Op het moment dat de draad kantelt en hierdoor op de \textbf{z-as meer dan 0,5 wordt weergegeven,}%nog extra uitleg vragen. 
+wordt er een signaal ontvangen door de poort van 13 A. Van hieruit wordt een nieuw signaal verstuurd maar dit keer naar de computer. Bijkomend is dit experiment nuttig om te begrijpen hoe er kan gedebugd worden. Bovendien is het cruciaal voor de verdere implementatie van de auto.  
 
-We hebben op de controller een draad bevestigd tussen poort 11 en 13 Ampère. Op het moment dat het kantelt en op de z-as meer dan 0,5 wordt weergegeven moet het via 11 A een signaal versturen. Dit werd dan ontvangen door 13 A. Als 13 A een signaal kreeg moest de controller een signaal sturen naar de computer waardoor een bol groen kleurt. 
-%om te communiceren, te debuggen... daaruit implementatie van het autootje
 
-Het echt programma zal bestaan uit verschillende subVI's. Zo zullen we een stukje code schrijven dat specifiek is voor het detecteren van wagens die voor ons rijden. Als er een obstakel minder dan 20 cm voor ons staat zal hij moeten stoppen of de snelheid aanpassen. Een ander stukje code zal het lezen van het stoplicht zijn. Hier zal de microcontroller de signalen van kleursensor moeten interpreteren. Een ander deel zal met de reflectie sensor de volglijn volgen en weten wanneer die overgaat in een stopstreep waarna het wagentje moet stoppen.
-Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden. 
+%%% moet taalonafhankelijk in het verslag dus enkel stukken van de code mogen erin. 
+%Het echt programma zal bestaan uit verschillende subVI's. Zo zullen we een stukje code schrijven dat specifiek is voor het detecteren van wagens die voor ons rijden. Als er een obstakel minder dan 20 cm voor ons staat zal hij moeten stoppen of de snelheid aanpassen. Een ander stukje code zal het lezen van het stoplicht zijn. Hier zal de microcontroller de signalen van kleursensor moeten interpreteren. Een ander deel zal met de reflectie sensor de volglijn volgen en weten wanneer die overgaat in een stopstreep waarna het wagentje moet stoppen. 
+%Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden.  
 
 \subsubsection{Sensoren}
 Met behulp van voorbeeldprogramma's is het mogelijk om de gekregen data die van de sensoren te interpreteren. Zo is er een idee met welke waarden er moet gewerkt worden in het definitief programma. 
@@ -201,25 +200,19 @@ Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwe
 
 
 
-\section{Het verloop van het project} %discussiesectie
-Om te beginnen aan dit project, is het noodzakelijk om zowel op korte als lange termijn te plannen. Daarnaast is het ook belangrijk om de financiën te beheren. In deze sectie krijgt men een kort besluit over deze zaken.
+\section{Discussie} %discussiesectie 
+\subsection{Resultaten demo} 
+Nog te schrijven. 
 
-Een goede planning is van groots belang. Het een geeft een overzicht wat van wat er allemaal is volbracht en wat er nog moet gebeuren.% nog verder afwerken
+\subsection{Financiële kant} 
+In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed.  
 
-In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed. 
-
-In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteden aan de mechanische stukken en draden.
+In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteden aan de mechanische stukken en draden. 
 
 
 
 \section{Besluit}
 
-Om te beginnen aan dit soort project, is het noodzakelijk om eerst op lange termijn te plannen: algemeen van welke 'grote' taken moeten er na een bepaalde tijd zeker afgewerkt zijn. Eerst en vooral moeten een aantal technische aspecten in orde zijn voordat we echt van werk kunnen gaan. Het aanmaken van een stuklijst is noodzakelijk om een beeld te krijgen van hoeveel we ongeveer zullen besteden rekening houdend met het budget. Hierbij is het ook zeer belangrijk om na te gaan welke onderdelen samen gaan en welke niet om fouten zoals bijvoorbeeld het bestellen van een motorbeugel die niet op de motor past te vermijden.
-
-Nadat de onderdelen met behulp van de stuklijst worden besteld, kan men praktisch aan de slag gaan met de sensoren, motoren en microcontroller om deze te implementeren in LabVIEW. Hoe men hieraan te werk is gegaan wordt beschreven in sectie 0.1.5.
-
-Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt. Dit geeft ons een beter beeld van hoe het wagentje eruit zal zien. Hierbij horen ook de technische tekeningen. Deze zijn handig bij het opzoeken van afmetingen van de aparte onderdelen. Als alle 3D-modellen in orde zijn, kan er gestart worden met de assemblage. Dit is een 3D-voorstelling in Solid Edge waarbij alle onderdelen als het ware aan elkaar worden geplakt. Als de assemblage in Solid Edge compleet is, kan er beslist worden welke mechanische stukken zoals MakerBeams er zullen passen op de wagen.
-\label{Besluit}
 
 %Samenvatting wat in verslag
 %Conclusie: werkte goed of niet
@@ -230,9 +223,6 @@ Verder worden er 3D-modellen van de onderdelen met behulp van Solid Edge gemaakt
 
 \section{Bijlagen}
 \includepdf{FinancieelRapport.pdf}\label{financieel rapport}
-%\includepdf{Kalender.pdf}\label{kalender}
-%\include{Takenstructuur.pdf}\label{takenstructuur}
-
 
 
 \bibliographystyle{plain}
