@@ -91,8 +91,9 @@ Hier wordt extra beargumenteerd waarom dit specifiek onderdeel is gekozen.
 \label{Ontwerpskeuze}
 
 \subsubsection{Chassis}
-Als eerste wordt de chassis besproken. Voor deze auto wordt een rechthoekige chassis gebruikt met als afmetingen 80 mm op 172 mm zoals kan gevonden worden op site \cite{RobotChassisRechthoekigZwart}. %verwijzing!!!! + 3 figuren invoegen assemblage (Mathis)
-Deze is zeer handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld van de site \cite{RobotChassis} is hiervoor minder geschikt. Ook zijn er in deze laatste groeven aanwezig voor de wielen.%verwijzing!!!
+Als eerste wordt de chassis besproken. Voor deze auto wordt een rechthoekige chassis gebruikt met als afmetingen 80 mm op 172 mm  \cite{RobotChassisRechthoekigZwart}. 
+% 3 figuren invoegen assemblage (Mathis)
+Deze is handig in gebruik wegens de verscheidene groottes van de groeven. Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld is hiervoor minder geschikt \cite{RobotChassis}. Ook zijn er in deze laatste groeven aanwezig voor de wielen.%verwijzing!!!
 Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. 
 \label{Chassis}
 ~
@@ -126,15 +127,9 @@ Verder is een dubbele aandrijfmotor essentieel om de tandwielmotoren met de micr
 
 ~
 \subsubsection{Microcontroller}
-% To do: conflict oplossen!!!
-% Versie van Rani: De microcontroller is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt het ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi.
-
-Volgend component is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt de microcontroller er immers voor dat het autootje de taken correct uitvoert. Dit keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
-Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. In sectie \ref{Implementatie} wordt hier dieper op ingegaan. %site van de microcontroller
-
-
-Dit heeft enkele gevolgen.
-Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. Daarnaast heeft dit ook invloed op de keuze van het chassis. We hebben achteraf gemerkt dat de microcontroller niet past op de chassis dus hebben we extra makerbeams besteld.
+De microcontroller is cruciaal voor de werking van de auto. Zoals eerder vermeld zorgt het ervoor dat het autootje de taken correct uitvoert. De keuze van de microcontroller gaat in dit project naar NI MyRIO in plaats van Raspberry Pi. Dit heeft enkele gevolgen. 
+Eerst en vooral hebben de inputs de mogelijkheid om een digitaal of een analoog signaal door te geven. Bij Raspberry Pi zijn er enkel digitale inputs beschikbaar. Dit heeft implicaties voor de keuze van de sensoren. Ten tweede zal alles in LabVIEW worden geprogrammeerd. Deze software en microcontroller zijn ervoor gemaakt om samen te werken. Dit biedt veel voordelen tijdens de implementatie. In sectie \ref{Implementatie} wordt hier dieper op ingegaan. %site van de microcontroller 
+Daarnaast heeft dit ook invloed op de keuze van het chassis. Achteraf viel het op dat de microcontroller niet paste op het chassis waardoor men het heeft vastgemaakt met makerbeams.
 %Waarom voor deze microcontroller gekozen
 
  %site van de microcontroller
