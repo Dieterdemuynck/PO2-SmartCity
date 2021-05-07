@@ -2,6 +2,9 @@
 
 \usepackage[dutch]{babel}
 \usepackage{pdfpages}
+%\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
 
 \faculty{Wetenschap \& Technologie Kulak }
 \group{Ingenieurswetenschappen}
@@ -93,21 +96,21 @@ Als eerste wordt de chassis besproken. Voor deze auto wordt een rechthoekige var
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{1chassisaAndrijving}
 	\centering
-	\caption{Cassis met wielen, kogelwiel en motoren}
+	\caption{Chassis met wielen, kogelwiel en motoren}
 	\label{opbouw1}
 \end{figure}
 
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{2sensoren}
 	\centering
-	\caption{Cassis met wielen, kogelwiel, motoren en sensoren}
+	\caption{Chassis met wielen, kogelwiel, motoren en sensoren}
 	\label{opbouw2}
 \end{figure}
 
 \begin{figure}
 	\includegraphics[width=0.5\textwidth]{3voorlaatste}
 	\centering
-	\caption{Cassis met wielen, kogelwiel, motoren, sensoren en makerbeams} 
+	\caption{Chassis met wielen, kogelwiel, motoren, sensoren en makerbeams} 
 \label{opbouw3}
 \end{figure}
 
@@ -224,7 +227,7 @@ Als men niet weet wat een bepaalde waarde betekent, kan men het programma niet s
 Bij de reflectiesensor werden de waarden van wit, grijs en zwart getest. 
 Voor zwart werden waarden tussen drie en vier terug gegeven.  
 Voor de kleursensor werd er getest met het rood en groen van de verkeerslichten.
-Bij het rood licht werd ook groen gedetekteerd maar bij een groen licht werd er geen rood gedetecteerd.
+Bij het rood licht werd ook groen gedetecteerd maar bij een groen licht werd er geen rood gedetecteerd.
 Er zal dus gebruik gemaakt worden van het rode licht.
 Voor de afstandssensor werd een boek gehouden en deze verschoof zodat de waarden op verschillende afstanden gekend was.
 Er werd een piekwaarde van drie teruggeven bij een afstand van 10 cm. 
@@ -244,6 +247,37 @@ Deze waarden en resultaten werden gebruikt om het eind programma te generen.
 %manuele override
 %inlezen sensoren
 %programma auto niet botsen -> stopwaarde
+
+% flowchart afstandssensor
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+minimum height=2em]
+
+\begin{tikzpicture}[node distance = 3cm, auto]\label{flowchart afstandssensor}
+	
+	% Place nodes
+	\node [cloud](start){start};
+	\node [decision, below of=start] (voorligger) {voorligger?};
+	\node [decision, right of=voorligger] (verder) {dichter dan 20 cm?};
+	\node [block, below left of=voorligger,] (rijden) {auto rijdt};
+	\node [decision, right of=verder] (dichtbij) {dichter dan 10 cm?};
+	\node [block, below of=dichtbij] (vertragen) {vertragen};
+	\node [block, below right of=dichtbij] (stoppen) {auto stopt};
+	\node [cloud, below of=stoppen] (einde) {stop};
+	% Draw edges 	
+	\path [line] (start) -- (voorligger);
+	\path [line] (voorligger) -- node {ja} (verder);
+	\path [line] (voorligger) -- node {nee} (rijden);
+	\path [line] (verder) |- node {nee} (rijden);
+	\path [line] (rijden) |- (start); 
+	\path [line] (verder) -- node {ja} (dichtbij);
+	\path [line] (dichtbij) -- node {nee} (vertragen);
+	\path [line] (vertragen) -- (verder);
+	\path [line] (dichtbij) -- node {ja} (stoppen);
+	\path [line] (stoppen) -- (einde);
+\end{tikzpicture}
 
 
 
@@ -268,7 +302,7 @@ Nog te schrijven.
 
 \newpage
 
-\section{Bijlagen}
+\appendix
 \includepdf{FinancieelRapport.pdf}\label{financieel rapport}
 \includepdf{TechnischeTekeningChassis.pdf}\label{TechTekChassis}
 \includepdf{TechnischeTekeningWiel.pdf}\label{TechTekWiel}
