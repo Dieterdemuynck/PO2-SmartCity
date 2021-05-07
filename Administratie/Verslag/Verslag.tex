@@ -37,12 +37,12 @@
 \section*{Inleiding}\label{Inleiding}
 %probleemstelling
 %Ontwerpsproces en planning
-Vandaag de dag zijn zelfrijdende auto's een actueel thema. Heel wat bedrijven zoals Tesla, BMW en Mercedes zijn volop bezig met de ontwikkeling van deze autonome wagens. Dit vanwege de vele voordelen. Een zelfsturende auto heeft namelijk een veel snellere reactie dan mensen. Hierdoor zullen ongevallen vermeden worden. Bovendien zullen er ook minder files zijn, waardoor er een mogelijke oplossing ontstaat voor de mobiliteitsproblemen. Daarnaast kiest een autonome auto voor de kortste weg. Hierdoor legt de auto minder kilometers af. Dit betekent dat deze soort auto's zowel instaan voor verkeersveiligheid als voor een meer milieubewust autotransport \cite{AutonomeAutos1, AutonomeAutos2}. De moeite waard dus om deze revolutionaire vooruitgang onder de loep te nemen en zelf ermee aan de slag te gaan.\\
-Voor dit project betekent dit dat een zelfsturend autootje in staat moet zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City'. Deze `Slimme Stad' is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling hierbij is dat deze hindernissen worden herkend en een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag. Daarnaast wordt het ontwerpproces uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht.
+Vandaag de dag zijn zelfrijdende auto's een actueel thema. Heel wat bedrijven zoals Tesla, BMW en Mercedes zijn volop bezig met de ontwikkeling van deze autonome wagens. Dit vanwege de vele voordelen. Een zelfsturende auto heeft namelijk een veel snellere reactie dan reactiesnelheid van de mens. Hierdoor zullen ongevallen vermeden worden. Bovendien zullen er ook minder files zijn, waardoor er een mogelijke oplossing ontstaat voor de mobiliteitsproblemen. Daarnaast kiest een autonome auto voor de kortste weg. Hierdoor legt de auto minder kilometers af. Dit betekent dat deze soort auto's zowel instaan voor verkeersveiligheid als voor een milieubewuster autotransport \cite{AutonomeAutos1, AutonomeAutos2}. De moeite waard dus om deze revolutionaire vooruitgang onder de loep te nemen en er zelf mee aan de slag te gaan.\\
+Voor dit project betekent dit dat een zelfsturend autootje in staat moet zijn om zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City'. Deze `Slimme Stad' is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling is hierbij dat deze hindernissen worden herkend en het autootje een bijpassende actie uitvoert. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag. Daarnaast wordt het ontwerpproces uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht.
 
 
 \section{Klantenvereisten} \label{Klantenvereisten}
-De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een stoplijn. Een verkeerslicht moet ook kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en stoppen als deze te dicht komen, om aanrijdingen te vermijden.
+De klant wenst een auto dat op een parcours lijnen volgt en aan een stoplijn stopt. Verder moeten verkeerslichten kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en tijdig stoppen als deze te dicht komen, om op die manier aanrijdingen te vermijden.
 
 \section{Hardwareontwerp} \label{Hardwareontwerp}
 
@@ -50,8 +50,13 @@ De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een st
 %Een van de basisonderdelen is het chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
 %Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één kogelwiel. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
 
+<<<<<<< HEAD
 
 De modelstad bestaat uit enkele straten en 9 identieke kruispunten. De auto zal 25 keer een kruispunt moeten kunnen oversteken. De straten zijn telkens 1 meter lang. Op het parcours met grijze ondergrond zijn er twee soorten zwarte lijnen te vinden: volglijnen en stoplijnen. Op het kruispunt zelf zijn er geen lijnen. Het autootje zal deze lijnen moeten kunnen interpreteren en een onderscheid kunnen maken tussen deze twee soorten. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De auto moet de lijnen van 25 mm dik volgen en stoppen bij de lijnen van 50 mm dik \ref{fig:plattegrond}. Het moet dus een sensor bevatten die deze lijnen kan herkennen, meer bepaald een reflectiesensor. De auto komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal het moeten stoppen en een verkeerslicht moeten interpreteren. Het feit dat het verkeerslicht om 7.5 cm hoogte staat, speelt een rol bij het bepalen van de hoogte van de auto. De auto moet dus voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht moet de auto blijven stil staan aan de stoplijn, bij groen moet hij weer starten.
+=======
+In wat volgt wordt eerst besproken hoe het parcours er uit ziet. Daarna wordt uitgelegd hoe dit probleem praktisch zal worden opgelost met betrekking op de auto.\\
+De modelstad bestaat uit rechte straten en 25 identieke kruispunten. De straten zijn telkens 1 meter lang. De ondergrond van het parcours is grijs. Hierop zijn twee soorten zwarte lijnen te vinden: volglijnen en stoplijnen. Op het kruispunt zelf zijn er geen lijnen. Het autootje moet de lijnen kunnen interpreteren en een onderscheid kunnen maken tussen deze twee soorten. Het verschil tussen deze twee lijnen is de oriëntatie en de dikte. Volglijnen zijn 25 mm dik en zijn verticaal gelegen. Stoplijnen hebben een dikte van 50 mm en zijn horizontaal geplaatst \ref{fig:plattegrond}. Aangezien het autootje de lijnen moet kunnen herkennen en correct interpreteren zal de auto een sensor nodig hebben, meer bepaald een reflectiesensor. Enkele bij het naderen van een kruispunt komt de auto een stoplijn tegen. Bij zo een stoplijn staat een verkeerslicht met een hoogte van 7,5 cm. Deze afmeting speelt een rol bij het bepalen van de hoogte van de auto. Verder moet de auto het verkeerslicht foutloos interpreteren. Bijgevolg moet de auto voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht moet de auto blijven stil staan aan de stoplijn, bij groen moet hij weer starten.
+>>>>>>> AdministratieveDocumenten
 
 %Smalle auto
 \begin{figure}
@@ -61,15 +66,15 @@ De modelstad bestaat uit enkele straten en 9 identieke kruispunten. De auto zal 
 	\label{fig:plattegrond}
 \end{figure}
 
-Ook moet het wagentje voorgaande wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand.
+Om een botsing te voorkomen, moet het autootje voorgaande wagens kunnen detecteren en tijdig stoppen wanneer deze te dichtbij komen. Wanneer de wagen achteraan wordt aangereden, is het in fout. Dit impliceert dat enkel voorliggers een probleem kunnen vormen. Om dit probleem op te lossen moet het wagentje uitgerust zijn met een afstandssensor. Deze sensor detecteert voorliggers en verzendt vervolgens een signaal zodat de motoren vertragen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand. %meer uitleg over de remafstand?
 
-Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
+Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het autootje een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het op een veilige manier voortbeweegt aan een snelheid van ongeveer 10 cm/s. Hierdoor blijft ook de remafstand beperkt.
 
-Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt, zoals een aanrijding. Zo zal de auto bestuurbaar gemaakt worden vanuit een toetsenbord.
+Ten slotte is het uit veiligheid dat men vanop afstand kan ingrijpen wanneer er iets fout loopt, zoals een aanrijding. Dit betekent dat de auto naast het autonoom rijden ook bestuurbaar moet zijn met een toetsenbord.
 
 
 
-%Per onnderdeel verwijzen voor bibliografie!!!
+%Per onderdeel verwijzen voor bibliografie!!!
 
 %- herkennen lijnen: welke soort sensor (bv reflectie voor lijnen)
 %- stoplicht: kleurensensor, tot stilstand komen blabla
@@ -84,15 +89,42 @@ Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt, z
 
 \subsubsection{Chassis}
 Als eerste wordt de chassis besproken. Voor deze auto wordt een rechthoekige variant gebruikt met als afmetingen 80 mm op 172 mm  \cite{RobotChassisRechthoekigZwart}. 
-% 3 figuren invoegen assemblage (Mathis)
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{1chassisaAndrijving}
+	\centering
+	\caption{Cassis met wielen, kogelwiel en motoren}
+	\label{opbouw1}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{2sensoren}
+	\centering
+	\caption{Cassis met wielen, kogelwiel, motoren en sensoren}
+	\label{opbouw2}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{3voorlaatste}
+	\centering
+	\caption{Cassis met wielen, kogelwiel, motoren, sensoren en makerbeams} 
+\label{opbouw3}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{4Volledig}
+	\centering
+	\caption{De afgewerkte auto}
+	\label{opbouw4}
+\end{figure}
+
 Deze is handig in gebruik wegens de verscheidene groottes van de groeven. %groottes of vormen?
-Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld is hiervoor minder geschikt \cite{RobotChassis}. Ook zijn er in deze laatste groeven aanwezig voor de wielen. 
-Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
+Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis is hiervoor minder geschikt \cite{RobotChassis}. Ook zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
 %motordrivers die er niet aan gesoldeerd konden worden?
 \label{Chassis}
 
 \subsubsection{Wielen}
-Een goede keuze voor de wielen zijn die met respectievelijk een diameter en dikte van 42 mm en 19 mm.
+Een goede keuze voor de wielen zijn die met een diameter en dikte van respectievelijk 42 mm en 19 mm.
 Figuur \ref{fig:wiel} geeft een idee hoe ze eruit zien.
 
 \begin{figure}
@@ -103,11 +135,11 @@ Figuur \ref{fig:wiel} geeft een idee hoe ze eruit zien.
 	\label{fig:wiel}
 \end{figure}
 
-De dikte van dit wiel is geschikt om voldoende grip te hebben. Bij dunnere banden is er dus minder grip en dat zou ervoor kunnen zorgen dat de auto niet snel genoeg kan remmen bij obstakels en stoplijnen \cite{Banden}. Daarnaast is de diameter evenredig met de versnelling en de nodige kracht.
-Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite.  
+De dikte van dit wiel is geschikt om voldoende grip te hebben. Bij dunnere banden is er minder grip. Dit zou ervoor kunnen zorgen dat de auto niet snel genoeg kan remmen bij zowel obstakels als stoplijnen \cite{Banden}. 
+Daarnaast is de diameter evenredig met de versnelling en de nodige kracht. Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite.  
 
-De auto van dit project is een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om te draaien. Als je vier wielen hebt, zijn er twee vaste punten en dus meer wrijving waardoor de auto minder vlot kan draaien. Om af te slaan is het makkelijker om één vast punt te hebben en dat de andere wielen eromheen draaien.
-Ten tweede reduceert een driewieler de kosten van het project. Een vierde wiel was niet nodig dus zou het niet verstandig zijn om aan het te kopen. Zo is er ook nog marge in het budget voor eventuele wijzigingen tijdens het project. Idealiter wordt als derde wiel gebruik gemaakt van een kogelwiel. We kozen voor het kogelwiel omdat dit flexibelere draaibewegingen heeft dan een normaal wiel. 
+De auto van dit project is een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om te draaien. Bij een vierwieler zijn er namelijk twee vaste punten. Hierdoor ontstaat er meer wrijving waardoor de auto minder vlot kan draaien. Bijgevolg is het dus gemakkelijker een driewieler te laten afslaan. Deze heeft bij het afslaan maar één vast punt waarrond de andere wielen draaien.
+Ten tweede reduceert een driewieler de kosten van het project een klein beetje. Een vierde wiel is niet noodzakelijk om aan te schaffen. Op deze manier is er nog een kleine marge in het budget voor eventuele wijzigingen tijdens het project. Als derde wiel wordt voor de auto gekozen voor een kogelwiel. Dit wiel biedt als voordeel flexibelere te zijn in draaibewegingen dan een normaal wiel. 
 \label{Wielen}
 
 
@@ -154,8 +186,7 @@ Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in ve
 %titel nog aan te passen
 %Alles op elkaar zetten, 3D-modellen?
 %NOG DOEN
-Voordat het autootje fysiek geassembleerd wordt, werd dit eerst via de computer gedaan. Aan de hand van de reeds gemaakte 3D-modellen, werd een 3D-model van het autootje gemaakt. Doordat de apparte onderdelen van het autootje al af waren, moesten die enkel nog samengevoegd worden. Het 3D-model zie je in figuur
-{\bf{\Large Moet nog ingevoegd worden/verwijzing naar figuur stap voor stap opbouw}}
+Voordat het autootje fysiek geassembleerd wordt, werd dit eerst via de computer gedaan. Aan de hand van de reeds gemaakte 3D-modellen, werd een 3D-model van het autootje gemaakt. Doordat de apparte onderdelen van het autootje al af waren, moesten die enkel nog samengevoegd worden. Het 3D-model zie je in figuren \ref{opbouw1}, \ref{opbouw2}, \ref{opbouw3} en \ref{opbouw4}.
 Door dit model was het gemakkelijker om de wagen in elkaar te zetten omdat er naar iets toegewerkt werd en de plaatsing van de onderdelen zichtbaar was. Er wordt gestart met het chassis. Daar worden dan de motoren met wielen aan de onderkant opgeplaatst. Ook het kogelwiel wordt bevestigd aan de onderkant. Helemaal van voor wordt een steunpaal gezet. Aan de voorkant wordt de reflectiesensor onder de steunpaal vast gemaakt. Ook aan de voorkant maar dan vooraan op de steunpaal de afstandssensor bevestigd. Aan de zijkant van de paal wordt op een hoogte van 7.5 cm wordt de kleursensor bevestigd. Dit is aan de rechterkant vast gemaakt. Net achter de steunpaal wordt de {\it dual drive motor} geplaatst. Dwars op het midden van het chassis wordt de microcontroller bevestigd.
 
 
@@ -174,9 +205,12 @@ Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de o
 
 \subsection{Experimenten}
 \subsubsection{Signalen ontvangen en versturen}
-Het doel van de eerste test is de communicatie met de microcontroller te begrijpen. Met behulp van het standaardprogramma \texttt{main.vi} in LabVIEW kan er gezien worden hoe de microcontroller beweegt.  
-De tweede test bestaat uit het versturen en ontvangen van signalen. Om te weten wanneer een signaal verstuurd wordt, wordt volgend experiment uitgevoerd. Een draad wordt bevestigd tussen de poorten van 11 en 13 Ampère. Op het moment dat de draad kantelt en hierdoor op de \textbf{z-as meer dan 0,5 wordt weergegeven,}%nog extra uitleg vragen. 
-wordt er een signaal ontvangen door de poort van 13 A. Van hieruit wordt een nieuw signaal verstuurd maar dit keer naar de computer. Bijkomend is dit experiment nuttig om te begrijpen hoe er kan gedebugd worden. Bovendien is het cruciaal voor de verdere implementatie van de auto.  
+Er zijn vijf experimenten gebeurd. Er zijn twee experimenten geweest om de communicatie met de microcontroller te testen. 
+Bij het eerste experiment werden de lampjes van de microcontroller aan en uitgezet met een schakelaar in LabVIEW.
+Het ander experiment was om een signaal terug te krijgen van de microcontroller.
+Er werden twee poorten va, de my Rio met elkaar verbonden en als de microcontroller gekanteld werd, moest een signaal verstuurt worden van de ene poort naar de andere.
+Er is nu communicatie mogelijk want het kan signalen versturen en ontvangen.
+
 
 
 %%% moet taalonafhankelijk in het verslag dus enkel stukken van de code mogen erin. 
@@ -184,15 +218,27 @@ wordt er een signaal ontvangen door de poort van 13 A. Van hieruit wordt een nie
 %Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden.  
 
 \subsubsection{Sensoren}
-Met behulp van voorbeeldprogramma's is het mogelijk om de gekregen data die van de sensoren te interpreteren. Zo is er een idee met welke waarden er moet gewerkt worden in het definitief programma. 
 
-Een eerste experiment is met de reflectiesensor. Deze sensor werkt met een programma dat de acht waarden teruggeeft. 
-Een van de vereisten voor het autootje is een lichte en donkere kleur te onderscheiden. Om te weten welke waarden de sensor geeft, kan dit worden getest met een wit papier, de zwarte voorkant van een laptop en een grijs tafelblad. Bij het papier wordt een waarde dichtbij 1 verkregen terwijl bij het donkere spectrum waarden tussen 4 en 4,5. %en de tafel?
-Door het experimentje is er nu geweten welke waarden er moeten gebruikt worden om de lijn op de grond te kunnen volgen.
+Dan werden er drie experimenten uitgevoerd om de waarden van de sensoren te begrijpen.
+Als men niet weet wat een bepaalde waarde betekent, kan men het programma niet schrijven.
+Bij de reflectiesensor werden de waarden van wit, grijs en zwart getest. 
+Voor zwart werden waarden tussen drie en vier terug gegeven.  
+Voor de kleursensor werd er getest met het rood en groen van de verkeerslichten.
+Bij het rood licht werd ook groen gedetekteerd maar bij een groen licht werd er geen rood gedetecteerd.
+Er zal dus gebruik gemaakt worden van het rode licht.
+Voor de afstandssensor werd een boek gehouden en deze verschoof zodat de waarden op verschillende afstanden gekend was.
+Er werd een piekwaarde van drie teruggeven bij een afstand van 10 cm. 
+Deze waarden en resultaten werden gebruikt om het eind programma te generen.
+
+%Met behulp van voorbeeldprogramma's is het mogelijk om de gekregen data die van de sensoren te interpreteren. Zo is er een idee met welke waarden er moet gewerkt worden in het definitief programma. 
+
+%Een eerste experiment is met de reflectiesensor. Deze sensor werkt met een programma dat de acht waarden teruggeeft. 
+%Een van de vereisten voor het autootje is een lichte en donkere kleur te onderscheiden. Om te weten welke waarden de sensor geeft, kan dit worden getest met een wit papier, de zwarte voorkant van een laptop en een grijs tafelblad. Bij het papier wordt een waarde dichtbij 1 verkregen terwijl bij het donkere spectrum waarden tussen 4 en 4,5. %en de tafel?
+%Door het experimentje is er nu geweten welke waarden er moeten gebruikt worden om de lijn op de grond te kunnen volgen.
 % !!!!!!!! Eventueel hetgene hieronder weglaten?? Is dit noodzakelijk voor het verslag????
 % We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
 
-Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwerp eerst ver van de sensor gehouden en dan dichterbij. Bij afstanden kleiner dan 80 cm worden lage waarden bekomen zoals 0,1. Afstanden groter dan 80 cm geven een negatieve waarde. Wanneer de afstand echter op een tiental cm van de sensor verwijderd is, wordt een maximale waarde van 3 verkregen. Eenmaal de lengte tussen de afstandssensor en het voorwerp kleiner is dan 10 cm, zakt de geleidelijk aan naar 2. De conclusie van deze test: voor de afstandssensor zullen de waarden twee en drie moeten gebruikt worden.
+%Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwerp eerst ver van de sensor gehouden en dan dichterbij. Bij afstanden kleiner dan 80 cm worden lage waarden bekomen zoals 0,1. Afstanden groter dan 80 cm geven een negatieve waarde. Wanneer de afstand echter op een tiental cm van de sensor verwijderd is, wordt een maximale waarde van 3 verkregen. Eenmaal de lengte tussen de afstandssensor en het voorwerp kleiner is dan 10 cm, zakt de geleidelijk aan naar 2. De conclusie van deze test: voor de afstandssensor zullen de waarden twee en drie moeten gebruikt worden.
 
 \subsection{Definitieve programma's}
 %manuele override
