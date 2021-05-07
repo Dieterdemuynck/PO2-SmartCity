@@ -9,10 +9,12 @@
 \usepackage[T1]{fontenc}
 
 \title[Smart City]{Smart City}
-\subtitle{Teamopdracht}
-\author[Groep 6]{Groep 6}%eventueel nog aanpassen met onze namen 
+\subtitle{\scriptsize Probleemoplossen en Ontwerpen Deel 2}
+\author[Groep 6]{Groep 6}%eventueel nog aanpassen met onze namen
 \institute[Kulak]{KU Leuven Kulak}
 \date{Academiejaar 2020 -- 2021}
+\author{\scriptsize Groep 6
+	\tiny - Jolien Barbier, Mathis Bossuyt, Dieter Demuynck, Sarah De Meester, Rani Jans, Aaron Vandenberghe}
 
 %% Overview at begin of each section; delete if unwanted.
 
@@ -27,22 +29,19 @@
 
 \begin{document}
 
+
 \begin{titleframe}
 \titlepage
 \end{titleframe}
 
 
-
- % % % Here you go  % % % 
-
-\section{Inleiding}
+\section*{Inleiding}
 
 \begin{frame}
 \frametitle{Inleiding}
 \begin{itemize}
 	
-	\item Waarom?
-	\item Wat: Zelfrijdend autootje met principe Smart City
+	\item Wat: Zelfrijdend autootje met principe Smart City 
 	\item Gekozen optie: Richtingsaanwijzers
 
 	\begin{block}{Definitie: Smart City}
@@ -51,9 +50,29 @@
 \end{itemize}
 \end{frame}
 
-\begin{outlineframe}[Overzicht]
-	\tableofcontents
-\end{outlineframe}
+\begin{frame}
+\frametitle{Maatschappelijke relevantie autonome wagens}
+\begin{itemize}
+	\item Meer veiligheid
+	\begin{itemize}
+		\item Snellere reactie dan mensen
+		\item Vermijden van ongelukken
+	\end{itemize}
+	\item Oplossing mobiliteitsproblemen
+	\begin{itemize}
+		\item Minder files
+	\end{itemize}
+	\item Milieubewust autotransport
+	\begin{itemize}
+		\item Kortste weg wordt gekozen
+	\end{itemize}
+
+\end{itemize}
+\end{frame}
+
+%\begin{outlineframe}[Overzicht]
+%	\tableofcontents
+%\end{outlineframe}
 
 \section[Opdracht]{Opdracht}% eventueel aanpassen
 
@@ -62,17 +81,22 @@
 \begin{columns}
 	\column{.5\textwidth}
 	\begin{itemize}
-		\item \textbf{V}olglijnen, stoplijnen en verkeerslichten interpreteren
-		\item \textbf{V}oorgaande wagen detecteren en botsing voorkomen
-		\item \textbf{V}oldoende grote snelheid
-		\item \textbf{V}anop afstand kunnen ingrijpen
+		\item \textbf{V}olglijnalgoritme
+		\item \textbf{V}erkeerslichtinterpretatie (bijhorend bij stoplijn)
+		\item \textbf{V}oorliggerdetectie
+
+	\end{itemize}
+	Extra's
+	\begin{itemize}
+		\item Acceptabele snelheid
+		\item Manuele override
 	\end{itemize}
 	
 	\column{.5\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[width=.95\textwidth]{plattegrondStraten}
-			\caption{Grondplan van de straten met de volglijnen}\cite{OpgavePO2}
+			\includegraphics[width=.95\textwidth]{volglijnenEnStoplijnen}
+			\caption{Kruispunt met volglijnen (25mm) en stoplijnen (50mm))}\cite{OpgavePO2}
 		\end{figure}
 	
 \end{columns}
@@ -108,49 +132,52 @@
 %	
 %\end{frame}
 
+\subsection{Volledige wagen}
+\begin{frame}
+	\frametitle{Volledige wagen}
+	\begin{figure}
+		\centering
+		\includegraphics[width=.95\textwidth]{assemblageAuto}
+		\caption{Assemblage van de wagen}
+	\end{figure}
+\end{frame}
+
 \subsection{Onderdelen}
 
 \begin{frame}
-	\frametitle{Microcontroller \& chassis}
+	\frametitle{Bodem} %chassis + wielen + motoren
+	
 	\begin{columns}
-		\column{.5\textwidth}
-		\begin{figure}
-			\centering
-			\includegraphics[width=.7\textwidth]{NI-myrio}
-		\caption{NI MyRio}\cite{nimyrio}
-		\end{figure}
-		\column{.5\textwidth}
+		\column{.25\textwidth}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.45\textwidth]{chassis}
-			\caption{Chassis}\cite{RobotChassisRechthoekigZwart}
+			\caption{\scriptsize Chassis}\cite{RobotChassisRechthoekigZwart}
 		\end{figure}
-		
-	\end{columns}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Wielen \& ball caster}
-	\begin{columns}
-		\column{.5\textwidth}
+		\column{.25\textwidth}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.7\textwidth]{wielen}
-			\caption{Wiel 42x19mm}\cite{Wiel42x19mm}
+			\caption{\scriptsize Wiel 42x19mm}\cite{Wiel42x19mm}
 		\end{figure}
-		\column{.5\textwidth}
+		\column{.25\textwidth}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.7\textwidth]{ballcaster}
-			\caption{Ball Caster}\cite{BallCaster}
+			\caption{\scriptsize Ball Caster}\cite{BallCaster}
+		\end{figure}
+		\column{.25\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.6\textwidth]{gear}
+			\caption{\scriptsize Micro Metal Gear Motor 50:1 HP}\cite{MicroMetalGearMotor50:1HP}
 		\end{figure}
 	\end{columns}
 	
 \end{frame}
-
 \begin{frame}
 	\frametitle{Sensoren}
+	Sensoren laten ons toe om informatie uit de buitenwereld te lezen
 	\begin{columns}
 		\column{.3\textwidth}
 		\begin{figure}
@@ -174,40 +201,35 @@
 	
 \end{frame}
 
+
+
 \begin{frame}
-	\frametitle{Gear Motor}
+	\frametitle{Microcontroller}
+	De microcontroller maakt het mogelijk om binnengekregen signalen van sensoren te verwerken
 	\begin{columns}
 		\column{.5\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[width=.6\textwidth]{gear}
-			\caption{Micro Metal Gear Motor 50:1 HP}\cite{MicroMetalGearMotor50:1HP}
+			\includegraphics[width=.7\textwidth]{NI-myrio}
+			\caption{NI MyRio}\cite{nimyrio}
 		\end{figure}
 		\column{.5\textwidth}
-		\begin{figure}
-			\centering
-			\includegraphics[width=.7\textwidth]{beugel}
-			\caption{Motorbeugel}\cite{MicroMetalGearMotorBeugel}
-		\end{figure}
+		%\begin{figure}
+		%	\centering
+		%	\includegraphics[width=.7\textwidth]{beugel}
+		%	\caption{Motorbeugel}\cite{MicroMetalGearMotorBeugel}
+		%\end{figure}
 	\end{columns}
 	
 \end{frame}
 
 
-\subsection{Assemblage}
 \begin{frame}
-	\frametitle{Assemblage}
-	\begin{figure}
-		\centering
-		\includegraphics[width=.95\textwidth]{assemblageAuto}
-		\caption{Assemblage van de wagen}
-	\end{figure}
-\end{frame}
-
 \subsection{Prijsbesteding}
 \begin{frame}
 	\frametitle{Prijsbesteding}
 	\begin{itemize}
+		taartdiagram
 		\item Budget: 3500 eenheden
 		\item Bieding: 1350 eenheden
 		\item Uitgave aan onderdelen: 1615 eenheden
@@ -236,7 +258,18 @@
 \section{Besluit}
 \begin{frame}
 \frametitle{Besluit}
-Afsluitende tekst.
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Mogelijke vragen}
+	\begin{itemize}
+		\item 
+		\item 
+		\item 
+		\item 
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
