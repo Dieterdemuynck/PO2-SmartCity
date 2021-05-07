@@ -37,12 +37,12 @@
 \section*{Inleiding}\label{Inleiding}
 %probleemstelling
 %Ontwerpsproces en planning
-Vandaag de dag zijn zelfrijdende auto's een actueel thema. Heel wat bedrijven zoals Tesla, BMW en Mercedes zijn volop bezig met de ontwikkeling van deze autonome wagens. Dit vanwege de vele voordelen. Een zelfsturende auto heeft namelijk een veel snellere reactie dan mensen. Hierdoor zullen ongevallen vermeden worden. Bovendien zullen er ook minder files zijn, waardoor er een mogelijke oplossing ontstaat voor de mobiliteitsproblemen. Daarnaast kiest een autonome auto voor de kortste weg. Hierdoor legt de auto minder kilometers af. Dit betekent dat deze soort auto's zowel instaan voor verkeersveiligheid als voor een meer milieubewust autotransport \cite{AutonomeAutos1, AutonomeAutos2}. De moeite waard dus om deze revolutionaire vooruitgang onder de loep te nemen en zelf ermee aan de slag te gaan.\\
-Voor dit project betekent dit dat een zelfsturend autootje in staat moet zijn zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City'. Deze `Slimme Stad' is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling hierbij is dat deze hindernissen worden herkend en een bijpassende actie wordt uitgevoerd. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag. Daarnaast wordt het ontwerpproces uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht.
+Vandaag de dag zijn zelfrijdende auto's een actueel thema. Heel wat bedrijven zoals Tesla, BMW en Mercedes zijn volop bezig met de ontwikkeling van deze autonome wagens. Dit vanwege de vele voordelen. Een zelfsturende auto heeft namelijk een veel snellere reactie dan reactiesnelheid van de mens. Hierdoor zullen ongevallen vermeden worden. Bovendien zullen er ook minder files zijn, waardoor er een mogelijke oplossing ontstaat voor de mobiliteitsproblemen. Daarnaast kiest een autonome auto voor de kortste weg. Hierdoor legt de auto minder kilometers af. Dit betekent dat deze soort auto's zowel instaan voor verkeersveiligheid als voor een milieubewuster autotransport \cite{AutonomeAutos1, AutonomeAutos2}. De moeite waard dus om deze revolutionaire vooruitgang onder de loep te nemen en er zelf mee aan de slag te gaan.\\
+Voor dit project betekent dit dat een zelfsturend autootje in staat moet zijn om zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City'. Deze `Slimme Stad' is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling is hierbij dat deze hindernissen worden herkend en het autootje een bijpassende actie uitvoert. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag. Daarnaast wordt het ontwerpproces uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht.
 
 
 \section{Klantenvereisten} \label{Klantenvereisten}
-De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een stoplijn. Een verkeerslicht moet ook kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en stoppen als deze te dicht komen, om aanrijdingen te vermijden.
+De klant wenst een auto dat op een parcours lijnen volgt en aan een stoplijn stopt. Verder moeten verkeerslichten kunnen geïnterpreteerd worden. Het autootje moet ook andere wagens kunnen detecteren en tijdig stoppen als deze te dicht komen, om op die manier aanrijdingen te vermijden.
 
 \section{Hardwareontwerp} \label{Hardwareontwerp}
 
@@ -50,8 +50,8 @@ De klant wil dat de auto op een parcours lijnen kan volgen en stoppen aan een st
 %Een van de basisonderdelen is het chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
 %Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één kogelwiel. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
 
-
-De modelstad bestaat uit enkele straten en 25 identieke kruispunten. De straten zijn telkens 1 meter lang. Op het parcours met grijze ondergrond zijn er twee soorten zwarte lijnen te vinden: volglijnen en stoplijnen. Op het kruispunt zelf zijn er geen lijnen. Het autootje zal deze lijnen moeten kunnen interpreteren en een onderscheid kunnen maken tussen deze twee soorten. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De auto moet de lijnen van 25 mm dik volgen en stoppen bij de lijnen van 50 mm dik \ref{fig:plattegrond}. Het moet dus een sensor bevatten die deze lijnen kan herkennen, meer bepaald een reflectiesensor. De auto komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal het moeten stoppen en een verkeerslicht moeten interpreteren. Het feit dat het verkeerslicht om 7.5 cm hoogte staat, speelt een rol bij het bepalen van de hoogte van de auto. De auto moet dus voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht moet de auto blijven stil staan aan de stoplijn, bij groen moet hij weer starten.
+In wat volgt wordt eerst besproken hoe het parcours er uit ziet. Daarna wordt uitgelegd hoe dit probleem praktisch zal worden opgelost met betrekking op de auto.\\
+De modelstad bestaat uit rechte straten en 25 identieke kruispunten. De straten zijn telkens 1 meter lang. De ondergrond van het parcours is grijs. Hierop zijn twee soorten zwarte lijnen te vinden: volglijnen en stoplijnen. Op het kruispunt zelf zijn er geen lijnen. Het autootje moet de lijnen kunnen interpreteren en een onderscheid kunnen maken tussen deze twee soorten. Het verschil tussen deze twee lijnen is de oriëntatie en de dikte. Volglijnen zijn 25 mm dik en zijn verticaal gelegen. Stoplijnen hebben een dikte van 50 mm en zijn horizontaal geplaatst \ref{fig:plattegrond}. Aangezien het autootje de lijnen moet kunnen herkennen en correct interpreteren zal de auto een sensor nodig hebben, meer bepaald een reflectiesensor. Enkele bij het naderen van een kruispunt komt de auto een stoplijn tegen. Bij zo een stoplijn staat een verkeerslicht met een hoogte van 7,5 cm. Deze afmeting speelt een rol bij het bepalen van de hoogte van de auto. Verder moet de auto het verkeerslicht foutloos interpreteren. Bijgevolg moet de auto voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht moet de auto blijven stil staan aan de stoplijn, bij groen moet hij weer starten.
 
 %Smalle auto
 \begin{figure}
@@ -61,11 +61,11 @@ De modelstad bestaat uit enkele straten en 25 identieke kruispunten. De straten 
 	\label{fig:plattegrond}
 \end{figure}
 
-Ook moet het wagentje voorgaande wagens kunnen detecteren en stoppen wanneer deze te dichtbij komen. Als de wagen van achter wordt aangereden is dit niet zijn fout, dus enkel voorliggers kunnen een probleem vormen. Om andere wagens te herkennen moet het wagentje een afstandssensor bevatten die voorliggers detecteert en vervolgens een signaal verzendt zodat de motoren vertragen om een botsing te voorkomen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand.
+Om een botsing te voorkomen, moet het autootje voorgaande wagens kunnen detecteren en tijdig stoppen wanneer deze te dichtbij komen. Wanneer de wagen achteraan wordt aangereden, is het in fout. Dit impliceert dat enkel voorliggers een probleem kunnen vormen. Om dit probleem op te lossen moet het wagentje uitgerust zijn met een afstandssensor. Deze sensor detecteert voorliggers en verzendt vervolgens een signaal zodat de motoren vertragen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand. %meer uitleg over de remafstand?
 
-Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het op een veilige manier zich aan ongeveer 10 cm/s kan voortbewegen zodat ook de remafstand beperkt blijft.
+Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het autootje een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het op een veilige manier voortbeweegt aan een snelheid van ongeveer 10 cm/s. Hierdoor blijft ook de remafstand beperkt.
 
-Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt, zoals een aanrijding. Zo zal de auto bestuurbaar gemaakt worden vanuit een toetsenbord.
+Ten slotte is het uit veiligheid dat men vanop afstand kan ingrijpen wanneer er iets fout loopt, zoals een aanrijding. Dit betekent dat de auto naast het autonoom rijden ook bestuurbaar moet zijn met een toetsenbord.
 
 
 
@@ -86,13 +86,12 @@ Ten slotte moet men vanop afstand kunnen ingrijpen wanneer er iets fout loopt, z
 Als eerste wordt de chassis besproken. Voor deze auto wordt een rechthoekige variant gebruikt met als afmetingen 80 mm op 172 mm  \cite{RobotChassisRechthoekigZwart}. 
 % 3 figuren invoegen assemblage (Mathis)
 Deze is handig in gebruik wegens de verscheidene groottes van de groeven. %groottes of vormen?
-Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld is hiervoor minder geschikt \cite{RobotChassis}. Ook zijn er in deze laatste groeven aanwezig voor de wielen. 
-Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
+Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis zoals bijvoorbeeld \textbf{????} is hiervoor minder geschikt \cite{RobotChassis}. Ook zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
 %motordrivers die er niet aan gesoldeerd konden worden?
 \label{Chassis}
 
 \subsubsection{Wielen}
-Een goede keuze voor de wielen zijn die met respectievelijk een diameter en dikte van 42 mm en 19 mm.
+Een goede keuze voor de wielen zijn die met een diameter en dikte van respectievelijk 42 mm en 19 mm.
 Figuur \ref{fig:wiel} geeft een idee hoe ze eruit zien.
 
 \begin{figure}
@@ -103,11 +102,11 @@ Figuur \ref{fig:wiel} geeft een idee hoe ze eruit zien.
 	\label{fig:wiel}
 \end{figure}
 
-De dikte van dit wiel is geschikt om voldoende grip te hebben. Bij dunnere banden is er dus minder grip en dat zou ervoor kunnen zorgen dat de auto niet snel genoeg kan remmen bij obstakels en stoplijnen \cite{Banden}. Daarnaast is de diameter evenredig met de versnelling en de nodige kracht.
-Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite.  
+De dikte van dit wiel is geschikt om voldoende grip te hebben. Bij dunnere banden is er minder grip. Dit zou ervoor kunnen zorgen dat de auto niet snel genoeg kan remmen bij zowel obstakels als stoplijnen \cite{Banden}. 
+Daarnaast is de diameter evenredig met de versnelling en de nodige kracht. Een kleiner wiel impliceert namelijk een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite.  
 
-De auto van dit project is een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om te draaien. Als je vier wielen hebt, zijn er twee vaste punten en dus meer wrijving waardoor de auto minder vlot kan draaien. Om af te slaan is het makkelijker om één vast punt te hebben en dat de andere wielen eromheen draaien.
-Ten tweede reduceert een driewieler de kosten van het project. Een vierde wiel was niet nodig dus zou het niet verstandig zijn om aan het te kopen. Zo is er ook nog marge in het budget voor eventuele wijzigingen tijdens het project. Idealiter wordt als derde wiel gebruik gemaakt van een kogelwiel. We kozen voor het kogelwiel omdat dit flexibelere draaibewegingen heeft dan een normaal wiel. 
+De auto van dit project is een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om te draaien. Bij een vierwieler zijn er namelijk twee vaste punten. Hierdoor ontstaat er meer wrijving waardoor de auto minder vlot kan draaien. Bijgevolg is het dus gemakkelijker een driewieler te laten afslaan. Deze heeft bij het afslaan maar één vast punt waarrond de andere wielen draaien.
+Ten tweede reduceert een driewieler de kosten van het project een klein beetje. Een vierde wiel is niet noodzakelijk om aan te schaffen. Op deze manier is er nog een kleine marge in het budget voor eventuele wijzigingen tijdens het project. Als derde wiel wordt voor de auto gekozen voor een kogelwiel. Dit wiel biedt als voordeel flexibelere te zijn in draaibewegingen dan een normaal wiel. 
 \label{Wielen}
 
 
