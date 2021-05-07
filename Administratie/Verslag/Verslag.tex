@@ -202,9 +202,12 @@ Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de o
 
 \subsection{Experimenten}
 \subsubsection{Signalen ontvangen en versturen}
-Het doel van de eerste test is de communicatie met de microcontroller te begrijpen. Met behulp van het standaardprogramma \texttt{main.vi} in LabVIEW kan er gezien worden hoe de microcontroller beweegt.  
-De tweede test bestaat uit het versturen en ontvangen van signalen. Om te weten wanneer een signaal verstuurd wordt, wordt volgend experiment uitgevoerd. Een draad wordt bevestigd tussen de poorten van 11 en 13 Ampère. Op het moment dat de draad kantelt en hierdoor op de \textbf{z-as meer dan 0,5 wordt weergegeven,}%nog extra uitleg vragen. 
-wordt er een signaal ontvangen door de poort van 13 A. Van hieruit wordt een nieuw signaal verstuurd maar dit keer naar de computer. Bijkomend is dit experiment nuttig om te begrijpen hoe er kan gedebugd worden. Bovendien is het cruciaal voor de verdere implementatie van de auto.  
+Er zijn vijf experimenten gebeurd. Er zijn twee experimenten geweest om de communicatie met de microcontroller te testen. 
+Bij het eerste experiment werden de lampjes van de microcontroller aan en uitgezet met een schakelaar in LabVIEW.
+Het ander experiment was om een signaal terug te krijgen van de microcontroller.
+Er werden twee poorten va, de my Rio met elkaar verbonden en als de microcontroller gekanteld werd, moest een signaal verstuurt worden van de ene poort naar de andere.
+Er is nu communicatie mogelijk want het kan signalen versturen en ontvangen.
+
 
 
 %%% moet taalonafhankelijk in het verslag dus enkel stukken van de code mogen erin. 
@@ -212,15 +215,26 @@ wordt er een signaal ontvangen door de poort van 13 A. Van hieruit wordt een nie
 %Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden.  
 
 \subsubsection{Sensoren}
-Met behulp van voorbeeldprogramma's is het mogelijk om de gekregen data die van de sensoren te interpreteren. Zo is er een idee met welke waarden er moet gewerkt worden in het definitief programma. 
 
-Een eerste experiment is met de reflectiesensor. Deze sensor werkt met een programma dat de acht waarden teruggeeft. 
-Een van de vereisten voor het autootje is een lichte en donkere kleur te onderscheiden. Om te weten welke waarden de sensor geeft, kan dit worden getest met een wit papier, de zwarte voorkant van een laptop en een grijs tafelblad. Bij het papier wordt een waarde dichtbij 1 verkregen terwijl bij het donkere spectrum waarden tussen 4 en 4,5. %en de tafel?
-Door het experimentje is er nu geweten welke waarden er moeten gebruikt worden om de lijn op de grond te kunnen volgen.
+Dan werden er drie experimenten uitgevoerd om de waarden van de sensoren te begrijpen.
+Bij de reflectiesensor werden de waarden van wit, grijs en zwart getest. 
+Voor zwart werden waarden tussen drie en vier terug gegeven.  
+Voor de kleursensor werd er getest met het rood en groen van de verkeerslichten.
+Bij het rood licht werd ook groen gedetekteerd maar bij een groen licht werd er geen rood gedetecteerd.
+Er zal dus gebruik gemaakt worden van het rode licht.
+Voor de afstandssensor werd een boek gehouden en deze verschoof zodat de waarden op verschillende afstanden gekend was.
+Er werd een piekwaarde van drie teruggeven bij een afstand van 10 cm. 
+Deze waarden en resultaten werden gebruikt om het eind programma te generen.
+
+%Met behulp van voorbeeldprogramma's is het mogelijk om de gekregen data die van de sensoren te interpreteren. Zo is er een idee met welke waarden er moet gewerkt worden in het definitief programma. 
+
+%Een eerste experiment is met de reflectiesensor. Deze sensor werkt met een programma dat de acht waarden teruggeeft. 
+%Een van de vereisten voor het autootje is een lichte en donkere kleur te onderscheiden. Om te weten welke waarden de sensor geeft, kan dit worden getest met een wit papier, de zwarte voorkant van een laptop en een grijs tafelblad. Bij het papier wordt een waarde dichtbij 1 verkregen terwijl bij het donkere spectrum waarden tussen 4 en 4,5. %en de tafel?
+%Door het experimentje is er nu geweten welke waarden er moeten gebruikt worden om de lijn op de grond te kunnen volgen.
 % !!!!!!!! Eventueel hetgene hieronder weglaten?? Is dit noodzakelijk voor het verslag????
 % We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
 
-Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwerp eerst ver van de sensor gehouden en dan dichterbij. Bij afstanden kleiner dan 80 cm worden lage waarden bekomen zoals 0,1. Afstanden groter dan 80 cm geven een negatieve waarde. Wanneer de afstand echter op een tiental cm van de sensor verwijderd is, wordt een maximale waarde van 3 verkregen. Eenmaal de lengte tussen de afstandssensor en het voorwerp kleiner is dan 10 cm, zakt de geleidelijk aan naar 2. De conclusie van deze test: voor de afstandssensor zullen de waarden twee en drie moeten gebruikt worden.
+%Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwerp eerst ver van de sensor gehouden en dan dichterbij. Bij afstanden kleiner dan 80 cm worden lage waarden bekomen zoals 0,1. Afstanden groter dan 80 cm geven een negatieve waarde. Wanneer de afstand echter op een tiental cm van de sensor verwijderd is, wordt een maximale waarde van 3 verkregen. Eenmaal de lengte tussen de afstandssensor en het voorwerp kleiner is dan 10 cm, zakt de geleidelijk aan naar 2. De conclusie van deze test: voor de afstandssensor zullen de waarden twee en drie moeten gebruikt worden.
 
 \subsection{Definitieve programma's}
 %manuele override
