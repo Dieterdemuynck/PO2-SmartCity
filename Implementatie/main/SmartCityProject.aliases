@@ -1,6 +1,6 @@
-[My Computer]
-My Computer = "192.168.137.1"
+[KULAK-WPSP-RIO12]
+KULAK-WPSP-RIO12 = "172.16.0.1"
 
-[myRIO-1900]
-myRIO-1900 = "0.0.0.0"
+[My Computer]
+My Computer = "172.22.11.2"
 
