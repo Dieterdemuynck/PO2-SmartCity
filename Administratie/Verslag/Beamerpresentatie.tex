@@ -7,6 +7,7 @@
 \usepackage[dutch]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{pgf-pie}
 
 \title[Smart City]{Smart City}
 \subtitle{\scriptsize Probleemoplossen en Ontwerpen Deel 2}
@@ -224,16 +225,16 @@
 \end{frame}
 
 
-\begin{frame}
 \subsection{Prijsbesteding}
 \begin{frame}
 	\frametitle{Prijsbesteding}
 	\begin{itemize}
-		taartdiagram
 		\item Budget: 3500 eenheden
-		\item Bieding: 1350 eenheden
-		\item Uitgave aan onderdelen: 1615 eenheden
 	\end{itemize}
+	\begin{tikzpicture}
+		\pie [rotate = 180]
+		{39/ Bieding, 6/ Wielen en chassis, 13/ Motoren, 12/ Microcontroller en batterij, 5/ Mechanische stukken en draden, 13/ Sensoren, 4/ Extra, 8/ Niet uitgegeven}
+	\end{tikzpicture}
 \end{frame}
 
 
