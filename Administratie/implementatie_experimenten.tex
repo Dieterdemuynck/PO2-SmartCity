@@ -1,0 +1,37 @@
+\documentclass[a4paper,kulak]{kulakarticle} %options: kul or kulak (default)
+
+\usepackage[dutch]{babel}
+
+\date{Academiejaar 2020 -- 2021}
+\address{
+  Burgerlijk ingenieur \\
+  Naam van het vak \\
+  Naam van de docent/begeleiders}
+\title{Titel van het document}
+\author{Aaron Vandenberghe}
+
+
+\begin{document}
+
+\maketitle
+
+\section*{Inleiding}
+
+Inleidende tekst.
+
+\section{Sectie-titel}
+
+We experimenteren met de sensoren. We maken voorbeeld programma's om de data die we krijgen van de sensoren te interpreteren. Op die manier weten we met elke waarden we moeten werken in ons echt programma. 
+
+Het eerste experiment met sensoren was met de reflectiesensor. Dat was een programma dat de 6 waarden van de sensor weer gaf. Omdat het miniatuur robotwagentje helder en donker moet onderscheiden hebben we die getest op wit papier waarbij we waarden rond de 1 krijgen. Om de waarden bij van het donkere spectrum te krijgen, hebben we het zwart van de laptop gebruikt. Hier kregen we waarden rond de 4 tot 4.5. We hebben het ook gedaan op de grijze tafels.
+Nu gaan we die waarden gebruiken om te weten wat de lijn is die we zullen moeten volgen.
+We hebben het aantal waarden dat we krijgen per seconde wat vermindert van 1000 naar 100 om op die manier stabielere inputs te krijgen. Anders was het moeilijk om die waarden te lezen.
+
+
+De volgende test was met de afstandssensor. Als de afstand tussen de sensor en het voorwerp groot is krijgen we lage waarden (ongeveer 0.1). Als er binnen de 80cm niets staat dan worden de waarden negatief. Dit stijgt tot een maximale waarde van 3 bij ongeveer 10cm. Als we het object dichter dan 10cm houden dan zakt de waarde die we van de sensor krijgen naar 2. We weten nu dat we waarden tussen de 2 en 3 gaan moeten gebruiken. 
+
+\section*{Besluit}
+
+Afsluitende tekst.
+
+\end{document}
