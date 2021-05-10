@@ -248,24 +248,96 @@ Deze waarden en resultaten werden gebruikt om het eind programma te generen.
 %inlezen sensoren
 %programma auto niet botsen -> stopwaarde
 
-% flowchart afstandssensor
-\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=orange!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
 \tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
 \tikzstyle{line} = [draw, -latex']
 \tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
 minimum height=2em]
 
-\begin{tikzpicture}[node distance = 3cm, auto]\label{flowchart afstandssensor}
-	
-	% Place nodes
+
+Om het programma volledig te begrijpen, zal alles chronologisch stap voor stap worden uitgelegd met behulp van verscheidene korte flowcharts. \\
+
+In het schema \ref{programmaBegin} wordt de opsplitsing tussen de manuele en automatische besturing toegelicht. Bij dit programma is het belangrijk om op te merken dat bij een overschakeling naar de manuele besturing de waarden 0, 1 en 2 telkens worden gereset opdat er steeds manueel kan gereden worden. %nog aan te passen.
+In het schema wordt ook gebruik van de afkortingen PWM en RGB. Deze staan respectievelijk voor de Engelse woorden Puls width modulation en Red Green Blue.
+Zodra de overschakeling op de automatische besturing wordt telkens een waarde verstuurd. Voor de waarden 0, 1 en 2 worden verder verduidelijkt in aparte flowchart respectievelijk \ref{reflectiesensorValueZero}, \ref{kleursensorValueOne} en % nog te maken.
+
+\begin{tikzpicture}[node distance = 2.5cm, auto]\label{programmaBegin}
+	%place
 	\node [cloud](start){start};
-	\node [decision, below of=start] (voorligger) {voorligger?};
-	\node [decision, right of=voorligger] (verder) {dichter dan 20 cm?};
-	\node [block, below left of=voorligger,] (rijden) {auto rijdt};
-	\node [decision, right of=verder] (dichtbij) {dichter dan 10 cm?};
-	\node [block, below of=dichtbij] (vertragen) {vertragen};
-	\node [block, below right of=dichtbij] (stoppen) {auto stopt};
-	\node [cloud, below of=stoppen] (einde) {stop};
+	\node [block, below of= start](sensor data){Sensor data};
+	\node [decision, below of= sensor data](manueel){Manuele besturing aan?};
+	\node [block, below right of= manueel](auto){Welke waarde? (default = 0)};
+	\node [decision, below left of= manueel](knoppen){Gebruik controleknoppen};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of= knoppen](PWM){PWM};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of = auto](0){Waarde 0};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = 0](1){Waarde 1};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = auto](2){Waarde 2};
+	% lines
+	\path [line] (start) -- (sensor data);
+	\path [line] (sensor data) -- (manueel);
+	\path [line] (manueel) -- node {nee} (auto);
+	\path [line] (manueel) -- node {ja} (knoppen);
+	\path [line] (knoppen) -- (PWM);
+	\path [line] (PWM) |- node {nieuwe iteratie}(sensor data);
+	\path [line] (auto) -- (0);
+	\path [line] (auto) -- (1);
+	\path [line] (auto) -- (2);
+\end{tikzpicture}
+\\
+\begin{tikzpicture}[node distance = 3.5cm, auto]\label{reflectiesensorValueZero}
+	%place nodes
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](0){Waarde 0};
+	\node [block, below of = 0] (begin) {Data reflectiesensor gebruiken};
+	\node [decision, below of=begin] (lijn) {Lijn gedetecteerd?};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=lijn] (hervat) {Terug naar waarde 0};
+	\node [decision, below left of=lijn] (welke) {Stoplijn?};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=welke] (stoplijn) {Waarde 1};
+	\node [block, below right of=welke] (volglijn) {Volg de lijn};
+	%place paths
+	\path [line] (0) -- (begin);
+	\path [line] (begin) -- (lijn);
+	\path [line] (lijn) -- node {ja} (welke);
+	\path [line] (lijn) -- node {nee} (hervat);
+	\path [line] (welke) -- node {ja} (stoplijn);
+	\path [line] (welke) -- node {nee} (volglijn);
+	\path [line] (volglijn) |- (welke);
+	\path [line] (hervat) |- node {nieuwe iteratie} (0);
+\end{tikzpicture}
+\\
+\begin{tikzpicture}[node distance = 3cm, auto]\label{kleursensorValueOne}
+	%place nodes
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](1){Waarde 1};
+	\node [decision, below of= 1] (Rood) {Was het rood?};
+	\node [decision, below left of=Rood] (Groen) {Groen?};
+	\node [decision, below right of=Rood] (controle) {Rood?};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=Groen] (volgende) {Waarde 2};
+	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=Groen] (opnieuw) {Terug naar waarde 1};
+	\node [block, below right of=controle] (waarde) {Onthoud de waarde};
+	%\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below of=waarde] (herbegin) {Waarde 1};
+	%place paths
+	\path [line] (1) -- (Rood);
+	\path [line] (Rood) -- node {ja} (Groen);
+	\path [line] (Rood) -- node {nee} (controle);
+	\path [line] (Groen) -- node {ja} (volgende);
+	\path [line] (Groen) -- node {nee} (opnieuw);
+	\path [line] (controle) -- (waarde);
+	%\path [line] (waarde) -- (herbegin);
+	\path [line] (waarde) |- node {controle}(1);
+	\path [line] (opnieuw) |- node {controle}(1);
+\end{tikzpicture}
+TO DO: Nog afstandssensor beetje verduidelijken. \ref{afstandssensor}
+\\
+\begin{tikzpicture}[node distance = 3cm, auto]\label{afstandssensor}
+	% Place node
+	\node [cloud](start){Start};
+	\node [decision, below of=start] (voorligger) {Voorligger?};
+	\node [decision, right of=voorligger] (verder) {Dichter dan 20 cm?};
+	\node [block, below left of=voorligger,] (rijden) {Auto rijdt};
+	\node [decision, right of=verder] (dichtbij) {Dichter dan 10 cm?};
+	\node [block, above of=dichtbij] (vertragen) {Vertragen};
+	\node [block, below right of=dichtbij] (stoppen) {Auto stopt};
+	\node [cloud, below of=stoppen] (einde) {Stop};
 	% Draw edges 	
 	\path [line] (start) -- (voorligger);
 	\path [line] (voorligger) -- node {ja} (verder);
