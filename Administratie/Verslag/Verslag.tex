@@ -282,13 +282,25 @@ minimum height=2em]
 
 
 \section{Discussie} %discussiesectie 
-\subsection{Resultaten demo} 
-Nog te schrijven. 
+\subsection{Resultaten demo}  % Dit deel geschreven door Dieter Demuynck 
+Er wordt ook een demonstratie gedaan voor de functionaliteit van het wagentje, om te kijken of het inderdaad doet wat werd gevraagd en hoe efficiënt dat het werkt.
+
+% Algemene problemen.
+Het wagentje reed tijdens de demo soms van de lijn, het had veel moeite met correcte bochten nemen, en het reed soms door het rood. Dit heeft hoogstwaarschijnlijk te maken met de gebruikte componenten en de algemene bouw van de wagen. Het wagentje kon wel snel genoeg rijden om de afgetippelde baan op een redelijke snelheid af te leggen.
+
+% Problemen met motoren
+Zo bleek het dat de motoren niet even snel en gelijkmatig draaiden. Ook hadden ze soms niet genoeg kracht om vooruit te rijden, vooral wanneer de wagen op één wiel probeert te draaien. Mogelijks komt dit doordat er te veel wrijving was tussen het kogelwiel en de grond, en/of te weinig wrijving tussen de wielen en de grond. Om toch die ongelijkmatigheid tegen te gaan werden er twee waarden ingevoerd om de snelheid van de te snelste motor te verlagen, en om beide motoren aan te houden zelfs tijdens bochten en aanpassingen, zodat er genoeg kracht was om toch vooruit te kunnen rijden. Dit zorgde echter voor nieuwe problemen. Zelfs met de snelheidsaanpassing reed de aanvankelijke snelste motor niet altijd even snel als werd ingegeven, zoals tijdens bochten, hoogstwaarschijnlijk omdat één wiel meer of minder kracht ondervindt. Ook kan het gebeuren dat een wiel slipt en geen of te weinig grip heeft. Dit, gecombineerd met het feit dat beide wielen aan blijven om vooruit te kunnen gaan, zorgde ervoor dat de wagen soms van de lijn afweek, ook al probeerde het toch om zich aan te passen om op de lijn te blijven. Door deze problemen moest er dus veel ingegrepen worden via manuele besturing, veelal tijdens bochten.
+
+% Problemen met kleurensensor
+Ook reed het wagentje soms door een rood licht. Dit komt omdat de kleurensensor een ingewikkeld algoritme nodig heeft om te besluiten of het groen of rood is. Er is enkel een heel geringe verandering in rode en groene waarden door de flikkering van het rood of groen licht aan 1 Hz, en het is net die flikkering dat we proberen op te meten. Hier loopt het soms fout, omdat er geen flikkering wordt opgemeten bij het rood licht, ook al is het rood, en de wagen dus door rijdt.
+
+% Besluit: Mogelijke oplossingen
+Uit de demo kunnen we besluiten welke verbeteringen en aanpassingen er kunnen worden gemaakt om een beter resultaat te verkrijgen. Zo is het in het vervolg mogelijk om het meer van het gewicht van de wagen op de wielen te laten rusten, en minder op het kogelwiel, of kunnen er meerdere kogelwielen gebruikt worden zodat de kracht meer wordt verdeeld. Daarbij kunnen we krachtigere wielen gebruiken. Het zou ook mogelijk zijn om een camera te gebruiken, samen met een passend algoritme, om de verkeerslichten beter te interpreteren.
 
 \subsection{Financiële kant} 
 In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed.  
 
-In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteden aan de mechanische stukken en draden. 
+In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteed aan de mechanische stukken en draden. 
 
 
 
