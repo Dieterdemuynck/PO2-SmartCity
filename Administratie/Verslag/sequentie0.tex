@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage[dutch]{babel}
+\usepackage{pdfpages}
+%\usepackage[latin1]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+
+\begin{document}
+	sequentie 0
+	
+	\tikzstyle{decision} = [diamond, draw, fill=blue!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+	\tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
+	\tikzstyle{line} = [draw, -latex']
+	\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+	minimum height=2em]
+	
+	\begin{tikzpicture}[node distance = 3cm, auto]\label{flowchart reflectiesensor}
+		%place nodes
+		\node [block] (begin) {Gebruik data reflectiesensor};
+		\node [decision, below of=begin] (lijn) {Lijn gedetecteerd?};
+		\node [block, below right of=lijn] (hervat) {Opnieuw sequentei nr. 0};
+		\node [decision, below left of=lijn] (welke) {Stoplijn?};
+		\node [block, below left of=welke] (stoplijn) {Sequentie nr. 1};
+		\node [block, below right of=welke] (volglijn) {Volg de lijn};
+		%place paths
+		\path [line] (begin) -- (lijn);
+		\path [line] (lijn) -- node {ja} (welke);
+		\path [line] (lijn) -- node {nee} (hervat);
+		\path [line] (welke) -- node {ja} (stoplijn);
+		\path [line] (welke) -- node {nee} (volglijn);
+		\path [line] (volglijn) |- (welke);
+		
+	\end{tikzpicture}
+\end{document}
