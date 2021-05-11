@@ -21,10 +21,10 @@
 		\node [decision] (Rood) {Was het rood?};
 		\node [decision, below left of=Rood] (Groen) {Is het groen?};
 		\node [decision, below right of=Rood] (controle) {Is het rood?};
-		\node [block, below left of=Groen] (volgende) {Sequentie nr. 2};
-		\node [block, below right of=Groen] (opnieuw) {Opnieuw sequentie nr. 1};
+		\node [block, below left of=Groen] (volgende) {Ga naar sequentie 2};
+		\node [block, below right of=Groen] (opnieuw) {Blijf op sequentie 1};
 		\node [block, below of=controle] (waarde) {Onthou de waarde};
-		\node [block, below of=waarde] (herbegin) {Sequentie nr. 1};
+		\node [block, below of=waarde] (herbegin) {Blijf op sequentie 1};
 		%place paths
 		\path [line] (Rood) -- node {ja} (Groen);
 		\path [line] (Rood) -- node {nee} (controle);
