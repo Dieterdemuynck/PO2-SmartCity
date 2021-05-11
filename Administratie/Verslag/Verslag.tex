@@ -40,8 +40,8 @@
 \section*{Inleiding}\label{Inleiding}
 %probleemstelling
 %Ontwerpsproces en planning
-Vandaag de dag zijn zelfrijdende auto's een actueel thema. Heel wat bedrijven zoals Tesla, BMW en Mercedes zijn volop bezig met de ontwikkeling van deze autonome wagens. Dit vanwege de vele voordelen. Een zelfsturende auto heeft namelijk een veel snellere reactie dan reactiesnelheid van de mens. Hierdoor zullen ongevallen vermeden worden. Bovendien zullen er ook minder files zijn, waardoor er een mogelijke oplossing ontstaat voor de mobiliteitsproblemen. Daarnaast kiest een autonome auto voor de kortste weg. Hierdoor legt de auto minder kilometers af. Dit betekent dat deze soort auto's zowel instaan voor verkeersveiligheid als voor een milieubewuster autotransport \cite{AutonomeAutos1, AutonomeAutos2}. De moeite waard dus om deze revolutionaire vooruitgang onder de loep te nemen en er zelf mee aan de slag te gaan.\\
-Voor dit project betekent dit dat een zelfsturend autootje in staat moet zijn om zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City'. Deze `Slimme Stad' is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling is hierbij dat deze hindernissen worden herkend en het autootje een bijpassende actie uitvoert. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag. Daarnaast wordt het ontwerpproces uitvoerig uitgelegd. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht.
+Vandaag de dag zijn zelfrijdende auto's een actueel thema. Heel wat bedrijven zoals Tesla, BMW en Mercedes zijn volop bezig met de ontwikkeling van deze autonome wagens. Dit vanwege de vele voordelen. Een zelfsturende auto heeft namelijk een veel snellere reactie dan de reactiesnelheid van de mens. Hierdoor zullen ongevallen vermeden worden. Bovendien zullen er ook minder files zijn, waardoor er een mogelijke oplossing ontstaat voor de mobiliteitsproblemen. Daarnaast kiest een autonome auto voor de kortste weg. Hierdoor legt de auto minder kilometers af. Dit betekent dat deze soort auto's zowel instaan voor verkeersveiligheid als voor een milieubewuster autotransport \cite{AutonomeAutos1, AutonomeAutos2}. De moeite waard dus om deze revolutionaire vooruitgang onder de loep te nemen en er zelf mee aan de slag te gaan.\\
+Voor dit project betekent dit dat een zelfsturend autootje in staat moet zijn om zich volgens een voorgeprogrammeerde route door een modelstad te bewegen. Dit is het idee van de `Smart City'. Deze `Slimme Stad' is een stad waarbij informatietechnologie gebruikt wordt om de stad te beheren en te besturen \cite{SmartCity}. Doorheen deze route, zal de auto verschillende obstakels tegenkomen. De bedoeling is hierbij dat deze hindernissen worden herkend en het autootje een bijpassende actie uitvoert. Hoe dit kan worden geïmplementeerd zal aan bod komen in dit verslag. Hierin wordt het aanschaffen van onderdelen en de vereisten toegelicht. Daarnaast wordt het ontwerpproces uitvoerig uitgelegd. 
 
 
 \section{Klantenvereisten} \label{Klantenvereisten}
@@ -53,10 +53,6 @@ De klant wenst een auto dat op een parcours lijnen volgt en aan een stoplijn sto
 %Een van de basisonderdelen is het chassis. Op dit onderdeel zal alles worden gemonteerd. Het is als het ware de ruggengraat van de auto.%wikipedia chassis
 %Opdat de auto kan rijden zijn uiteraard wielen nodig. In het model dat verder wordt beschreven, worden er twee reguliere ronde wielen gebruikt en één kogelwiel. Om de aandrijving van de wielen mogelijk te maken wordt er aan ieder rond wiel een microtandwielmotor geplaatst. De regeling van de motoren gebeurt via de dual drive motor. Om uiteindelijk geheel de auto te laten voortbewegen is er een nood aan een hardwarecomponent namelijk een microcontroller. Deze fungeert als een soort mini computer. Daarnaast zal ook extra stroomtoevoer moeten worden voorzien. Hiervoor worden twee oplaadbare lithium-ion batterijen gebruikt. Verder is het ook nuttig om gebruik te maken van een breadboard. Dit is echter geen onderdeel van de zelfrijdende auto, maar is handig voor het testen van elektrische circuits.
 
-%<<<<<<< HEAD
-
-De modelstad bestaat uit enkele straten en negen identieke kruispunten. De auto zal 25 keer een kruispunt moeten kunnen oversteken. De straten zijn telkens 1 meter lang. Op het parcours met grijze ondergrond zijn er twee soorten zwarte lijnen te vinden: volglijnen en stoplijnen. Op het kruispunt zelf zijn er geen lijnen. Het autootje zal deze lijnen moeten kunnen interpreteren en een onderscheid kunnen maken tussen deze twee soorten. Het verschil tussen deze twee lijnen zit hem in de dikte. Volglijnen zijn 25 mm dik, stoplijnen 50 mm. De auto moet de lijnen van 25 mm dik volgen en stoppen bij de lijnen van 50 mm dik \ref{fig:plattegrond}. Het moet dus een sensor bevatten die deze lijnen kan herkennen, meer bepaald een reflectiesensor. De auto komt een stoplijn tegen bij het naderen van een kruispunt. Hier zal het moeten stoppen en een verkeerslicht moeten interpreteren. Het feit dat het verkeerslicht om 7,5 cm hoogte staat, speelt een rol bij het bepalen van de hoogte van de auto. De auto moet dus voorzien zijn van een kleurensensor of een camera die de twee verschillende kleuren van het stoplicht kan onderscheiden. Bij een rood licht moet de auto blijven stil staan aan de stoplijn, bij groen moet hij weer starten.
-%=======
 In wat volgt wordt eerst besproken hoe het parcours er uit ziet. Daarna wordt uitgelegd hoe dit probleem praktisch zal worden opgelost met betrekking op de auto.
 
 
@@ -214,7 +210,7 @@ Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de o
 Er zijn vijf experimenten gebeurd. Er zijn twee experimenten geweest om de communicatie met de microcontroller te testen. 
 Bij het eerste experiment werden de lampjes van de microcontroller aan en uitgezet met een schakelaar in LabVIEW.
 Het ander experiment was om een signaal terug te krijgen van de microcontroller.
-Er werden twee poorten va, de my Rio met elkaar verbonden en als de microcontroller gekanteld werd, moest een signaal verstuurt worden van de ene poort naar de andere.
+Er werden twee poorten va, de my Rio met elkaar verbonden en als de microcontroller gekanteld werd, moest een signaal verstuurd worden van de ene poort naar de andere.
 Er is nu communicatie mogelijk want het kan signalen versturen en ontvangen.
 
 
@@ -446,7 +442,11 @@ In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te best
 
 
 \section{Besluit}
-Nog te schrijven.
+Er is duidelijk te zien dat er veel opzoekingswerk vereist is. Er moet namelijk gezorgd worden dat alle onderdelen bij elkaar passen: geen te grote wielen, onderdelen die niet te veel wegen…
+Voor het implementeren is er ook heel wat opzoekingwerk vereist. Daarom is het belagrijk dat dit werk vroeg genoeg wordt ingepland, zodat men genoeg tijd zal hebben om effectief te programmeren. Eens er begonnen wordt met het programmeren is het ten sterkste aangeraden om over de onderdelen van de auto te beschikken. Zo zal er geëxperimenteerd kunnen worden. Om een beter beeld te krijgen over de programma’s die moeten geïmplementeerd worden, is het handig om vooraf een flowchart te maken. Aan  de hand van deze flowcharts zou het mogelijk moeten zijn om een programma uit te schrijven.\\
+Om de auto te verbeteren, is het aangeraden om meer gewicht op de voorkant te laten rusten, zodat het kogelwiel achteraan minder wrijving zou ondervinden. Het gebruik van krachtigere wielen kan ook voor een oplossing zorgen. Ook kon men besluiten dat voor het interpreteren van een verkeerslicht, het gebruik van een camera misschien meer ideaal zou geweest zijn. Een nadeel hiervan is het bijkomend gewicht.
+In het geval dat we meer tijd gehad zouden hebben, zouden de programma’s meer getest kunnen worden en zouden de programma’s nog verbeterd kunnen worden.
+
 
 %Samenvatting wat in verslag
 %Conclusie: werkte goed of niet
