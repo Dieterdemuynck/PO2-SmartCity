@@ -246,7 +246,7 @@ Deze waarden en resultaten werden gebruikt om het eind programma te generen.
 
 %Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwerp eerst ver van de sensor gehouden en dan dichterbij. Bij afstanden kleiner dan 80 cm worden lage waarden bekomen zoals 0,1. Afstanden groter dan 80 cm geven een negatieve waarde. Wanneer de afstand echter op een tiental cm van de sensor verwijderd is, wordt een maximale waarde van 3 verkregen. Eenmaal de lengte tussen de afstandssensor en het voorwerp kleiner is dan 10 cm, zakt de geleidelijk aan naar 2. De conclusie van deze test: voor de afstandssensor zullen de waarden twee en drie moeten gebruikt worden.
 
-\subsection{Definitieve programma's}
+\subsection{Programma's}
 %manuele override
 %inlezen sensoren
 %programma auto niet botsen -> stopwaarde
@@ -259,100 +259,166 @@ Deze waarden en resultaten werden gebruikt om het eind programma te generen.
 minimum height=2em]
 
 
-Om het programma volledig te begrijpen, zal alles chronologisch stap voor stap worden uitgelegd met behulp van verscheidene korte flowcharts. \\
+Om het programma volledig te begrijpen, zal alles stap voor stap worden uitgelegd met behulp van verscheidene korte flowcharts. \\
 
-In het schema \ref{programmaBegin} wordt de opsplitsing tussen de manuele en automatische besturing toegelicht. Bij dit programma is het belangrijk om op te merken dat bij een overschakeling naar de manuele besturing de waarden 0, 1 en 2 telkens worden gereset opdat er steeds manueel kan gereden worden. %nog aan te passen.
-In het schema wordt ook gebruik van de afkortingen PWM en RGB. Deze staan respectievelijk voor de Engelse woorden Puls width modulation en Red Green Blue.
-Zodra de overschakeling op de automatische besturing wordt telkens een waarde verstuurd. Voor de waarden 0, 1 en 2 worden verder verduidelijkt in aparte flowchart respectievelijk \ref{reflectiesensorValueZero}, \ref{kleursensorValueOne} en % nog te maken.
+In schema \ref{programmaBegin} wordt de opsplitsing tussen de manuele en automatische besturing toegelicht. Bij dit programma is het belangrijk om op te merken dat bij een overschakeling naar de manuele besturing de waarden 0, 1 en 2 telkens automatisch worden gereset opdat er steeds manueel kan gereden worden. %nog aan te passen.
+Zodra de overschakeling naar de automatische besturing gebeurt, wordt er telkens een waarde verstuurd 0, 1, en 2. Deze waarden worden verder verduidelijkt in aparte flowchart respectievelijk \ref{reflectiesensorValueZero}, \ref{kleursensorValueOne} en % nog te maken.
+In het schema wordt ook gebruik gemaakt van de Engelse afkortingen PWM en RGB. De eerste afkorting staat voor Puls width modulation of in het Nederlands pulsbreedtemodulatie. Dit is een techniek waarbij vaste frequentie pulsen in een soort van blokstructuur worden uitgezonden.%\cite{bibid}
+De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen namelijk rood, groen en blauw.
+\\
+\begin{figure}
+	\label{programmaBegin}
+	\centering
+	\begin{tikzpicture}[node distance = 2.5cm, auto]
+		%place
+		\node [cloud](start){start};
+		\node [block, below of= start](sensor data){Sensor data};
+		\node [decision, below of= sensor data](manueel){Manuele besturing aan?};
+		\node [block, below right of= manueel](auto){Welke waarde? (default = 0)};
+		\node [decision, below left of= manueel](knoppen){Gebruik controleknoppen};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of= knoppen](PWM){PWM};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of = auto](0){Waarde 0};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = 0](1){Waarde 1};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = auto](2){Waarde 2};
+		% lines
+		\path [line] (start) -- (sensor data);
+		\path [line] (sensor data) -- (manueel);
+		\path [line] (manueel) -- node {nee} (auto);
+		\path [line] (manueel) -- node {ja} (knoppen);
+		\path [line] (knoppen) -- (PWM);
+		\path [line] (PWM) |- node {nieuwe iteratie}(sensor data);
+		\path [line] (auto) -- (0);
+		\path [line] (auto) -- (1);
+		\path [line] (auto) -- (2);
+	\end{tikzpicture}
+	\caption{De algemene structuur van het basisprogramma.}
+\end{figure}
 
-\begin{tikzpicture}[node distance = 2.5cm, auto]\label{programmaBegin}
-	%place
-	\node [cloud](start){start};
-	\node [block, below of= start](sensor data){Sensor data};
-	\node [decision, below of= sensor data](manueel){Manuele besturing aan?};
-	\node [block, below right of= manueel](auto){Welke waarde? (default = 0)};
-	\node [decision, below left of= manueel](knoppen){Gebruik controleknoppen};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of= knoppen](PWM){PWM};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of = auto](0){Waarde 0};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = 0](1){Waarde 1};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = auto](2){Waarde 2};
-	% lines
-	\path [line] (start) -- (sensor data);
-	\path [line] (sensor data) -- (manueel);
-	\path [line] (manueel) -- node {nee} (auto);
-	\path [line] (manueel) -- node {ja} (knoppen);
-	\path [line] (knoppen) -- (PWM);
-	\path [line] (PWM) |- node {nieuwe iteratie}(sensor data);
-	\path [line] (auto) -- (0);
-	\path [line] (auto) -- (1);
-	\path [line] (auto) -- (2);
-\end{tikzpicture}
+\begin{figure}
+	\label{reflectiesensorValueZero}
+	\hspace*{-0.5cm}
+	\begin{tikzpicture}[node distance = 3cm, auto]
+		%place nodes
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](0){Waarde 0};
+		\node [block, below of = 0] (begin) {Data reflectiesensor gebruiken};
+		\node [decision, below of=begin] (lijn) {Lijn gedetecteerd?};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=lijn] (hervat) {Terug naar waarde 0};
+		\node [decision, below left of=lijn] (welke) {Stoplijn?};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=welke] (stoplijn) {Waarde 1};
+		\node [block, below right of=welke] (volglijn) {Volg de lijn};
+		%place paths
+		\path [line] (0) -- (begin);
+		\path [line] (begin) -- (lijn);
+		\path [line] (lijn) -- node {ja} (welke);
+		\path [line] (lijn) -- node {nee} (hervat);
+		\path [line] (welke) -- node {ja} (stoplijn);
+		\path [line] (welke) -- node {nee} (volglijn);
+		\path [line] (volglijn) |- (welke);
+		\path [line] (hervat) |- node {nieuwe iteratie} (0);
+	\end{tikzpicture}
+	\caption{Het basisidee van het programma van de reflectiesensor, bepaald door de waarde 0}
+\end{figure}
+
+\begin{figure}
+	\label{kleursensorValueOne}
+	\centering
+	\begin{tikzpicture}[node distance = 2.1cm, auto]
+		%place nodes
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](1){Waarde 1};
+		\node [decision, below of= 1] (Rood) {Was het rood?};
+		\node [decision, below left of=Rood] (Groen) {Groen?};
+		\node [decision, below right of=Rood] (controle) {Rood?};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=Groen] (volgende) {Waarde 2};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=Groen] (opnieuw) {Terug naar waarde 1};
+		\node [block, below right of=controle] (waarde) {Onthoud de waarde};
+		%\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below of=waarde] (herbegin) {Waarde 1};
+		%place paths
+		\path [line] (1) -- (Rood);
+		\path [line] (Rood) -- node {ja} (Groen);
+		\path [line] (Rood) -- node {nee} (controle);
+		\path [line] (Groen) -- node {ja} (volgende);
+		\path [line] (Groen) -- node {nee} (opnieuw);
+		\path [line] (controle) -- (waarde);
+		%\path [line] (waarde) -- (herbegin);
+		\path [line] (waarde) |- node {controle}(1);
+		\path [line] (opnieuw) |- node {controle}(1);
+	\end{tikzpicture}
+	\caption{Het basisidee van het programma van de kleurensensor, bepaald door de waarde 1}
+\end{figure}
+
+Nog een interessante opmerking over onderdeel \ref{waarde2} van het basisprogramma. TO DO: nog verder schrijven
+
+\begin{figure}
+	\label{waarde2}
+	\hspace*{-2.5cm}
+	\begin{tikzpicture}[node distance = 4.5cm, auto]
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](2){Waarde 2};
+		\node [decision, below of = 2](draaien){Draaien?};
+		\node [block, below of= draaien](instellen){PWM instellen};
+		\node [decision, below right of= instellen](iteraties){25 iteraties zonder lijn?};
+		\node [decision, right of= iteraties](JaGevonden){Lijn gevonden?};
+		\node [decision, below left of= iteraties](NeeGevonden){Lijn gevonden?};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=JaGevonden] (waarde0) {Waarde 0 \ref{reflectiesensorValueZero}};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, above right of=JaGevonden] (opnieuw) {Terug naar waarde 2};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=NeeGevonden](optellen){Telling van de iteratie +1};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=NeeGevonden](resetten){Reset de telling van de iteratie};
+		\node [block, above right of= draaien](rechtdoor){Rechtdoor rijden};
+		\node [block, right of= rechtdoor](uit){LED's uit};
+		\node [decision, below right of= draaien](rechts?){Rechts?};
+		\node [block, above right of= rechts?](linker){Linker pinker aan};
+		\node [block, right of= rechts?](rechter){Rechter pinker aan};
+		% setting arrows
+		\path [line] (2) -- (draaien);
+		\path [line, dashed] (draaien) -- (instellen);
+		\path [line] (instellen) -- (iteraties);
+		\path [line] (iteraties) -- node {ja} (JaGevonden);
+		\path [line] (iteraties) -- node {nee} (NeeGevonden);
+		\path [line] (JaGevonden) -- node {ja} (waarde0);
+		\path [line] (JaGevonden) -- node {nee} (opnieuw);
+		\path [line] (NeeGevonden) -- node {ja} (resetten);
+		\path [line] (NeeGevonden) -- node {nee} (optellen);
+		\path [line] (draaien) -- node {nee} (rechtdoor);
+		\path [line] (rechtdoor) -- (uit);
+		\path [line] (draaien) -- node {ja} (rechts?);
+		\path [line] (rechts?) -- node {ja} (rechter);
+		\path [line] (rechts?) -- node {nee} (linker);
+	\end{tikzpicture}
+	\caption{Het programma om het autootje te laten draaien in een notendop.}
+\end{figure}
+
+Naast het basisprogramma is de implementering van de afstandssensor nuttig om beter te begrijpen. Dit wordt verduidelijkt met flowchart \ref{afstandssensor}.
 \\
-\begin{tikzpicture}[node distance = 3.5cm, auto]\label{reflectiesensorValueZero}
-	%place nodes
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](0){Waarde 0};
-	\node [block, below of = 0] (begin) {Data reflectiesensor gebruiken};
-	\node [decision, below of=begin] (lijn) {Lijn gedetecteerd?};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=lijn] (hervat) {Terug naar waarde 0};
-	\node [decision, below left of=lijn] (welke) {Stoplijn?};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=welke] (stoplijn) {Waarde 1};
-	\node [block, below right of=welke] (volglijn) {Volg de lijn};
-	%place paths
-	\path [line] (0) -- (begin);
-	\path [line] (begin) -- (lijn);
-	\path [line] (lijn) -- node {ja} (welke);
-	\path [line] (lijn) -- node {nee} (hervat);
-	\path [line] (welke) -- node {ja} (stoplijn);
-	\path [line] (welke) -- node {nee} (volglijn);
-	\path [line] (volglijn) |- (welke);
-	\path [line] (hervat) |- node {nieuwe iteratie} (0);
-\end{tikzpicture}
+TO DO: juiste referentie naar de figuren
 \\
-\begin{tikzpicture}[node distance = 3cm, auto]\label{kleursensorValueOne}
-	%place nodes
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](1){Waarde 1};
-	\node [decision, below of= 1] (Rood) {Was het rood?};
-	\node [decision, below left of=Rood] (Groen) {Groen?};
-	\node [decision, below right of=Rood] (controle) {Rood?};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=Groen] (volgende) {Waarde 2};
-	\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=Groen] (opnieuw) {Terug naar waarde 1};
-	\node [block, below right of=controle] (waarde) {Onthoud de waarde};
-	%\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below of=waarde] (herbegin) {Waarde 1};
-	%place paths
-	\path [line] (1) -- (Rood);
-	\path [line] (Rood) -- node {ja} (Groen);
-	\path [line] (Rood) -- node {nee} (controle);
-	\path [line] (Groen) -- node {ja} (volgende);
-	\path [line] (Groen) -- node {nee} (opnieuw);
-	\path [line] (controle) -- (waarde);
-	%\path [line] (waarde) -- (herbegin);
-	\path [line] (waarde) |- node {controle}(1);
-	\path [line] (opnieuw) |- node {controle}(1);
-\end{tikzpicture}
-{\LARGE TO DO: Nog afstandssensor beetje verduidelijken.} \ref{afstandssensor}
-\\
-\begin{tikzpicture}[node distance = 3cm, auto]\label{afstandssensor}
-	% Place node
-	\node [cloud](start){Start};
-	\node [decision, below of=start] (voorligger) {Voorligger?};
-	\node [decision, right of=voorligger] (verder) {Dichter dan 20 cm?};
-	\node [block, below left of=voorligger,] (rijden) {Auto rijdt};
-	\node [decision, right of=verder] (dichtbij) {Dichter dan 10 cm?};
-	\node [block, above of=dichtbij] (vertragen) {Vertragen};
-	\node [block, below right of=dichtbij] (stoppen) {Auto stopt};
-	\node [cloud, below of=stoppen] (einde) {Stop};
-	% Draw edges 	
-	\path [line] (start) -- (voorligger);
-	\path [line] (voorligger) -- node {ja} (verder);
-	\path [line] (voorligger) -- node {nee} (rijden);
-	\path [line] (verder) |- node {nee} (rijden);
-	\path [line] (rijden) |- (start); 
-	\path [line] (verder) -- node {ja} (dichtbij);
-	\path [line] (dichtbij) -- node {nee} (vertragen);
-	\path [line] (vertragen) -- (verder);
-	\path [line] (dichtbij) -- node {ja} (stoppen);
-	\path [line] (stoppen) -- (einde);
-\end{tikzpicture}
+\begin{figure}
+	\label{afstandssensor}
+	\centering
+	\begin{tikzpicture}[node distance = 3cm, auto]
+		% Place nodes
+		\node [cloud](start){Start};
+		\node [decision, below of=start] (voorligger) {Voorligger?};
+		\node [decision, right of=voorligger] (verder) {Dichter dan 20 cm?};
+		\node [block, below left of=voorligger,] (rijden) {Auto rijdt};
+		\node [decision, right of=verder] (dichtbij) {Dichter dan 10 cm?};
+		\node [block, above of=dichtbij] (vertragen) {Vertragen};
+		\node [block, below right of=dichtbij] (stoppen) {Auto stopt};
+		\node [cloud, below of=stoppen] (einde) {Stop};
+		% Draw edges 	
+		\path [line] (start) -- (voorligger);
+		\path [line] (voorligger) -- node {ja} (verder);
+		\path [line] (voorligger) -- node {nee} (rijden);
+		\path [line] (verder) |- node {nee} (rijden);
+		\path [line] (rijden) |- (start); 
+		\path [line] (verder) -- node {ja} (dichtbij);
+		\path [line] (dichtbij) -- node {nee} (vertragen);
+		\path [line] (vertragen) -- (verder);
+		\path [line] (dichtbij) -- node {ja} (stoppen);
+		\path [line] (stoppen) -- (einde);
+	\end{tikzpicture}
+	\caption{Het basisidee van het programma van de afstandssensor.}
+\end{figure}
+
+TO DO: hoe het draaien precies verloopt, hoe de wielen draaien
 
 
 
