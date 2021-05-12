@@ -183,17 +183,17 @@ Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in ve
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
 
-\subsection{Assemblage}
+\subsection{Assemblage}\label{Assemblage}
 %titel nog aan te passen
 %Alles op elkaar zetten, 3D-modellen?
 %NOG DOEN
 Voordat het autootje fysiek geassembleerd wordt, werd dit eerst via de computer gedaan. Aan de hand van de reeds gemaakte 3D-modellen, werd een 3D-model van het autootje gemaakt. Doordat de apparte onderdelen van het autootje al af waren, moesten die enkel nog samengevoegd worden. Het 3D-model zie je in figuren \ref{opbouw1}, \ref{opbouw2}, \ref{opbouw3} en \ref{opbouw4}.
-Door dit model was het gemakkelijker om de wagen in elkaar te zetten omdat er naar iets toegewerkt werd en de plaatsing van de onderdelen zichtbaar was. Er wordt gestart met het chassis. Daar worden dan de motoren met wielen aan de onderkant opgeplaatst. Ook het kogelwiel wordt bevestigd aan de onderkant. Helemaal van voor wordt een steunpaal gezet. Aan de voorkant wordt de reflectiesensor onder de steunpaal vast gemaakt. Ook aan de voorkant maar dan vooraan op de steunpaal de afstandssensor bevestigd. Aan de zijkant van de paal wordt op een hoogte van 7.5 cm wordt de kleursensor bevestigd. Dit is aan de rechterkant vast gemaakt. Net achter de steunpaal wordt de {\it dual drive motor} geplaatst. Op het midden van het chassis worden vier makerbeams bevestigd. 
+Door dit model was het gemakkelijker om de wagen in elkaar te zetten omdat er naar iets toegewerkt werd en de plaatsing van de onderdelen zichtbaar was. Er wordt gestart met het chassis. Daar worden dan de motoren met wielen aan de onderkant opgeplaatst. Ook het kogelwiel wordt bevestigd aan de onderkant. Helemaal van voor wordt een steunpaal gezet. Aan de voorkant wordt de reflectiesensor onder de steunpaal vast gemaakt. Ook aan de voorkant maar dan vooraan op de steunpaal de afstandssensor bevestigd. Aan de zijkant van de paal wordt op een hoogte van 7,5 cm wordt de kleursensor bevestigd. Dit is aan de rechterkant vast gemaakt. Net achter de steunpaal wordt de {\it dual drive motor} geplaatst. Op het midden van het chassis worden vier makerbeams bevestigd. 
 Dit zorgt voor een platform waarop de microcontroller wordt bevestigd.
 
 
 
-\label{Assemblage}
+
 
 \section{Softwareontwerp}\label{Softwareontwerp}
 
@@ -210,14 +210,9 @@ Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de o
 Er zijn vijf experimenten gebeurd. Er zijn twee experimenten geweest om de communicatie met de microcontroller te testen. 
 Bij het eerste experiment werden de lampjes van de microcontroller aan en uitgezet met een schakelaar in LabVIEW.
 Het ander experiment was om een signaal terug te krijgen van de microcontroller.
-Er werden twee poorten va, de my Rio met elkaar verbonden en als de microcontroller gekanteld werd, moest een signaal verstuurd worden van de ene poort naar de andere.
+Er werden twee poorten van de my Rio met elkaar verbonden en als de microcontroller gekanteld werd, moest een signaal verstuurd worden van de ene poort naar de andere.
 Er is nu communicatie mogelijk want het kan signalen versturen en ontvangen.
 
-
-
-%%% moet taalonafhankelijk in het verslag dus enkel stukken van de code mogen erin. 
-%Het echt programma zal bestaan uit verschillende subVI's. Zo zullen we een stukje code schrijven dat specifiek is voor het detecteren van wagens die voor ons rijden. Als er een obstakel minder dan 20 cm voor ons staat zal hij moeten stoppen of de snelheid aanpassen. Een ander stukje code zal het lezen van het stoplicht zijn. Hier zal de microcontroller de signalen van kleursensor moeten interpreteren. Een ander deel zal met de reflectie sensor de volglijn volgen en weten wanneer die overgaat in een stopstreep waarna het wagentje moet stoppen. 
-%Er zal ook een deel zijn over het kruispunt. Dit zal bestaan uit drie delen. Deze zijn rechtdoor rijden en links of rechts afslaan. Hieraan zullen de richtingsaanwijzers gekoppeld worden.  
 
 \subsubsection{Sensoren}
 
@@ -242,11 +237,7 @@ Deze waarden en resultaten werden gebruikt om het eind programma te generen.
 
 %Het volgende experiment is met de afstandssensor. Bij deze test wordt een voorwerp eerst ver van de sensor gehouden en dan dichterbij. Bij afstanden kleiner dan 80 cm worden lage waarden bekomen zoals 0,1. Afstanden groter dan 80 cm geven een negatieve waarde. Wanneer de afstand echter op een tiental cm van de sensor verwijderd is, wordt een maximale waarde van 3 verkregen. Eenmaal de lengte tussen de afstandssensor en het voorwerp kleiner is dan 10 cm, zakt de geleidelijk aan naar 2. De conclusie van deze test: voor de afstandssensor zullen de waarden twee en drie moeten gebruikt worden.
 
-\subsection{Programma's}
-%manuele override
-%inlezen sensoren
-%programma auto niet botsen -> stopwaarde
-
+\subsection{Programma's}\label{definitieve programma's}
 % Define block styles
 \tikzstyle{decision} = [diamond, draw, fill=orange!20, text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
 \tikzstyle{block} = [rectangle, draw, fill=blue!20, text width=5em, text centered, rounded corners, minimum height=4em]
@@ -270,12 +261,12 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 		\node [cloud](start){start};
 		\node [block, below of= start](sensor data){Sensor data};
 		\node [decision, below of= sensor data](manueel){Manuele besturing aan?};
-		\node [block, below right of= manueel](auto){Welke waarde? (default = 0)};
+		\node [block, below right of= manueel](auto){Welke sequentie? (default = 0)};
 		\node [decision, below left of= manueel](knoppen){Gebruik controleknoppen};
 		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of= knoppen](PWM){PWM};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of = auto](0){Waarde 0};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = 0](1){Waarde 1};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = auto](2){Waarde 2};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of = auto](0){Sequentie 0 \ref{reflectiesensorValueZero}};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = 0](1){Sequentie 1 \ref{kleursensorValueOne}};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of = auto](2){Sequentie 2 \ref{sequentie2}};
 		% lines
 		\path [line] (start) -- (sensor data);
 		\path [line] (sensor data) -- (manueel);
@@ -295,12 +286,12 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 	\hspace*{-0.5cm}
 	\begin{tikzpicture}[node distance = 3cm, auto]
 		%place nodes
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](0){Waarde 0};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](0){Sequentie 0};
 		\node [block, below of = 0] (begin) {Data reflectiesensor gebruiken};
 		\node [decision, below of=begin] (lijn) {Lijn gedetecteerd?};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=lijn] (hervat) {Terug naar waarde 0};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=lijn] (hervat) {Blijf op sequentie 0};
 		\node [decision, below left of=lijn] (welke) {Stoplijn?};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=welke] (stoplijn) {Waarde 1};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=welke] (stoplijn) {Ga naar sequentie 1 \ref{kleursensorValueOne}};
 		\node [block, below right of=welke] (volglijn) {Volg de lijn};
 		%place paths
 		\path [line] (0) -- (begin);
@@ -312,20 +303,20 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 		\path [line] (volglijn) |- (welke);
 		\path [line] (hervat) |- node {nieuwe iteratie} (0);
 	\end{tikzpicture}
-	\caption{Het basisidee van het programma van de reflectiesensor, bepaald door de waarde 0}
+	\caption{Het basisidee van het programma van de reflectiesensor voor de sequentie 0.}
 \end{figure}
 
 \begin{figure}
 	\label{kleursensorValueOne}
 	\centering
-	\begin{tikzpicture}[node distance = 2.1cm, auto]
+	\begin{tikzpicture}[node distance = 3cm, auto]
 		%place nodes
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](1){Waarde 1};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](1){Sequentie 1};
 		\node [decision, below of= 1] (Rood) {Was het rood?};
 		\node [decision, below left of=Rood] (Groen) {Groen?};
 		\node [decision, below right of=Rood] (controle) {Rood?};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=Groen] (volgende) {Waarde 2};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=Groen] (opnieuw) {Terug naar waarde 1};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=Groen] (volgende) {Ga naar sequentie 2 \ref{sequentie2}};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=Groen] (opnieuw) {Blijf op sequentie 1};
 		\node [block, below right of=controle] (waarde) {Onthoud de waarde};
 		%\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below of=waarde] (herbegin) {Waarde 1};
 		%place paths
@@ -339,23 +330,23 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 		\path [line] (waarde) |- node {controle}(1);
 		\path [line] (opnieuw) |- node {controle}(1);
 	\end{tikzpicture}
-	\caption{Het basisidee van het programma van de kleurensensor, bepaald door de waarde 1}
+	\caption{Het basisidee van het programma van de kleurensensor met behulp van de sequentie 1.}
 \end{figure}
 
-Nog een interessante opmerking over onderdeel \ref{waarde2} van het basisprogramma. TO DO: nog verder schrijven
+Nog een interessante opmerking over onderdeel \ref{sequentie2} van het basisprogramma. TO DO: nog verder schrijven
 
 \begin{figure}
-	\label{waarde2}
 	\hspace*{-2.5cm}
+	\label{sequentie2}
 	\begin{tikzpicture}[node distance = 4.5cm, auto]
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](2){Waarde 2};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](2){Sequentie 2};
 		\node [decision, below of = 2](draaien){Draaien?};
 		\node [block, below of= draaien](instellen){PWM instellen};
 		\node [decision, below right of= instellen](iteraties){25 iteraties zonder lijn?};
 		\node [decision, right of= iteraties](JaGevonden){Lijn gevonden?};
 		\node [decision, below left of= iteraties](NeeGevonden){Lijn gevonden?};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=JaGevonden] (waarde0) {Waarde 0 \ref{reflectiesensorValueZero}};
-		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, above right of=JaGevonden] (opnieuw) {Terug naar waarde 2};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=JaGevonden] (waarde0) {Ga naar sequentie 0 \ref{reflectiesensorValueZero}};
+		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, above right of=JaGevonden] (opnieuw) {Blijf op sequentie 2};
 		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below left of=NeeGevonden](optellen){Telling van de iteratie +1};
 		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115, below right of=NeeGevonden](resetten){Reset de telling van de iteratie};
 		\node [block, above right of= draaien](rechtdoor){Rechtdoor rijden};
@@ -379,7 +370,7 @@ Nog een interessante opmerking over onderdeel \ref{waarde2} van het basisprogram
 		\path [line] (rechts?) -- node {ja} (rechter);
 		\path [line] (rechts?) -- node {nee} (linker);
 	\end{tikzpicture}
-	\caption{Het programma om het autootje te laten draaien in een notendop.}
+	\caption{In een notendop het programma om het autootje te laten draaien.}
 \end{figure}
 
 Naast het basisprogramma is de implementering van de afstandssensor nuttig om beter te begrijpen. Dit wordt verduidelijkt met flowchart \ref{afstandssensor}.
@@ -420,19 +411,19 @@ TO DO: hoe het draaien precies verloopt, hoe de wielen draaien
 
 \section{Discussie} %discussiesectie 
 \subsection{Resultaten demo}  % Dit deel geschreven door Dieter Demuynck 
-Er wordt ook een demonstratie gedaan voor de functionaliteit van het wagentje, om te kijken of het inderdaad doet wat werd gevraagd en hoe efficiënt dat het werkt.
+Er wordt een demonstratie gehouden om de functionaliteit van het autootje te testen. Dit is nuttig om te kijken of het inderdaad doet wat er gevraagd wordt en hoe efficiënt het werkt.
 
 % Algemene problemen.
-Het wagentje reed tijdens de demo soms van de lijn, het had veel moeite met correcte bochten nemen, en het reed soms door het rood. Dit heeft hoogstwaarschijnlijk te maken met de gebruikte componenten en de algemene bouw van de wagen. Het wagentje kon wel snel genoeg rijden om de afgetippelde baan op een redelijke snelheid af te leggen.
+Er werd vastgesteld dat de auto soms van de lijn reed. Daarnaast had het veel moeite met te draaien op een correcte manier. Bovendien reed het soms door het rood. Dit heeft hoogstwaarschijnlijk te maken met de gebruikte componenten en de algemene bouw van de wagen. Het wagentje kon wel snel genoeg rijden om de uitgestippeld weg op een redelijke snelheid af te leggen.
 
 % Problemen met motoren
-Zo bleek het dat de motoren niet even snel en gelijkmatig draaiden. Ook hadden ze soms niet genoeg kracht om vooruit te rijden, vooral wanneer de wagen op één wiel probeert te draaien. Mogelijks komt dit doordat er te veel wrijving was tussen het kogelwiel en de grond, en/of te weinig wrijving tussen de wielen en de grond. Om toch die ongelijkmatigheid tegen te gaan werden er twee waarden ingevoerd om de snelheid van de te snelste motor te verlagen, en om beide motoren aan te houden zelfs tijdens bochten en aanpassingen, zodat er genoeg kracht was om toch vooruit te kunnen rijden. Dit zorgde echter voor nieuwe problemen. Zelfs met de snelheidsaanpassing reed de aanvankelijke snelste motor niet altijd even snel als werd ingegeven, zoals tijdens bochten, hoogstwaarschijnlijk omdat één wiel meer of minder kracht ondervindt. Ook kan het gebeuren dat een wiel slipt en geen of te weinig grip heeft. Dit, gecombineerd met het feit dat beide wielen aan blijven om vooruit te kunnen gaan, zorgde ervoor dat de wagen soms van de lijn afweek, ook al probeerde het toch om zich aan te passen om op de lijn te blijven. Door deze problemen moest er dus veel ingegrepen worden via manuele besturing, veelal tijdens bochten.
+Eén van de oorzaken van de ondervonden moeilijkheden, bleek het dat de motoren niet even snel en gelijkmatig draaiden. Ook hadden ze soms niet genoeg kracht om vooruit te rijden. Dit kwam vooral voor wanneer de wagen op één wiel probeert te draaien, bijvoorbeeld in bochten. Mogelijks is dit te wijten aan te veel wrijving tussen het kogelwiel en de grond, en/of te weinig wrijving tussen de wielen en de grond. Om toch die ongelijkmatigheid te beperken, werden er twee waarden ingevoerd om de snelheid van de motor die het snelste draaide te verlagen. Op die manier moesten beide motoren niet uitgeschakeld worden opdat de kracht voldoende groot bleef om toch verder te kunnen rijden. Dit zorgde echter voor nieuwe problemen. Zelfs met snelheidsaanpassingen reed de aanvankelijke snelste motor niet altijd even snel als werd ingegeven, zoals tijdens bochten. Hoogstwaarschijnlijk komt dit doordat één wiel meer of minder kracht ondervindt. Ook kan het gebeuren dat er een wiel slipt en geen of te weinig grip heeft. Deze twee redenen zorgden ervoor dat de wagen soms van de lijn afweek, ook al probeerde het toch om zich aan te passen om op de lijn te blijven. Hierdoor was er de noodzaak om veelal tijdens bochten manueel in te grijpen.
 
 % Problemen met kleurensensor
-Ook reed het wagentje soms door een rood licht. Dit komt omdat de kleurensensor een ingewikkeld algoritme nodig heeft om te besluiten of het groen of rood is. Er is enkel een heel geringe verandering in rode en groene waarden door de flikkering van het rood of groen licht aan 1 Hz, en het is net die flikkering dat we proberen op te meten. Hier loopt het soms fout, omdat er geen flikkering wordt opgemeten bij het rood licht, ook al is het rood, en de wagen dus door rijdt.
+Zoals eerder aangehaald, reed het autootje soms door een rood licht. De oorzaak hiervan ligt bij het ingewikkelde algoritme van de kleurensensor dat besluit of het groen of rood is. Er is enkel een heel geringe verandering in de rode en groene waarden door de flikkering van het rood of groen licht aan 1 Hz. Deze flikkering is net het probleem bij het opmeten, aangezien er geen flikkering wordt opgemeten bij het rood licht, ook al is het rood. Dit zorgt ervoor dat de auto door rijdt.
 
 % Besluit: Mogelijke oplossingen
-Uit de demo kunnen we besluiten welke verbeteringen en aanpassingen er kunnen worden gemaakt om een beter resultaat te verkrijgen. Zo is het in het vervolg mogelijk om het meer van het gewicht van de wagen op de wielen te laten rusten, en minder op het kogelwiel, of kunnen er meerdere kogelwielen gebruikt worden zodat de kracht meer wordt verdeeld. Daarbij kunnen we krachtigere wielen gebruiken. Het zou ook mogelijk zijn om een camera te gebruiken, samen met een passend algoritme, om de verkeerslichten beter te interpreteren.
+Uit de demo kan er besloten worden welke mogelijke verbeteringen en aanpassingen er in de toekomst gemaakt kunnen worden opdat een beter resultaat verkregen wordt. Een eerste verbetering zou kunnen zijn om het zwaartepunt van de auto op de wielen te laten rusten, en minder op het kogelwiel. Een andere mogelijkheid is om meerdere kogelwielen te gebruiken zodat de kracht meer wordt verdeeld. Daarnaast kunnen er ook krachtigere wielen gebruikt worden. Er zou ook eventueel overwegen kunnen worden om een camera te gebruiken, samen met een passend algoritme, om de verkeerslichten beter te interpreteren.
 
 \subsection{Financiële kant} 
 In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed.  
@@ -442,10 +433,10 @@ In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te best
 
 
 \section{Besluit}
-Er is duidelijk te zien dat er veel opzoekingswerk vereist is. Er moet namelijk gezorgd worden dat alle onderdelen bij elkaar passen: geen te grote wielen, onderdelen die niet te veel wegen… Dit het belangrijkste onderdeel van het ontwerpproces.\\
-Voor het implementeren is er ook heel wat opzoekingswerk vereist. Daarom is het belangrijk dat dit werk vroeg genoeg wordt ingepland, zodat men genoeg tijd zal hebben om effectief te programmeren. Eens er begonnen wordt met het programmeren is het ten sterkste aangeraden om over de onderdelen van de auto te beschikken. Zo zal er geëxperimenteerd kunnen worden. Om een beter beeld te krijgen over de programma’s die moeten geïmplementeerd worden, is het handig om vooraf een flowchart te maken. Aan  de hand van deze flowcharts zou het mogelijk moeten zijn om een programma uit te schrijven.\\
-Om de auto te verbeteren, is het aangeraden om meer gewicht op de voorkant te laten rusten, zodat het kogelwiel achteraan minder wrijving zou ondervinden. Het gebruik van krachtigere wielen kan ook voor een oplossing zorgen. Ook kon men besluiten dat voor het interpreteren van een verkeerslicht, het gebruik van een camera misschien meer ideaal zou geweest zijn. Een nadeel hiervan is het bijkomend gewicht.
-In het geval dat we meer tijd gehad zouden hebben, zouden de programma’s meer getest kunnen worden en zouden de programma’s nog verbeterd kunnen worden.
+Het is duidelijk dat er veel opzoekingswerk vereist is. Er moet namelijk gezorgd worden dat alle onderdelen bij elkaar passen: geen te grote wielen, onderdelen die niet te veel wegen… Dit is het belangrijkste onderdeel van het ontwerpproces.\\
+Voor het implementeerwerk is er ook heel wat opzoekingswerk vereist. Daarom is het belangrijk dat dit werk tijdig wordt ingepland, zodat men genoeg tijd zal hebben om effectief te programmeren. Eens er begonnen wordt met het programmeren is het ten sterkste aangeraden om over de onderdelen van de auto te beschikken. Zo zal er geëxperimenteerd kunnen worden. Om een beter beeld te krijgen over de programma’s die moeten geïmplementeerd worden, is het handig om vooraf een flowchart te maken. Aan de hand van deze flowcharts zou het haalbaar moeten zijn om het volledig programma uit te schrijven.\\
+Om in de toekomst de auto te verbeteren, is het aanbevolen om meer gewicht op de wielen te laten rusten, zodat het kogelwiel achteraan minder wrijving ondervindt. Het gebruik van krachtigere wielen kan hier ook een oplossing bieden. Daarnaast is het misschien idealer om een camera te gebruiken voor het interpreteren van een verkeerslicht. Een nadeel hiervan is het bijkomend gewicht. 
+Extra tijd voor dit project zou bovendien ook betekenen dat de programma’s meer getest zouden kunnen worden waardoor deze nog verbeterd kunnen worden.
 
 
 %Samenvatting wat in verslag
