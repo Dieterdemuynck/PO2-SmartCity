@@ -257,7 +257,7 @@ In het schema wordt ook gebruik gemaakt van de Engelse afkortingen PWM en RGB. D
 De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen namelijk rood, groen en blauw.
 \\
 \begin{figure}
-	\label{programmaBegin}
+	
 	\centering
 	\begin{tikzpicture}[node distance = 2.5cm, auto]
 		%place
@@ -282,10 +282,11 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 		\path [line] (auto) -- (2);
 	\end{tikzpicture}
 	\caption{De algemene structuur van het basisprogramma.}
+	\label{programmaBegin}
 \end{figure}
 
 \begin{figure}
-	\label{reflectiesensorValueZero}
+	
 	\hspace*{-0.5cm}
 	\begin{tikzpicture}[node distance = 3cm, auto]
 		%place nodes
@@ -307,10 +308,11 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 		\path [line] (hervat) |- node {nieuwe iteratie} (0);
 	\end{tikzpicture}
 	\caption{Het basisidee van het programma van de reflectiesensor voor de sequentie 0.}
+	\label{reflectiesensorValueZero}
 \end{figure}
 
 \begin{figure}
-	\label{kleursensorValueOne}
+	
 	\centering
 	\begin{tikzpicture}[node distance = 3cm, auto]
 		%place nodes
@@ -334,13 +336,14 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 		\path [line] (opnieuw) |- node {controle}(1);
 	\end{tikzpicture}
 	\caption{Het basisidee van het programma van de kleurensensor met behulp van de sequentie 1.}
+	\label{kleursensorValueOne}
 \end{figure}
 
-Nog een interessante opmerking over onderdeel \ref{sequentie2} van het basisprogramma. TO DO: nog verder schrijven
+
 
 \begin{figure}
 	\hspace*{-2.5cm}
-	\label{sequentie2}
+	
 	\begin{tikzpicture}[node distance = 4.5cm, auto]
 		\node [draw, trapezium, fill=gray!20, trapezium left angle = 65, trapezium right angle = 115](2){Sequentie 2};
 		\node [decision, below of = 2](draaien){Draaien?};
@@ -374,14 +377,13 @@ Nog een interessante opmerking over onderdeel \ref{sequentie2} van het basisprog
 		\path [line] (rechts?) -- node {nee} (linker);
 	\end{tikzpicture}
 	\caption{In een notendop het programma om het autootje te laten draaien.}
+	\label{sequentie2}
 \end{figure}
 
-Naast het basisprogramma is de implementering van de afstandssensor nuttig om beter te begrijpen. Dit wordt verduidelijkt met flowchart \ref{afstandssensor}.
-\\
-TO DO: juiste referentie naar de figuren
-\\
+
+
 \begin{figure}
-	\label{afstandssensor}
+	
 	\centering
 	\begin{tikzpicture}[node distance = 3cm, auto]
 		% Place nodes
@@ -406,9 +408,10 @@ TO DO: juiste referentie naar de figuren
 		\path [line] (stoppen) -- (einde);
 	\end{tikzpicture}
 	\caption{Het basisidee van het programma van de afstandssensor.}
+	\label{afstandssensor}
 \end{figure}
 
-TO DO: hoe het draaien precies verloopt, hoe de wielen draaien
+
 
 
 
