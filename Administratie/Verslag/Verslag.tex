@@ -5,6 +5,7 @@
 %\usepackage[latin1]{inputenc}
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows}
+\usepackage{subcaption}
 
 \faculty{Wetenschap \& Technologie Kulak }
 \group{Ingenieurswetenschappen}
@@ -66,11 +67,11 @@ De modelstad bestaat uit enkele straten en negen identieke kruispunten. De auto 
 	\label{fig:plattegrond}
 \end{figure}
 
-Om een botsing te voorkomen, moet het autootje voorgaande wagens kunnen detecteren en tijdig stoppen wanneer deze te dichtbij komen. Als de wagen achteraan wordt aangereden, is het in fout. Dit impliceert dat enkel voorliggers een probleem kunnen vormen. Om dit op te lossen moet het wagentje uitgerust zijn met een afstandssensor. Deze sensor detecteert voorliggers en verzendt vervolgens een signaal zodat de motoren vertragen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand. %meer uitleg over de remafstand? 
+Om een botsing te voorkomen, moet het autootje voorgaande wagens kunnen detecteren en tijdig stoppen wanneer deze te dichtbij komen. Als de wagen achteraan wordt aangereden, is het niet in fout. Dit impliceert dat enkel voorliggers een probleem kunnen vormen. Om dit op te lossen moet het wagentje uitgerust zijn met een afstandssensor. Deze sensor detecteert voorliggers en verzendt vervolgens een signaal zodat de motoren vertragen. Er moet dus ook gezorgd worden voor een zo kort mogelijke remafstand. %meer uitleg over de remafstand? 
 
 Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren rond de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het autootje een beperkte massa heeft, maximaal 500 gram. Dit zal ervoor zorgen dat het op een veilige manier voortbeweegt aan een snelheid van ongeveer 10 cm/s. Hierdoor blijft ook de remafstand beperkt.
 
-Uit veiligheid wil men vanop afstand kunnen ingrijpen wanneer er iets fout loopt, zoals een aanrijding. Dit betekent dat de auto naast het autonoom rijden ook bestuurbaar moet zijn met een toetsenbord. 
+Uit veiligheid wil men vanop afstand kunnen ingrijpen wanneer er iets fout loopt, zoals een aanrijding. Dit betekent dat de auto naast het autonoom rijden ook bestuurbaar moet zijn via een computer. 
 
 
 %Per onderdeel verwijzen voor bibliografie!!!
@@ -87,38 +88,41 @@ Uit veiligheid wil men vanop afstand kunnen ingrijpen wanneer er iets fout loopt
 \label{Ontwerpskeuze}
 
 \subsubsection{Chassis}
-Als eerste wordt de chassis besproken. Voor deze auto wordt een rechthoekige variant gebruikt met als afmetingen 80 mm op 172 mm  \cite{RobotChassisRechthoekigZwart}. 
+Als eerste wordt het chassis besproken. Voor deze auto wordt een rechthoekige variant gebruikt met als afmetingen 80 mm op 172 mm  \cite{RobotChassisRechthoekigZwart}. 
 
-\begin{figure}
-	\includegraphics[width=0.5\textwidth]{1chassisaAndrijving}
-	\centering
-	\caption{Chassis met wielen, kogelwiel en motoren}
-	\label{opbouw1}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=0.5\textwidth]{2sensoren}
-	\centering
-	\caption{Chassis met wielen, kogelwiel, motoren en sensoren}
-	\label{opbouw2}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=0.5\textwidth]{3voorlaatste}
-	\centering
-	\caption{Chassis met wielen, kogelwiel, motoren, sensoren en makerbeams} 
-\label{opbouw3}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=0.5\textwidth]{4Volledig}
-	\centering
-	\caption{De afgewerkte auto}
-	\label{opbouw4}
+\begin{figure}[ht] 
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{1chassisaAndrijving} 
+		\caption{Chassis met wielen, kogelwiel en motoren} 
+		\label{opbouw1} 
+		\vspace{4ex}
+	\end{subfigure}%% 
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{2sensoren} 
+		\caption{Chassis met wielen, kogelwiel, motoren en sensoren} 
+		\label{opbouw2} 
+		\vspace{4ex}
+	\end{subfigure} 
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{3voorlaatste} 
+		\caption{Chassis met wielen, kogelwiel, motoren, sensoren en makerbeams} 
+		\label{opbouw3} 
+	\end{subfigure}%%
+	\begin{subfigure}[b]{0.5\linewidth}
+		\centering
+		\includegraphics[width=0.75\linewidth]{4Volledig} 
+		\caption{De afgewerkte auto} 
+		\label{opbouw4} 
+	\end{subfigure} 
+	\caption{opbouw van de wagen}
+	\label{opbouwvanwagen} 
 \end{figure}
 
 Deze is handig in gebruik wegens de verscheidene vormen van de groeven. %groottes of vormen?
-Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een ronde chassis is hiervoor minder geschikt \cite{RobotChassis}. Ook zijn er in deze laatste groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
+Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te hechten. Een rond chassis is hiervoor minder geschikt \cite{RobotChassis}. Ook zijn er in dit laatste chassis, groeven aanwezig voor de wielen. Dit impliceert dat er minder ruimte is om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
 %motordrivers die er niet aan gesoldeerd konden worden?
 \label{Chassis}
 
@@ -134,21 +138,21 @@ Figuur \ref{fig:wiel} geeft een idee hoe ze eruit zien.
 	\label{fig:wiel}
 \end{figure}
 
-De dikte van dit wiel is geschikt om voldoende grip te hebben. Bij dunnere banden is er minder grip. Dit zou ervoor kunnen zorgen dat de auto niet snel genoeg kan remmen bij obstakels en stoplijnen \cite{Banden}.  
+De dikte van dit wiel zorgt voor voldoende grip. Bij dunnere banden is er minder grip. Dit zou ervoor kunnen zorgen dat de auto niet snel genoeg kan remmen bij obstakels en stoplijnen \cite{Banden}.  
 Daarnaast is de diameter evenredig met de versnelling en de nodige kracht. Een kleiner wiel impliceert een kleinere kracht en een kleine versnelling. Een groot wiel daarentegen levert een grote versnelling maar heeft een grote kracht nodig. Het is dus belangrijk dat de middenweg wordt genomen om een goede snelheid te behalen zonder al te veel moeite.    
 
 De auto van dit project is een driewieler. Dit heeft enkele voordelen. Eerst en vooral is dit eenvoudiger om te draaien. Bij een vierwieler zijn er twee vaste punten. Hierdoor ontstaat er meer wrijving waardoor de auto minder vlot kan draaien. Daardoor is het dus gemakkelijker een driewieler te laten afslaan. Deze heeft bij het afslaan maar één vast punt waarrond de andere wielen draaien. 
-Ten tweede reduceert een driewieler de kosten van het project een klein beetje. Een vierde wiel is niet noodzakelijk om aan te schaffen. Op deze manier is er nog een kleine marge in het budget voor eventuele wijzigingen tijdens het project. Als derde wiel voor de auto kiest men voor een kogelwiel. Dit wiel biedt als voordeel flexibeler te zijn in draaibewegingen dan een normaal wiel.  
+Ten tweede reduceert een driewieler de kosten van het project een klein beetje. Een vierde wiel is niet noodzakelijk om aan te schaffen. Op deze manier is er nog een kleine marge in het budget voor eventuele wijzigingen tijdens het project. Als derde wiel voor de auto kiest men voor een kogelwiel. Dit wiel biedt als voordeel flexibeler te zijn in draaibewegingen.  
 \label{Wielen}
 
 
 \subsubsection{Motoren}
-Aansluitend hierbij spelen de tandwielmotoren ook een belangrijke rol. Motoren met een groot tandwiel starten zeer gemakkelijk maar behalen geen al te grote snelheid. Kleine tandwielen hebben dan weer de omgekeerde eigenschap. Het is dus van belang dat er een tandwielen worden gebruikt met een gemiddelde grootte namelijk de motor met verhouding 50:1. Niet alleen de grootte speelt een rol, maar ook de kracht van de motor. Hiervoor wordt het best gekozen voor de "High Power" (HP). Deze motoren hebben een grote efficiëntie. 
+Aansluitend spelen de tandwielmotoren ook een belangrijke rol. Motoren met een groot tandwiel starten zeer gemakkelijk maar behalen geen al te grote snelheid. Kleine tandwielen hebben dan weer de omgekeerde eigenschap. Het is dus van belang dat er een tandwielen worden gebruikt met een gemiddelde grootte namelijk de motor met verhouding 50:1. Niet alleen de grootte speelt een rol, maar ook de kracht van de motor. Hiervoor wordt het best gekozen voor de "High Power" (HP). Deze motoren hebben een grote efficiëntie. 
 
 Een bijkomend voordeel is het gewicht dat slechts 9,5 gram bedraagt \cite{MicroMetalGearMotor50:1HP}. %Erbij zetten dat het ook een groter vermogen heeft?
 Hoe minder de onderdelen wegen, hoe minder kracht je nodig hebt om de auto te laten rijden. 
 
-Door het gebruik van deze motoren is er nood aan motorbeugels zodat de ze aan de chassis  vastgemaakt kunnen worden. Aangezien de motoren een breedte van 12 mm en een hoogte van 10 mm hebben, is het logisch dat de beugels met afmetingen 12 mm op 10 mm worden genomen \cite{MicroMetalGearMotorBeugel}.
+Door het gebruik van deze motoren is er nood aan motorbeugels zodat de ze aan het chassis  vastgemaakt kunnen worden. Aangezien de motoren een breedte van 12 mm en een hoogte van 10 mm hebben, is het logisch dat de beugels met afmetingen 12 mm op 10 mm worden genomen \cite{MicroMetalGearMotorBeugel}.
 Verder is een dubbele aandrijfmotor essentieel om de tandwielmotoren met de microcontroller te verbinden. In dit project wordt gekozen voor de Dual Drive DRV8833 \cite{DualDriveDRV8833}. 
 \label{Motoren}
 
@@ -178,7 +182,7 @@ Ook om de kleuren groen en rood te herkennen, is er nood aan een kleurensensor o
 
 
 \subsubsection{LED-lampjes}\label{LED-lampjes}
-Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in vergelijking met de andere ideeën. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren waardoor er risico zou zijn dat het wagentje niet juist werkt.
+Als extra optie kozen we om LED's te voorzien, dit zorgt ervoor dat omstaanders kunnen waarnemen welke richting het wagentje zal uitgaan. Daarnaast leek het ons ook een haalbare extra opdracht. Eerst dachten we eraan om servomotoren te gebruiken maar deze waren schaars en ingewikkeld te modelleren en programmeren waardoor er risico zou zijn dat het wagentje niet juist werkt.
 %Gear-motor: niet 100, want anders veel toeren, maar te weinig kracht (50 omgekeerd)
 
 
@@ -188,8 +192,8 @@ Als extra optie om LED's te plaatsen omdat het ons het meest haalbaar leek in ve
 %NOG DOEN
 Voordat het autootje fysiek geassembleerd wordt, werd dit eerst via de computer gedaan. Aan de hand van de reeds gemaakte 3D-modellen, werd een 3D-model van het autootje gemaakt. Doordat de apparte onderdelen van het autootje al af waren, moesten die enkel nog samengevoegd worden. Het 3D-model zie je in figuren \ref{opbouw1}, \ref{opbouw2}, \ref{opbouw3} en \ref{opbouw4}.
 Door dit model was het gemakkelijker om de wagen in elkaar te zetten omdat er zo naar iets toegewerkt kon worden. Ook was hierdoor de plaatsing van de onderdelen zichtbaar.%Deze zin is nogsteeds niet mooi maar ik weet niet goe hoe het anders te zeggen.
-Er wordt gestart met het chassis. Daar worden dan de motoren met wielen aan de onderkant opgeplaatst. Ook het kogelwiel wordt bevestigd aan de onderkant. Helemaal vooraan wordt een steunpaal gezet. Aan de voorkant wordt de reflectiesensor onder de steunpaal vast gemaakt. Ook aan de voorkant maar dan vooraan op de steunpaal de afstandssensor bevestigd. Aan de zijkant van de paal wordt op een hoogte van 7,5 cm wordt de kleursensor bevestigd. Dit is aan de rechterkant vast gemaakt. Net achter de steunpaal wordt de {\it dual drive motor} geplaatst. Op het midden van het chassis worden vier makerbeams bevestigd. 
-Dit zorgt voor een platform waarop de microcontroller wordt bevestigd.
+Het ontwerp start bij het chassis. hierbij worden dan de motoren met wielen aan de onderkant geplaatst. Ook het kogelwiel wordt bevestigd aan de onderkant. Helemaal vooraan worden twee steunpalen bevestigd. De reflectiesensor wordt onder de steunpaal vast gemaakt. Ook aan de voorkant wordt de afstandsensor geplaatst. Deze sensor wordt niet aan de onderkant vastgemaakt, maar aan de voorkant van deze twee palen. Aan de rechterzijkant wordt nog een grotere paal geplaast, zodat de kleursensor op een hoogte van 7.5 cm de stoplichten kan lezen. Net achter de steunpaal wordt de {\it dual drive motor} op de printplaat gesoldeerd. Op het midden van het chassis ondersteunen drie kleinere palen de microcontroller. 
+
 
 
 
@@ -197,7 +201,7 @@ Dit zorgt voor een platform waarop de microcontroller wordt bevestigd.
 
 \section{Softwareontwerp}\label{Softwareontwerp}
 
-Om te kunnen implementeren is het belangrijk om informatie in te winnen door opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden.
+Om te kunnen implementeren is het belangrijk om informatie in te winnen via opzoekingswerk. Het is dan ook cruciaal dat er specifieker wordt gezocht hoe het materiaal best gebruikt kan worden.
 %bron myrio nog vermelden
 Dit is nuttig om de communicatie tussen de sensoren en de NI MyRIO-controller te begrijpen. Ook de spanning dat nodig is om de sensoren te laten te werken is belangrijk. Zo zijn er enkele poorten die precies 5 volt leveren. Dit is perfect, aangezien dit compatibel is met het spanningsverschil van de sensoren. Vervolgens kan het elektrisch circuit opgesteld worden. Dit is handig om te weten welke onderdelen er met elkaar worden verbonden. Eenmaal dit in orde is, kan het programmeerwerk beginnen.
 %Laatste twee zinnen nog aan te passen.
@@ -209,20 +213,19 @@ Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de o
 \subsubsection{Signalen ontvangen en versturen}
 Er zijn vijf experimenten gebeurd. Er zijn twee experimenten geweest om de communicatie met de microcontroller te testen. 
 Bij het eerste experiment werden de lampjes van de microcontroller aan en uitgezet met een schakelaar in LabVIEW.
-Het ander experiment was om een signaal terug te krijgen van de microcontroller.
+Het andere experiment, was om een signaal terug te krijgen van de microcontroller.
 Er werden twee poorten van de my Rio met elkaar verbonden en als de microcontroller gekanteld werd, moest een signaal verstuurd worden van de ene poort naar de andere.
 Er is nu communicatie mogelijk want het kan signalen versturen en ontvangen.
 
 
 \subsubsection{Sensoren}
 
-Dan werden er drie experimenten uitgevoerd om de waarden van de sensoren te begrijpen.
+Vervolgens werden er drie experimenten uitgevoerd om de waarden van de sensoren te begrijpen.
 Als men niet weet wat een bepaalde waarde betekent, kan men het programma niet schrijven.
 Bij de reflectiesensor werden de waarden van wit, grijs en zwart getest. 
 Voor zwart werden waarden tussen drie en vier terug gegeven.  
 Voor de kleursensor werd er getest met het rood en groen van de verkeerslichten.
-Bij het rood licht werd ook groen gedetecteerd maar bij een groen licht werd er geen rood gedetecteerd.
-Er zal dus gebruik gemaakt worden van het rode licht.
+De sensor detecteerde nauwelijks groene waardes, dus besloten we om ons enkel te baseren op de rode waardes die we van de kleursensor verkregen.
 Voor de afstandssensor werd een boek gehouden en deze verschoof zodat de waarden op verschillende afstanden gekend was.
 Er werd een piekwaarde van drie teruggeven bij een afstand van 10 cm. 
 Deze waarden en resultaten werden gebruikt om het eind programma te generen.
@@ -414,22 +417,23 @@ TO DO: hoe het draaien precies verloopt, hoe de wielen draaien
 Er wordt een demonstratie gehouden om de functionaliteit van het autootje te testen. Dit is nuttig om te kijken of het inderdaad doet wat er gevraagd wordt en hoe efficiënt het werkt.
 
 % Algemene problemen.
-Er werd vastgesteld dat de auto soms van de lijn reed. Daarnaast had het veel moeite met te draaien op een correcte manier. Bovendien reed het soms door het rood. Dit heeft hoogstwaarschijnlijk te maken met de gebruikte componenten en de algemene bouw van de wagen. Het wagentje kon wel snel genoeg rijden om de uitgestippeld weg op een redelijke snelheid af te leggen.
+Er werd vastgesteld dat de auto soms van de lijn reed. Daarnaast had het veel moeite met te draaien op een correcte manier. Bovendien reed het soms door het rood. Dit heeft hoogstwaarschijnlijk te maken met de gebruikte componenten en de algemene bouw van de wagen. Het wagentje kon wel snel genoeg rijden om de uitgestippelde weg op een redelijke snelheid af te leggen.
 
 % Problemen met motoren
+Eén van de oorzaken, bleek dat de motoren niet even snel en gelijkmatig draaiden. Ook hadden ze soms niet genoeg kracht om vooruit te rijden. Dit kwam vooral voor wanneer de wagen op één wiel probeert te draaien, bijvoorbeeld in bochten. Mogelijks is dit te wijten aan te veel wrijving tussen het kogelwiel en de grond, en/of te weinig wrijving tussen de wielen en de grond. Om toch die ongelijkmatigheid te beperken, werden er twee waarden ingevoerd om de snelheid van de motor die het snelste draaide te verlagen. Op die manier moesten beide motoren niet uitgeschakeld worden opdat de kracht voldoende groot bleef om toch verder te kunnen rijden. Dit zorgde echter voor nieuwe problemen. Zelfs met snelheidsaanpassingen reed de aanvankelijke snelste motor niet altijd even snel als werd ingegeven, zoals tijdens bochten. Hoogstwaarschijnlijk komt dit doordat één wiel meer of minder kracht ondervindt. Ook kan het gebeuren dat er een wiel slipt en geen of te weinig grip heeft. Deze twee redenen zorgden ervoor dat de wagen soms van de lijn afweek, ook al probeerde het toch om zich aan te passen om op de lijn te blijven. Hierdoor was er de noodzaak om veelal tijdens bochten manueel in te grijpen.
 %Eerste zin over snelheid motoren niet gelijkmatig staat wat te ver van de uitleg die erbij hoort!
-Eén van de oorzaken van de ondervonden moeilijkheden, bleek het dat de motoren niet even snel en gelijkmatig draaiden. Ook hadden ze soms niet genoeg kracht om vooruit te rijden. Dit kwam vooral voor wanneer de wagen op één wiel probeert te draaien, bijvoorbeeld in bochten. Mogelijks is dit te wijten aan te veel wrijving tussen het kogelwiel en de grond, en/of te weinig wrijving tussen de wielen en de grond. Om toch die ongelijkmatigheid te beperken, werden er twee waarden ingevoerd om de snelheid van de motor die het snelste draaide te verlagen. Op die manier moesten beide motoren niet uitgeschakeld worden opdat de kracht voldoende groot bleef om toch verder te kunnen rijden. Dit zorgde echter voor nieuwe problemen. Zelfs met snelheidsaanpassingen reed de aanvankelijke snelste motor niet altijd even snel als werd ingegeven, zoals tijdens bochten. Hoogstwaarschijnlijk komt dit doordat één wiel meer of minder kracht ondervindt. Ook kan het gebeuren dat er een wiel slipt en geen of te weinig grip heeft. Deze twee redenen zorgden ervoor dat de wagen soms van de lijn afweek, ook al probeerde het om zich toch aan te passen om op de lijn te blijven. Hierdoor was er de noodzaak om veelal tijdens bochten manueel in te grijpen.
 
 % Problemen met kleurensensor
 Zoals eerder aangehaald, reed het autootje soms door een rood licht. De oorzaak hiervan ligt bij het ingewikkelde algoritme van de kleurensensor dat besluit of het groen of rood is. Er is enkel een heel geringe verandering in de rode en groene waarden door de flikkering van het rood of groen licht aan 1 Hz. Deze flikkering is net het probleem bij het opmeten, aangezien er geen flikkering wordt opgemeten bij het rood licht, ook al is het rood. Dit zorgt ervoor dat de auto door rijdt.
 
 % Besluit: Mogelijke oplossingen
 Uit de demo kan er besloten worden welke mogelijke verbeteringen en aanpassingen er in de toekomst gemaakt kunnen worden opdat een beter resultaat verkregen wordt. Een eerste verbetering zou kunnen zijn om het zwaartepunt van de auto op de wielen te laten rusten, en minder op het kogelwiel. Een andere mogelijkheid is om meerdere kogelwielen te gebruiken zodat de kracht meer wordt verdeeld. Daarnaast kunnen er ook krachtigere wielen gebruikt worden. Er zou ook eventueel overwegen kunnen worden om een camera te gebruiken, samen met een passend algoritme, om de verkeerslichten beter te interpreteren.
+\\
 
 \subsection{Financiële kant} 
 In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed.  
 
-In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 535 eenheden over. Deze 535 eenheden werden besteed aan de mechanische stukken en draden. 
+In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd, bleven er nog 311 eenheden over.
 
 
 
