@@ -1,7 +1,7 @@
 %% This classfile tries to implement the lay-out of the beamer style beamerthemekuleuven2. This .sty-file can be downloaded here: https://www.kuleuven.be/communicatie/marketing/templates/presentatiemateriaal/index.html Not all options of the style are implemented in this class, for its purpose is merely to mimic the lay-out, and to provide a way to change the lay-out of presentations that were made using the "old" kulakbeamer class. For new documents, we recommend using the .sty-file instead.
 
 \documentclass
-   [kulak] % options: kul or kulak (default), handout 
+   [kulak,aspectratio=169,<options>] % options: kul or kulak (default), handout 
    {kulakbeamer}
 
 \usepackage[dutch]{babel}
@@ -12,7 +12,7 @@
 \title[Smart City]{Smart City}
 \subtitle{\scriptsize Probleemoplossen en Ontwerpen, Deel 2}
 \author[Groep 6]{Groep 6}%eventueel nog aanpassen met onze namen
-\institute[Kulak]{ KU Leuven Kulak}
+
 \date{Academiejaar 2020 -- 2021}
 \author{\scriptsize Groep 6
 	\tiny - Jolien Barbier, Mathis Bossuyt, Dieter Demuynck, Sarah De Meester, Rani Jans, Aaron Vandenberghe
@@ -81,7 +81,7 @@
 \begin{frame}
 \frametitle{De V's van vereisten}
 \begin{columns}
-	\column{.5\textwidth}
+	\column{.35\textwidth}
 	\begin{itemize}
 		\item \textbf{V}olglijnalgoritme
 		\item \textbf{V}erkeerslichtinterpretatie (bijhorend bij stoplijn)
@@ -97,7 +97,7 @@
 	\column{.5\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[width=.95\textwidth]{volglijnenEnStoplijnen}
+			\includegraphics[width=.7\textwidth]{volglijnenEnStoplijnen}
 			\caption{Kruispunt met volglijnen (25mm) en stoplijnen (50mm)}\cite{OpgavePO2}
 		\end{figure}
 	
@@ -138,7 +138,7 @@
 	\frametitle{Volledige wagen}
 	\begin{figure}
 		\centering
-		\includegraphics[width=0.50\textwidth]{4Volledig}
+		\includegraphics[width=0.4\textwidth]{4Volledig}
 		\caption{Assemblage van de wagen}
 	\end{figure}
 \end{frame}
@@ -183,7 +183,7 @@
 		%\column{.5\textwidth}
 		\begin{figure}
 			\centering
-			\includegraphics[width=.45\textwidth]{NI-myrio}
+			\includegraphics[width=.3\textwidth]{NI-myrio}
 			\caption{NI myRio}\cite{nimyrio}
 		\end{figure}
 		%\column{.5\textwidth}
@@ -229,6 +229,7 @@
 		\item Budget: 3500 eenheden
 	\end{itemize}
 	\begin{tikzpicture}[scale=0.8]
+		\hspace*{3cm}
 		\pie [rotate = 180]
 		{39/ Bieding, 6/ Wielen en chassis, 13/ Motoren, 12/ Microcontroller en batterij, 5/ Draden en mechanische stukken, 13/ Sensoren, 4/ Extra, 8/ Niet uitgegeven}
 	\end{tikzpicture}
@@ -242,7 +243,7 @@
 	\frametitle{Basisprogramma}
 	\begin{figure}
 		\centering
-		\includegraphics[width=.5\textwidth,]{flowchartBegin}
+		\includegraphics[width=.35\textwidth,]{flowchartBegin}
 		\caption{Samenvatting van het programma}
 	\end{figure}
 \end{frame}
@@ -251,7 +252,7 @@
 	\frametitle{Interface}
 	\begin{figure}
 		\centering
-		\includegraphics[width=.5\textwidth,]{Interface}
+		\includegraphics[width=.7\textwidth,]{Interface}
 		\caption{Grafische interface}
 	\end{figure}
 \end{frame}
@@ -267,7 +268,7 @@
 	\end{itemize}
 	\begin{figure}
 		\centering
-		\includegraphics[width=.5\textwidth]{fotowagen}
+		\includegraphics[width=.4\textwidth]{fotowagen}
 		\caption{Het wagentje}
 	\end{figure}
 \end{frame}
@@ -303,7 +304,7 @@
 	\frametitle{Programma Reflectiesensor}
 	\begin{figure}
 		\centering
-		\includegraphics[width=.5\textwidth,]{flowchart_sequentie0}
+		\includegraphics[width=.4\textwidth,]{flowchart_sequentie0}
 		\caption{Programma reflectiesensor}
 	\end{figure}
 \end{frame}
@@ -312,7 +313,7 @@
 	\frametitle{Programma kleurensensor}
 	\begin{figure}
 		\centering
-		\includegraphics[width=.7\textwidth]{flowchart_sequentie1}
+		\includegraphics[width=.5\textwidth]{flowchart_sequentie1}
 		\caption{Programma kleurensensor}
 	\end{figure}
 \end{frame}
@@ -321,7 +322,7 @@
 	\frametitle{Programma}
 	\begin{figure}
 		\centering
-		\includegraphics[width=.5\textwidth]{flowchart_grootProgramma}
+		\includegraphics[width=.4\textwidth]{flowchart_grootProgramma}
 		\caption{Programma om gedrag op kruispunt te bepalen}
 	\end{figure}
 \end{frame}
