@@ -10,12 +10,13 @@
 \usepackage{pgf-pie}
 
 \title[Smart City]{Smart City}
-\subtitle{\scriptsize Probleemoplossen en Ontwerpen Deel 2}
+\subtitle{\scriptsize Probleemoplossen en Ontwerpen, Deel 2}
 \author[Groep 6]{Groep 6}%eventueel nog aanpassen met onze namen
-\institute[Kulak]{KU Leuven Kulak}
+\institute[Kulak]{ KU Leuven Kulak}
 \date{Academiejaar 2020 -- 2021}
 \author{\scriptsize Groep 6
-	\tiny - Jolien Barbier, Mathis Bossuyt, Dieter Demuynck, Sarah De Meester, Rani Jans, Aaron Vandenberghe}
+	\tiny - Jolien Barbier, Mathis Bossuyt, Dieter Demuynck, Sarah De Meester, Rani Jans, Aaron Vandenberghe
+	\\o.l.v. Benjamin Maveau, Kevin Truyaert en Martijn Boussé}
 
 %% Overview at begin of each section; delete if unwanted.
 
@@ -57,7 +58,7 @@
 	\item Meer veiligheid
 	\begin{itemize}
 		\item Snellere reactie dan mensen
-		\item Vermijden van ongelukken
+		\item Ongelukken vermijden
 	\end{itemize}
 	\item Oplossing mobiliteitsproblemen
 	\begin{itemize}
@@ -90,14 +91,14 @@
 	Extra's
 	\begin{itemize}
 		\item Acceptabele snelheid
-		\item Manuele override
+		\item Manuele besturing
 	\end{itemize}
 	
 	\column{.5\textwidth}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.95\textwidth]{volglijnenEnStoplijnen}
-			\caption{Kruispunt met volglijnen (25mm) en stoplijnen (50mm))}\cite{OpgavePO2}
+			\caption{Kruispunt met volglijnen (25mm) en stoplijnen (50mm)}\cite{OpgavePO2}
 		\end{figure}
 	
 \end{columns}
@@ -107,7 +108,6 @@
 
 
 \section{Aanpak}
-
 
 %\subsection{Planning}
 %\begin{frame}
@@ -146,7 +146,7 @@
 \subsection{Onderdelen}
 
 \begin{frame}
-	\frametitle{Bodem} %chassis + wielen + motoren
+	\frametitle{Frame en motoren} %chassis + wielen + motoren
 	
 	\begin{columns}
 		\column{.25\textwidth}
@@ -165,20 +165,39 @@
 		\begin{figure}
 			\centering
 			\includegraphics[width=.7\textwidth]{ballcaster}
-			\caption{\scriptsize Ball Caster}\cite{BallCaster}
+			\caption{\scriptsize Kogelwiel}\cite{BallCaster}
 		\end{figure}
 		\column{.25\textwidth}
 		\begin{figure}
 			\centering
 			\includegraphics[width=.6\textwidth]{gear}
-			\caption{\scriptsize Micro Metal Gear Motor 50:1 HP}\cite{MicroMetalGearMotor50:1HP}
+			\caption{\scriptsize Tandwielmotor 50:1 HP}\cite{MicroMetalGearMotor50:1HP}
 		\end{figure}
 	\end{columns}
-	
 \end{frame}
+
+\begin{frame}
+	\frametitle{Microcontroller}
+	De microcontroller of processor is het hart van de auto. Het verwerkt o.a. signalen van sensoren.
+	%\begin{columns}
+		%\column{.5\textwidth}
+		\begin{figure}
+			\centering
+			\includegraphics[width=.45\textwidth]{NI-myrio}
+			\caption{NI myRio}\cite{nimyrio}
+		\end{figure}
+		%\column{.5\textwidth}
+		%\begin{figure}
+		%	\centering
+		%	\includegraphics[width=.7\textwidth]{beugel}
+		%	\caption{Motorbeugel}\cite{MicroMetalGearMotorBeugel}
+		%\end{figure}
+	%\end{columns}
+\end{frame}
+
 \begin{frame}
 	\frametitle{Sensoren}
-	Sensoren laten ons toe om informatie uit de buitenwereld te lezen
+	Sensoren laten ons toe om informatie te lezen over een bepaalde plaats.
 	\begin{columns}
 		\column{.3\textwidth}
 		\begin{figure}
@@ -203,28 +222,6 @@
 \end{frame}
 
 
-
-\begin{frame}
-	\frametitle{Microcontroller}
-	De microcontroller maakt het mogelijk om binnengekregen signalen van sensoren te verwerken
-	\begin{columns}
-		\column{.5\textwidth}
-		\begin{figure}
-			\centering
-			\includegraphics[width=.7\textwidth]{NI-myrio}
-			\caption{NI MyRio}\cite{nimyrio}
-		\end{figure}
-		\column{.5\textwidth}
-		%\begin{figure}
-		%	\centering
-		%	\includegraphics[width=.7\textwidth]{beugel}
-		%	\caption{Motorbeugel}\cite{MicroMetalGearMotorBeugel}
-		%\end{figure}
-	\end{columns}
-	
-\end{frame}
-
-
 \subsection{Prijsbesteding}
 \begin{frame}
 	\frametitle{Prijsbesteding}
@@ -233,7 +230,7 @@
 	\end{itemize}
 	\begin{tikzpicture}[scale=0.8]
 		\pie [rotate = 180]
-		{39/ Bieding, 6/ Wielen en chassis, 13/ Motoren, 12/ Microcontroller en batterij, 5/ Mechanische stukken en draden, 13/ Sensoren, 4/ Extra, 8/ Niet uitgegeven}
+		{39/ Bieding, 6/ Wielen en chassis, 13/ Motoren, 12/ Microcontroller en batterij, 5/ Draden en mechanische stukken, 13/ Sensoren, 4/ Extra, 8/ Niet uitgegeven}
 	\end{tikzpicture}
 \end{frame}
 
@@ -242,7 +239,7 @@
 \section[Programma]{Programma in LabVIEW}
 
 \begin{frame}
-	\frametitle{Basis programma}
+	\frametitle{Basisprogramma}
 	\begin{figure}
 		\centering
 		\includegraphics[width=.5\textwidth,]{flowchartBegin}
@@ -281,7 +278,7 @@
 \frametitle{Besluit}
 	\begin{itemize}
 	\item Veel opzoekingswerk vereist
-	\item Programmeren aan de hand van flowcharts
+	\item Programmeren a.d.h.v. flowcharts
 	\item Verbetering onderdelen
 		\begin{itemize}
 		\item Krachtigere wielen
@@ -303,11 +300,11 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Programma kleursensor}
+	\frametitle{Programma kleurensensor}
 	\begin{figure}
 		\centering
 		\includegraphics[width=.7\textwidth]{flowchart_sequentie1}
-		\caption{Programma kleursensor}
+		\caption{Programma kleurensensor}
 	\end{figure}
 \end{frame}
 
