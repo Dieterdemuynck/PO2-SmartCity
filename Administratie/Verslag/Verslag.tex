@@ -74,7 +74,7 @@ Om een botsing te voorkomen, moet het autootje voorgaande wagens en andere voorl
 
 Verder moet de auto aan een aanvaardbare snelheid voortbewegen. De tandwielmotoren verbonden met de wielen zorgen voor de aandrijving. Daarbij is het belangrijk dat het autootje een beperkte massa heeft, maximaal 500 gram. Dit is een ruwe schatting van de som van de onderdelen. Dit zal ervoor zorgen dat het op een veilige manier voortbeweegt aan een snelheid van ongeveer 10 cm/s. Ook dit is een schatting. Elke baan is 1 meter lang waardoor hij dus 10 seconden zou doen over een baan. Dit is niet te snel maar ook niet te traag. Hierdoor blijft ook de remafstand beperkt.
 
-Uit veiligheid wil men vanop afstand kunnen ingrijpen wanneer er iets fout loopt. Dit betekent dat de auto ook bestuurbaar moet zijn via een computer. 
+Uit veiligheid wil men vanop afstand kunnen ingrijpen wanneer er iets fout loopt. De auto moet om deze reden ook bestuurbaar moet zijn via een computer. 
 
 
 
@@ -83,8 +83,11 @@ Uit veiligheid wil men vanop afstand kunnen ingrijpen wanneer er iets fout loopt
 \label{Ontwerpskeuze}
 
 \subsubsection{Chassis}
-Om te beginnen wordt het chassis besproken. Voor deze auto wordt een rechthoekige variant gebruikt met als afmetingen 80 mm op 172 mm  \cite{RobotChassisRechthoekigZwart}. 
-
+Eerst wordt het chassis besproken. Voor deze auto wordt een rechthoekige variant gebruikt met als afmetingen 80 op 172 mm  \cite{RobotChassisRechthoekigZwart}. 
+Deze is handig in gebruik wegens de verscheidene vormen van de groeven. 
+Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te maken. Een rond chassis is hiervoor minder geschikt \cite{RobotChassis}. Hierin zijn ook al groeven aanwezig voor de wielen. Hierdoor is er minder ruimte om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
+%motordrivers die er niet aan gesoldeerd konden worden?
+\label{Chassis}
 \begin{figure}[ht] 
 	\begin{subfigure}[b]{0.5\linewidth}
 		\centering
@@ -116,10 +119,7 @@ Om te beginnen wordt het chassis besproken. Voor deze auto wordt een rechthoekig
 	\label{opbouwvanwagen} 
 \end{figure}
 
-Deze is handig in gebruik wegens de verscheidene vormen van de groeven. %groottes of vormen?
-Bovendien is de rechthoekige vorm zeer gemakkelijk om alle componenten van de auto vast te maken. Een rond chassis is hiervoor minder geschikt \cite{RobotChassis}. Hierin zijn ook al groeven aanwezig voor de wielen. Hierdoor is er minder ruimte om andere onderdelen te assembleren op het onderstel. %nadeel nog vermelden over onze 
-%motordrivers die er niet aan gesoldeerd konden worden?
-\label{Chassis}
+
 
 \subsubsection{Wielen}
 Een goede keuze voor de wielen zijn die met een diameter van 42 mm en en dikte 19 mm.
@@ -134,7 +134,7 @@ Ten tweede reduceert een driewieler de kosten van het project een beetje. Een vi
 
 
 \subsubsection{Motoren}
-Aansluitend spelen de tandwielmotoren ook een belangrijke rol. Motoren met een grote tandwielverhouding starten zeer gemakkelijk maar behalen geen al te grote snelheid. Die met een kleine tandwielverhouding hebben dan weer de omgekeerde eigenschap. Het is dus van belang dat er tandwielen worden gebruikt met een gemiddelde verhouding namelijk 50:1. Ook de kracht van de motor speelt een rol. Hiervoor wordt het best gekozen voor de 'High Power' (HP). Deze motoren hebben een grote efficiëntie. 
+Aansluitend spelen de tandwielmotoren ook een belangrijke rol. Motoren met een grote tandwielverhouding starten zeer gemakkelijk maar hebben geen hoge topsnelheid. Die met een kleine tandwielverhouding hebben dan weer de omgekeerde eigenschap. Het is dus van belang dat er tandwielen worden gebruikt met een gemiddelde verhouding namelijk 50:1. Ook de kracht van de motor speelt een rol. Hiervoor wordt het best gekozen voor de `High Power' (HP) motoren. Deze hebben een grote efficiëntie. 
 
 Een bijkomend voordeel is het gewicht dat slechts 9,5 gram per motor bedraagt \cite{MicroMetalGearMotor50:1HP}. %Erbij zetten dat het ook een groter vermogen heeft?
 Hoe minder de onderdelen wegen, hoe minder kracht je nodig hebt om de auto te laten rijden. 
@@ -159,10 +159,9 @@ Daarnaast heeft dit ook invloed op de keuze van het chassis. Achteraf viel het o
 \label{Microcontroller}
 
 \subsubsection{Sensoren} \label{Sensoren}
-Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Zoals hierboven verteld is, kunnen beide gebruikt worden met de NI myRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen enkel binaire signalen doorgeven aan de microcontroller namelijk nul of een. De analoge sensoren sturen analoge signalen uit. Dit soort signaal kan alle waarden aannemen, in tegenstelling tot een digitaal signaal. Anderzijds zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden zodat we meer vrijheid hebben om drempelwaarden te kiezen. Met de keuze van een analoge sensor is dit dus voldaan. %echte waarden nog wat uitleggen wat ermee bedoeld wordt. experimentele waarden?
+Zoals al aangehaald is, wordt in dit ontwerp gewerkt met een reflectiesensor en een afstandssensor. Er bestaan twee soorten, namelijk sensoren met digitale output en met analoge output. Zoals hierboven vermeld is, kunnen beide gebruikt worden met de NI myRIO. De analoge sensoren geven meer info dan de digitale. De digitale kunnen enkel binaire signalen doorgeven aan de microcontroller namelijk nul of een. De analoge sensoren sturen analoge signalen uit. Dit soort signaal kan alle waarden aannemen, in tegenstelling tot een digitaal signaal. Anderzijds zorgen de analoge sensoren voor meer programmeerwerk \cite{DigitaalOfAnaloog}. Voor dit project is het beter dat de informatieoverdracht tussen sensor en microcontroller vlot verloopt met behulp van echte waarden zodat we meer vrijheid hebben om drempelwaarden te kiezen. Met de keuze van een analoge sensor is dit dus voldaan. %echte waarden nog wat uitleggen wat ermee bedoeld wordt. experimentele waarden?
 De reflectiesensor zal onderaan de auto, dichtbij de grond geplaatst worden zodat de lijnen op het juiste moment zullen herkend worden. Ook is de reflectiesensor iets breder dan de volglijn. Zo zal het van zodra de auto bij een stoplijn komt, andere waarden binnenkrijgen.
 
-~
 
 Om de kleuren groen en rood te herkennen, is een kleurensensor of camera nodig. Er is keuze tussen een Raspberry Pi-camera, een webcam en een kleurensensor voor het interpreteren van de stoplichten. In dit ontwerp wordt gekozen voor de kleurensensor. Deze is compatibel met de NI myRIO en weegt maar 3,23 gram \cite{Webcam,TCS34725KleurSensorBOB}. Bovendien weegt de webcam 223,6 gram. Hoe minder de wagen weegt, hoe minder kracht er nodig is om een bepaalde snelheid te kunnen halen. De Raspberry Pi-camera is enkel bruikbaar met een Raspberry Pi als microcontroller. Aangezien in dit model wordt gewerkt met een NI myRIO, is dit dus geen optie \cite{RPi-camera}. Samengevat: de kleurensensor heeft als voordeel dat het zeer licht is en compatibel is met de NI myRIO-microcontroller. % 2 keer is? 
 
@@ -175,7 +174,7 @@ Als extra optie ging de voorkeur naar het plaatsen van LED's. Dit zorgt ervoor d
 
 \subsection{Assemblage}\label{Assemblage}
 Vooraleer het autootje fysiek te assembleren, is het gemakkelijker dit eerst via de computer te doen. Van elk onderdeel wordt een 3D-model gemaakt. Eenmaal samengevoegd is er een 3D-model van het volledige autootje. Dit is zichtbaar in Figuren \ref{opbouw1}, \ref{opbouw2}, \ref{opbouw3} en \ref{opbouw4}. %Misschien toch gewoon figuur 2 zetten?
-Het ontwerp start bij de basis van de auto, namelijk het chassis. Aan de onderkant daarvan worden de motoren met de wielen geplaatst. Ook het kogelwiel wordt aan de onderkant bevestigd. Dit plaatsen we achteraan in het midden om de massa gelijkmatig te verdelen. Helemaal vooraan worden twee steunpalen bevestigd. De reflectiesensor wordt onder een van deze palen vastgemaakt om zo dicht bij de grond te hangen. Vooraan wordt de afstandssensor geplaatst. Deze sensor wordt niet aan de onderkant vastgemaakt, maar aan de voorkant van deze twee palen om zo voorliggende objecten te detecteren. Aan de rechter zijkant wordt nog een grotere paal geplaatst, waaraan de kleurensensor wordt vastgemaakt. Zo kan de kleursensor op een hoogte van 7,5 cm de stoplichten lezen. Net achter de steunpaal wordt de {\it dual drive motor} op de printplaat gesoldeerd. Op het midden van het chassis ondersteunen drie kleinere palen de microcontroller. 
+Het ontwerp start bij de basis van de auto, namelijk het chassis. Aan de onderkant daarvan worden de motoren met de wielen en het kogelwiel geplaatst. Dit plaatsen we achteraan in het midden om de massa gelijkmatig te verdelen. Helemaal vooraan worden twee steunpalen bevestigd. De reflectiesensor wordt onder een van deze palen vastgemaakt om zo dicht bij de grond te hangen. Vooraan wordt de afstandssensor geplaatst. Deze sensor wordt niet aan de onderkant vastgemaakt, maar aan de voorkant van deze twee palen om zo voorliggende objecten te detecteren. Aan de rechter zijkant wordt nog een grotere paal geplaatst, waaraan de kleurensensor wordt vastgemaakt. Zo kan de kleursensor op een hoogte van 7,5 cm de stoplichten lezen. Net achter de steunpaal wordt de {\it dual drive motor} op de printplaat gesoldeerd. Op het midden van het chassis ondersteunen drie kleinere palen de microcontroller. 
 
 
 
@@ -189,7 +188,7 @@ Om het uiteindelijke programma te kunnen implementeren is het belangrijk om info
 Dit is nuttig om de communicatie tussen de sensoren en de NI myRIO-controller te begrijpen. Ook de spanning die nodig is om de sensoren te laten te werken is belangrijk. Zo zijn er enkele poorten die precies 5 volt leveren. Dit is perfect, aangezien dit compatibel is met de voedingsspanning van de sensoren. Vervolgens kan het elektrisch circuit opgesteld worden. Dit is handig om te weten welke onderdelen er met elkaar verbonden worden. Eenmaal dit in orde is, kan het programmeerwerk beginnen.
 %Laatste twee zinnen nog aan te passen.
 
-Voor het schrijven van stukjes code, is het ten sterkste aangeraden om over de onderdelen van de auto te beschikken zodat de fragmenten van de code uitgetest kunnen worden. In de subsectie die volgt wordt een korte analyse gegeven van de observaties die volgen uit kleine experimenten. Om de testen mogelijk te maken, moet er eerst contact worden gemaakt tussen een computer en de microcontroller. Dit kan gerealiseerd worden met de ´LED´ functie in LabVIEW. Eenmaal er connectie is, branden de lampjes op de microcontroller en kunnen de experimenten van start gaan.
+Voor de stukjes code getest kunnen worden, moesten eerst alle onderdelen aanwezig zijn. In de subsectie die volgt wordt een korte analyse gegeven van de observaties die volgen uit kleine experimenten. Om de testen mogelijk te maken, moet er eerst contact worden gemaakt tussen een computer en de microcontroller. Dit kan gerealiseerd worden met de ´LED´ functie in LabVIEW. Eenmaal er connectie is, branden de lampjes op de microcontroller en kunnen de experimenten van start gaan.
 
 
 \subsection{Experimenten}
@@ -206,7 +205,7 @@ Uit de testen blijkt dat communicatie mogelijk is, aangezien de microcontroller 
 Vervolgens worden drie experimenten uitgevoerd om de waarden van de sensoren te begrijpen. Dit is zeer belangrijk want als de betekenis van een bepaalde waarde niet duidelijk is, kan men het programma niet schrijven.
 Bij de reflectiesensor worden de waarden `wit', `grijs' en `zwart' getest. 
 Voor zwart worden er waarden tussen drie en vier teruggegeven.  
-Voor de kleursensor wordt er getest met het rood en groen van de verkeerslichten.
+De kleursensor wordt getest met het rood en groen van de verkeerslichten.
 Opmerkelijk is dat de sensor nauwelijks groene waarden detecteert. Er kan dus besloten worden om het programma enkel te baseren op de rode waarden.
 Bij de test voor de afstandssensor wordt er een boek voor de sensor gehouden dat varieert van afstand zodat de waarden op verschillende afstanden gekend zijn. Op een afstand van 10 cm wordt de piekwaarde drie teruggeven.
 Deze waarden en resultaten worden later in het proces gebruikt om het eindprogramma te genereren.
@@ -238,7 +237,7 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 \\
 \begin{figure}
 	\centering
-	\includegraphics[width=.6\textwidth]{flowchartBegin}
+	\includegraphics[width=.55\textwidth]{flowchartBegin}
 	\caption{De algemene structuur van het basisprogramma.}
 	\label{programmaBegin}
 \end{figure}
@@ -382,12 +381,10 @@ De tweede afkorting geeft de kleuren aan die de kleurensensor kan waarnemen name
 \section{Discussie} %discussiesectie 
 \subsection{Resultaten demo}  % Dit deel geschreven door Dieter Demuynck 
 Er wordt een demonstratie gehouden om de functionaliteit van het autootje te testen. Dit is nuttig om te kijken of het inderdaad doet wat er gevraagd wordt en hoe efficiënt het werkt.
-
-% Algemene problemen.
-Er werd vastgesteld dat de auto soms van de lijn weg reed. Bovendien had het veel moeite om op een correcte manier te draaien. Daarnaast reed het soms door het rood. Dit heeft hoogstwaarschijnlijk te maken met de gebruikte componenten en de algemene bouw van de wagen. Het wagentje kon wel snel genoeg rijden om de uitgestippelde weg aan een redelijke snelheid af te leggen.
+Er werd vastgesteld dat de auto soms van de lijn weg reed. Bovendien had het veel moeite om op een correcte manier te draaien. Daarnaast reed het soms door het rood. Dit heeft hoogstwaarschijnlijk te maken met de gebruikte componenten en de algemene bouw van de wagen. Het autootje kon wel snel genoeg rijden om de uitgestippelde weg aan een redelijke snelheid af te leggen.
 
 % Problemen met motoren
-Eén van de oorzaken was, dat de motoren niet even snel en gelijkmatig draaiden en dat ze soms niet genoeg kracht hadden om vooruit te rijden. Dit kwam vooral voor wanneer de wagen op één wiel probeerde te draaien, bijvoorbeeld in bochten. Mogelijks is dit door te veel wrijving tussen het kogelwiel en de grond, en/of te weinig wrijving tussen de wielen en de grond. Om die ongelijkmatigheid te beperken, werden er twee waarden ingevoerd om de snelheid van de motor die het snelst draaide te verlagen. Op die manier moesten beide motoren niet uitgeschakeld worden zodat de kracht voldoende groot bleef om verder te rijden. Dit zorgde echter voor nieuwe problemen. Zelfs met de aanpassingen reed de aanvankelijk snelste motor niet altijd even snel als werd ingegeven, zoals tijdens bochten. Waarschijnlijk komt dit doordat één wiel meer of minder kracht ondervindt. Ook kan het dat er een wiel slipt en geen of te weinig grip heeft. Deze twee redenen zorgden ervoor dat de wagen soms van de lijn afweek, ookal probeerde het om op de lijn te blijven. Hierdoor moest er vaak tijdens bochten manueel ingegrepen worden.
+Eén van de oorzaken was, dat de motoren niet even snel en gelijkmatig draaiden en dat ze soms niet genoeg kracht hadden om vooruit te rijden. Dit kwam vooral voor wanneer de auto op één wiel probeerde te draaien, bijvoorbeeld in bochten. Mogelijks is dit door te veel wrijving tussen het kogelwiel en de grond, en/of te weinig wrijving tussen de wielen en de grond. Om die ongelijkmatigheid te beperken, werden er twee waarden ingevoerd om de snelheid van de motor die het snelst draaide te verlagen. Op die manier moesten beide motoren niet uitgeschakeld worden zodat de kracht voldoende groot bleef om verder te rijden. Dit zorgde echter voor nieuwe problemen. Zelfs met de aanpassingen reed de aanvankelijk snelste motor niet altijd even snel als werd ingegeven, zoals tijdens bochten. Waarschijnlijk komt dit doordat één wiel meer of minder kracht ondervindt. Ook kan het dat er een wiel slipt en geen of te weinig grip heeft. Deze twee redenen zorgden ervoor dat de wagen soms van de lijn afweek, ookal probeerde het om op de lijn te blijven. Hierdoor moest er vaak tijdens bochten manueel ingegrepen worden.
 %Eerste zin over snelheid motoren niet gelijkmatig staat wat te ver van de uitleg die erbij hoort!
 
 % Problemen met kleurensensor
@@ -398,14 +395,12 @@ Uit de demo kan er besloten worden welke mogelijke verbeteringen en aanpassingen
 \\
 
 \subsection{Financiële kant} 
-In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed.  
-
+In het financieel rapport \ref{financieel rapport} krijgt men een beeld van wat er is aangekocht en hoeveel eenheden hieraan zijn besteed. 
 In dit project kreeg elke groep 3500 eenheden om te bieden en onderdelen te bestellen voor de auto. Bij de eerste bestelling werden in totaal 1615 eenheden uitgegeven. Na de bieding, waaraan 1350 eenheden werden gespendeerd. We kochten in de loop van het project nog extra onderdelen voor 224 eenheden, zo bleven er nog 311 eenheden over.
-\\
 
 
 \section{Besluit}
-Het is duidelijk dat er veel opzoekingswerk nodig is. Er moet namelijk gezorgd worden dat alle onderdelen bij elkaar passen: geen te grote wielen, onderdelen die niet te veel wegen… Dit is het belangrijkste onderdeel van het ontwerpproces.\\
+Het is duidelijk dat er veel opzoekingswerk nodig is. Er moet namelijk gezorgd worden dat alle onderdelen bij elkaar passen. Dit is het belangrijkste onderdeel van het ontwerpproces.\\
 Voor het implementeerwerk is er ook heel wat opzoekingswerk vereist. Daarom is het belangrijk dat dit werk tijdig wordt ingepland, zodat er genoeg tijd is om effectief te programmeren. Eens er begonnen wordt met het programmeren is het sterk aangeraden om over de onderdelen van de auto te beschikken. Zo zal er geëxperimenteerd kunnen worden. Om een beter beeld te krijgen van de programma’s die geïmplementeerd moeten worden, is het handig om vooraf een flowchart te maken. Aan de hand van deze flowcharts zou het haalbaar moeten zijn om het volledige programma uit te schrijven.\\
 Om in de toekomst de auto te verbeteren, is het aanbevolen om meer gewicht op de wielen te laten rusten, zodat het kogelwiel achteraan minder wrijving ondervindt. Het gebruik van krachtigere wielen kan hier ook een oplossing bieden. Daarnaast is het misschien beter om een camera te gebruiken voor het interpreteren van een verkeerslicht. Een nadeel hiervan is het bijkomend gewicht. 
 Extra tijd voor dit project zou bovendien ook betekenen dat de programma’s meer getest kunnen worden waardoor deze nog verbeterd kunnen worden.
